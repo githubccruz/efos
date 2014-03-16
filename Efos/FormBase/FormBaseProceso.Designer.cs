@@ -43,6 +43,7 @@
             this.lupaAsunto = new ControlesEfos.efosButtonBuscador();
             this.botonNuevo = new ControlesEfos.efosButtonNuevo();
             this.letreroNombrePaciente = new ControlesEfos.efosLetrero();
+            this.efosGroupBox1 = new ControlesEfos.efosGroupBox();
             this.SuspendLayout();
             // 
             // botonProcesar
@@ -105,7 +106,7 @@
             // 
             this.efosLetrero1.AutoSize = true;
             this.efosLetrero1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero1.Location = new System.Drawing.Point(36, 47);
+            this.efosLetrero1.Location = new System.Drawing.Point(22, 42);
             this.efosLetrero1.Name = "efosLetrero1";
             this.efosLetrero1.Size = new System.Drawing.Size(129, 15);
             this.efosLetrero1.TabIndex = 4;
@@ -116,7 +117,7 @@
             // 
             this.efosLetrero2.AutoSize = true;
             this.efosLetrero2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero2.Location = new System.Drawing.Point(413, 47);
+            this.efosLetrero2.Location = new System.Drawing.Point(399, 42);
             this.efosLetrero2.Name = "efosLetrero2";
             this.efosLetrero2.Size = new System.Drawing.Size(117, 15);
             this.efosLetrero2.TabIndex = 5;
@@ -128,7 +129,7 @@
             this.txtFechaAsunto.CampoBD = null;
             this.txtFechaAsunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechaAsunto.Limpiar = true;
-            this.txtFechaAsunto.Location = new System.Drawing.Point(537, 44);
+            this.txtFechaAsunto.Location = new System.Drawing.Point(523, 39);
             this.txtFechaAsunto.Name = "txtFechaAsunto";
             this.txtFechaAsunto.Size = new System.Drawing.Size(100, 21);
             this.txtFechaAsunto.SoloLectura = false;
@@ -139,7 +140,7 @@
             this.txtNumeroAsunto.CampoBD = null;
             this.txtNumeroAsunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroAsunto.Limpiar = true;
-            this.txtNumeroAsunto.Location = new System.Drawing.Point(203, 44);
+            this.txtNumeroAsunto.Location = new System.Drawing.Point(189, 39);
             this.txtNumeroAsunto.Name = "txtNumeroAsunto";
             this.txtNumeroAsunto.Size = new System.Drawing.Size(100, 21);
             this.txtNumeroAsunto.SoloLectura = false;
@@ -150,7 +151,7 @@
             this.txtCodigoPaciente.CampoBD = null;
             this.txtCodigoPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoPaciente.Limpiar = true;
-            this.txtCodigoPaciente.Location = new System.Drawing.Point(203, 87);
+            this.txtCodigoPaciente.Location = new System.Drawing.Point(189, 82);
             this.txtCodigoPaciente.Name = "txtCodigoPaciente";
             this.txtCodigoPaciente.Size = new System.Drawing.Size(100, 21);
             this.txtCodigoPaciente.SoloLectura = false;
@@ -160,7 +161,7 @@
             // 
             this.efosLetrero3.AutoSize = true;
             this.efosLetrero3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero3.Location = new System.Drawing.Point(36, 90);
+            this.efosLetrero3.Location = new System.Drawing.Point(22, 85);
             this.efosLetrero3.Name = "efosLetrero3";
             this.efosLetrero3.Size = new System.Drawing.Size(116, 15);
             this.efosLetrero3.TabIndex = 9;
@@ -171,7 +172,7 @@
             // 
             this.lupaPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lupaPaciente.Image = ((System.Drawing.Image)(resources.GetObject("lupaPaciente.Image")));
-            this.lupaPaciente.Location = new System.Drawing.Point(167, 82);
+            this.lupaPaciente.Location = new System.Drawing.Point(153, 77);
             this.lupaPaciente.Name = "lupaPaciente";
             this.lupaPaciente.Size = new System.Drawing.Size(35, 30);
             this.lupaPaciente.TabIndex = 11;
@@ -182,7 +183,7 @@
             // 
             this.lupaAsunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lupaAsunto.Image = ((System.Drawing.Image)(resources.GetObject("lupaAsunto.Image")));
-            this.lupaAsunto.Location = new System.Drawing.Point(167, 39);
+            this.lupaAsunto.Location = new System.Drawing.Point(153, 34);
             this.lupaAsunto.Name = "lupaAsunto";
             this.lupaAsunto.Size = new System.Drawing.Size(35, 30);
             this.lupaAsunto.TabIndex = 12;
@@ -207,12 +208,21 @@
             // 
             this.letreroNombrePaciente.AutoSize = true;
             this.letreroNombrePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letreroNombrePaciente.Location = new System.Drawing.Point(309, 90);
+            this.letreroNombrePaciente.Location = new System.Drawing.Point(295, 85);
             this.letreroNombrePaciente.Name = "letreroNombrePaciente";
             this.letreroNombrePaciente.Size = new System.Drawing.Size(142, 15);
             this.letreroNombrePaciente.TabIndex = 14;
             this.letreroNombrePaciente.Text = "Nombre del Paciente";
             this.letreroNombrePaciente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // efosGroupBox1
+            // 
+            this.efosGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosGroupBox1.Location = new System.Drawing.Point(12, 21);
+            this.efosGroupBox1.Name = "efosGroupBox1";
+            this.efosGroupBox1.Size = new System.Drawing.Size(625, 100);
+            this.efosGroupBox1.TabIndex = 15;
+            this.efosGroupBox1.TabStop = false;
             // 
             // FormBaseProceso
             // 
@@ -234,6 +244,7 @@
             this.Controls.Add(this.botonBuscar);
             this.Controls.Add(this.botonCancelar);
             this.Controls.Add(this.botonProcesar);
+            this.Controls.Add(this.efosGroupBox1);
             this.Name = "FormBaseProceso";
             this.Text = "FormBaseProceso";
             this.ResumeLayout(false);
@@ -243,10 +254,6 @@
 
         #endregion
 
-        private ControlesEfos.efosButtonProcesar botonProcesar;
-        private ControlesEfos.efosButtonCancelar botonCancelar;
-        private ControlesEfos.efosButtonBuscar botonBuscar;
-        private ControlesEfos.efosButtonSalir botonSalir;
         private ControlesEfos.efosLetrero efosLetrero1;
         private ControlesEfos.efosLetrero efosLetrero2;
         private ControlesEfos.efosCampo txtFechaAsunto;
@@ -255,8 +262,13 @@
         private ControlesEfos.efosLetrero efosLetrero3;
         private ControlesEfos.efosButtonBuscador lupaPaciente;
         private ControlesEfos.efosButtonBuscador lupaAsunto;
-        private ControlesEfos.efosButtonNuevo botonNuevo;
         private ControlesEfos.efosLetrero letreroNombrePaciente;
+        public ControlesEfos.efosButtonProcesar botonProcesar;
+        public ControlesEfos.efosButtonCancelar botonCancelar;
+        public ControlesEfos.efosButtonBuscar botonBuscar;
+        public ControlesEfos.efosButtonSalir botonSalir;
+        public ControlesEfos.efosButtonNuevo botonNuevo;
+        private ControlesEfos.efosGroupBox efosGroupBox1;
 
     }
 }
