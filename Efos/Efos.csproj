@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A57093A8-6601-439E-838B-8528C0031BA7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Efos</RootNamespace>
+    <AssemblyName>Efos</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlesEfos">
+      <HintPath>..\..\ControlesEfos\ControlesEfos\bin\Release\ControlesEfos.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.2.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04" />
+    <Reference Include="Npgsql">
+      <HintPath>..\..\..\..\..\..\..\Program Files\PostgreSQL\Npgsql\ms.net4.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBaseConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaseConsulta.Designer.cs">
+      <DependentUpon>FormBaseConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBaseConsultaPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaseConsultaPersona.Designer.cs">
+      <DependentUpon>FormBaseConsultaPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBaseMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaseMantenimiento.Designer.cs">
+      <DependentUpon>FormBaseMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBaseMantenimientoGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaseMantenimientoGeneral.Designer.cs">
+      <DependentUpon>FormBaseMantenimientoGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBaseMantenimientoRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaseMantenimientoRegion.Designer.cs">
+      <DependentUpon>FormBaseMantenimientoRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBaseProceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaseProceso.Designer.cs">
+      <DependentUpon>FormBaseProceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBaseReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaseReporte.Designer.cs">
+      <DependentUpon>FormBaseReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoBanco.Designer.cs">
+      <DependentUpon>FormMantenimientoBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoCiudad.Designer.cs">
+      <DependentUpon>FormMantenimientoCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoCuestionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoCuestionario.Designer.cs">
+      <DependentUpon>FormMantenimientoCuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoDoctor.Designer.cs">
+      <DependentUpon>FormMantenimientoDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoDominioEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoDominioEmail.Designer.cs">
+      <DependentUpon>FormMantenimientoDominioEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoDosi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoDosi.Designer.cs">
+      <DependentUpon>FormMantenimientoDosi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoEstadoCivil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoEstadoCivil.Designer.cs">
+      <DependentUpon>FormMantenimientoEstadoCivil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoEstadoPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoEstadoPresupuesto.Designer.cs">
+      <DependentUpon>FormMantenimientoEstadoPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoEstadoTercero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoEstadoTercero.Designer.cs">
+      <DependentUpon>FormMantenimientoEstadoTercero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoEstadoTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoEstadoTrabajo.Designer.cs">
+      <DependentUpon>FormMantenimientoEstadoTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoIngrediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoIngrediente.Designer.cs">
+      <DependentUpon>FormMantenimientoIngrediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoLadoPiezaDental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoLadoPiezaDental.Designer.cs">
+      <DependentUpon>FormMantenimientoLadoPiezaDental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoMedicamento.Designer.cs">
+      <DependentUpon>FormMantenimientoMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoNacionalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoNacionalidad.Designer.cs">
+      <DependentUpon>FormMantenimientoNacionalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoNivelAcademico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoNivelAcademico.Designer.cs">
+      <DependentUpon>FormMantenimientoNivelAcademico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoPaciente.Designer.cs">
+      <DependentUpon>FormMantenimientoPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoPais.Designer.cs">
+      <DependentUpon>FormMantenimientoPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoPatologia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoPatologia.Designer.cs">
+      <DependentUpon>FormMantenimientoPatologia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBaseMantenimientoPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBaseMantenimientoPersona.Designer.cs">
+      <DependentUpon>FormBaseMantenimientoPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoPregunta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoPregunta.Designer.cs">
+      <DependentUpon>FormMantenimientoPregunta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoProducto.Designer.cs">
+      <DependentUpon>FormMantenimientoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoProvincia.Designer.cs">
+      <DependentUpon>FormMantenimientoProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoRespuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoRespuesta.Designer.cs">
+      <DependentUpon>FormMantenimientoRespuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoSector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoSector.Designer.cs">
+      <DependentUpon>FormMantenimientoSector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoServicio.Designer.cs">
+      <DependentUpon>FormMantenimientoServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoSexo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoSexo.Designer.cs">
+      <DependentUpon>FormMantenimientoSexo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoCuestionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoCuestionario.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoCuestionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoDescuentoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoDescuentoEmpleado.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoDescuentoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoDoctor.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoEmpleado.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoFactura.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoIdentificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoIdentificacion.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoIdentificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoMedicamento.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPaciente.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPago.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPersona.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPrecioServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPrecioServicio.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoPrecioServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPrecioProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPrecioProducto.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoPrecioProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPregunta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoPregunta.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoPregunta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoProducto.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoProveedor.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoRespuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoRespuesta.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoRespuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoServicio.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoTelefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoTipoTelefono.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoTelefono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesoCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesoCita.Designer.cs">
+      <DependentUpon>FormProcesoCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesoEvaluacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesoEvaluacion.Designer.cs">
+      <DependentUpon>FormProcesoEvaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesoFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesoFactura.Designer.cs">
+      <DependentUpon>FormProcesoFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesoOdontograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesoOdontograma.Designer.cs">
+      <DependentUpon>FormProcesoOdontograma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesoOrdenesCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesoOrdenesCompra.Designer.cs">
+      <DependentUpon>FormProcesoOrdenesCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesoOrdenesTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesoOrdenesTrabajo.Designer.cs">
+      <DependentUpon>FormProcesoOrdenesTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesoOrdenTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesoOrdenTrabajo.Designer.cs">
+      <DependentUpon>FormProcesoOrdenTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesoReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesoReceta.Designer.cs">
+      <DependentUpon>FormProcesoReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProcesoTrabajoDentales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProcesoTrabajoDentales.Designer.cs">
+      <DependentUpon>FormProcesoTrabajoDentales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent.Designer.cs">
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostgreSQL.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaseConsulta.resx">
+      <DependentUpon>FormBaseConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaseConsultaPersona.resx">
+      <DependentUpon>FormBaseConsultaPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaseMantenimiento.resx">
+      <DependentUpon>FormBaseMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaseMantenimientoGeneral.resx">
+      <DependentUpon>FormBaseMantenimientoGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaseMantenimientoRegion.resx">
+      <DependentUpon>FormBaseMantenimientoRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaseProceso.resx">
+      <DependentUpon>FormBaseProceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaseReporte.resx">
+      <DependentUpon>FormBaseReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoBanco.resx">
+      <DependentUpon>FormMantenimientoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoCiudad.resx">
+      <DependentUpon>FormMantenimientoCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoCuestionario.resx">
+      <DependentUpon>FormMantenimientoCuestionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoDoctor.resx">
+      <DependentUpon>FormMantenimientoDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoEstadoTrabajo.resx">
+      <DependentUpon>FormMantenimientoEstadoTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoNacionalidad.resx">
+      <DependentUpon>FormMantenimientoNacionalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoPaciente.resx">
+      <DependentUpon>FormMantenimientoPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaseMantenimientoPersona.resx">
+      <DependentUpon>FormBaseMantenimientoPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoPregunta.resx">
+      <DependentUpon>FormMantenimientoPregunta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoProducto.resx">
+      <DependentUpon>FormMantenimientoProducto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoProvincia.resx">
+      <DependentUpon>FormMantenimientoProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoSector.resx">
+      <DependentUpon>FormMantenimientoSector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoServicio.resx">
+      <DependentUpon>FormMantenimientoServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoTipoPrecioServicio.resx">
+      <DependentUpon>FormMantenimientoTipoPrecioServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoTipoPrecioProducto.resx">
+      <DependentUpon>FormMantenimientoTipoPrecioProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoTipoPregunta.resx">
+      <DependentUpon>FormMantenimientoTipoPregunta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoTipoProducto.resx">
+      <DependentUpon>FormMantenimientoTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoTipoServicio.resx">
+      <DependentUpon>FormMantenimientoTipoServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProcesoCita.resx">
+      <DependentUpon>FormProcesoCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProcesoFactura.resx">
+      <DependentUpon>FormProcesoFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProcesoOrdenTrabajo.resx">
+      <DependentUpon>FormProcesoOrdenTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent.resx">
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\32x32\document-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\32x32\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\32x32\edit-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\32x32\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\32x32\search-advanced.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\32x32\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\32x32\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\power-standby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\32x32\register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\32x32\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\MD-audio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\pattern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\database-alt-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="icons\imagen\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\notepad-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\blog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\bag-alt-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\baggage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\cart-alt-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\16x16\web.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
