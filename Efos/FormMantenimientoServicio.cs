@@ -134,6 +134,20 @@ namespace Efos
                     dataGridPrecioServicio.Rows[indexRows].Cells[1].Value = row["precserv"].ToString();
                     indexRows++;
                 }
+
+                cmd = "SELECT * FROM servicio_vs_insumo_detalle WHERE codiserv="+ txtCodigo.Text.Trim();
+                data = PostgreSQL.Execute(cmd);
+                dataGridInsumo.Rows.Clear();
+
+                indexRows = 0;
+                foreach (DataRow row in data.Rows)
+                {
+                    dataGridInsumo.Rows.Add(1);
+                    dataGridInsumo.Rows[indexRows].Cells[0].Value = Convert.ToInt32(row["codiinsu"].ToString());
+                    dataGridInsumo.Rows[indexRows].Cells[1].Value = row["cantinsu"].ToString();
+                    indexRows++;
+                }
+
                 data.Dispose();
                 cmd = null;
                 AccionCodigoValidado();
