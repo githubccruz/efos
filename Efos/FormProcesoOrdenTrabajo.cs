@@ -16,6 +16,7 @@ namespace Efos
         {
             InitializeComponent();
             checkEstado.Checked = false;
+            
         }
 
     }

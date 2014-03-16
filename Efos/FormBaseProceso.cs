@@ -52,7 +52,7 @@ namespace Efos
             lupaAsunto.Enabled = false;
             lupaPaciente.Enabled = true;
 
-            letreroPersona.Text = "";
+            //letreroPersona.Text = "";
             txtCodigoPaciente.Text = 0.ToString();
             txtCodigoPaciente.Enabled = true;
 
@@ -83,7 +83,7 @@ namespace Efos
 
             txtNumeroAsunto.Text = 0.ToString();
             txtNumeroAsunto.Enabled = true;
-            letreroPersona.Text = "";            
+            ////letreroPersona.Text = "";            
         }
         public void AccionBotonBuscar()
         {

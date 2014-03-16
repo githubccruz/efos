@@ -39,10 +39,10 @@
             this.txtNumeroAsunto = new ControlesEfos.efosCampoCodigo();
             this.txtCodigoPaciente = new ControlesEfos.efosCampo();
             this.efosLetrero3 = new ControlesEfos.efosLetrero();
-            this.letreroPersona = new ControlesEfos.efosLetrero();
             this.lupaPaciente = new ControlesEfos.efosButtonBuscador();
             this.lupaAsunto = new ControlesEfos.efosButtonBuscador();
             this.botonNuevo = new ControlesEfos.efosButtonNuevo();
+            this.letreroNombrePaciente = new ControlesEfos.efosLetrero();
             this.SuspendLayout();
             // 
             // botonProcesar
@@ -167,17 +167,6 @@
             this.efosLetrero3.Text = "Codigo Paciente:";
             this.efosLetrero3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // letreroPersona
-            // 
-            this.letreroPersona.AutoSize = true;
-            this.letreroPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letreroPersona.Location = new System.Drawing.Point(310, 90);
-            this.letreroPersona.Name = "letreroPersona";
-            this.letreroPersona.Size = new System.Drawing.Size(148, 15);
-            this.letreroPersona.TabIndex = 10;
-            this.letreroPersona.Text = "nombre de la persona";
-            this.letreroPersona.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lupaPaciente
             // 
             this.lupaPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,16 +203,27 @@
             this.botonNuevo.UseVisualStyleBackColor = true;
             this.botonNuevo.Click += new System.EventHandler(this.botonNuevo_Click);
             // 
+            // letreroNombrePaciente
+            // 
+            this.letreroNombrePaciente.AutoSize = true;
+            this.letreroNombrePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letreroNombrePaciente.Location = new System.Drawing.Point(309, 90);
+            this.letreroNombrePaciente.Name = "letreroNombrePaciente";
+            this.letreroNombrePaciente.Size = new System.Drawing.Size(142, 15);
+            this.letreroNombrePaciente.TabIndex = 14;
+            this.letreroNombrePaciente.Text = "Nombre del Paciente";
+            this.letreroNombrePaciente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormBaseProceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(845, 507);
+            this.Controls.Add(this.letreroNombrePaciente);
             this.Controls.Add(this.botonNuevo);
             this.Controls.Add(this.lupaAsunto);
             this.Controls.Add(this.lupaPaciente);
-            this.Controls.Add(this.letreroPersona);
             this.Controls.Add(this.efosLetrero3);
             this.Controls.Add(this.txtCodigoPaciente);
             this.Controls.Add(this.txtNumeroAsunto);
@@ -253,10 +253,10 @@
         private ControlesEfos.efosCampoCodigo txtNumeroAsunto;
         private ControlesEfos.efosCampo txtCodigoPaciente;
         private ControlesEfos.efosLetrero efosLetrero3;
-        private ControlesEfos.efosLetrero letreroPersona;
         private ControlesEfos.efosButtonBuscador lupaPaciente;
         private ControlesEfos.efosButtonBuscador lupaAsunto;
         private ControlesEfos.efosButtonNuevo botonNuevo;
+        private ControlesEfos.efosLetrero letreroNombrePaciente;
 
     }
 }
