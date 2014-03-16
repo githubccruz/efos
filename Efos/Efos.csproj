@@ -394,12 +394,6 @@
     <Compile Include="FormProcesoOrdenesCompra.Designer.cs">
       <DependentUpon>FormProcesoOrdenesCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProcesoOrdenesTrabajo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormProcesoOrdenesTrabajo.Designer.cs">
-      <DependentUpon>FormProcesoOrdenesTrabajo.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormProcesoOrdenTrabajo.cs">
       <SubType>Form</SubType>
     </Compile>
