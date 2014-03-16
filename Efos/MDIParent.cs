@@ -161,7 +161,7 @@ namespace Efos
             if (checkForm("Ordenes de Trabajo"))
                 return;
 
-            FormProcesoOrdenesTrabajo Form = new FormProcesoOrdenesTrabajo();
+            FormProcesoOrdenTrabajo Form = new FormProcesoOrdenTrabajo();
             Form.Text = "Ordenes de Trabajo";
             Form.MdiParent = this;
             Form.Show();
