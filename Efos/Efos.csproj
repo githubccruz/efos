@@ -52,52 +52,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormBase.cs">
+    <Compile Include="FormBase\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBase.Designer.cs">
+    <Compile Include="FormBase\FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaseConsulta.cs">
+    <Compile Include="FormBase\FormBaseConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaseConsulta.Designer.cs">
+    <Compile Include="FormBase\FormBaseConsulta.Designer.cs">
       <DependentUpon>FormBaseConsulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaseConsultaPersona.cs">
+    <Compile Include="FormBase\FormBaseConsultaPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaseConsultaPersona.Designer.cs">
+    <Compile Include="FormBase\FormBaseConsultaPersona.Designer.cs">
       <DependentUpon>FormBaseConsultaPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaseMantenimiento.cs">
+    <Compile Include="FormBase\FormBaseMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaseMantenimiento.Designer.cs">
+    <Compile Include="FormBase\FormBaseMantenimiento.Designer.cs">
       <DependentUpon>FormBaseMantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaseMantenimientoGeneral.cs">
+    <Compile Include="FormBase\FormBaseMantenimientoGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaseMantenimientoGeneral.Designer.cs">
+    <Compile Include="FormBase\FormBaseMantenimientoGeneral.Designer.cs">
       <DependentUpon>FormBaseMantenimientoGeneral.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaseMantenimientoRegion.cs">
+    <Compile Include="FormBase\FormBaseMantenimientoRegion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaseMantenimientoRegion.Designer.cs">
+    <Compile Include="FormBase\FormBaseMantenimientoRegion.Designer.cs">
       <DependentUpon>FormBaseMantenimientoRegion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaseProceso.cs">
+    <Compile Include="FormBase\FormBaseProceso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaseProceso.Designer.cs">
+    <Compile Include="FormBase\FormBaseProceso.Designer.cs">
       <DependentUpon>FormBaseProceso.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaseReporte.cs">
+    <Compile Include="FormBase\FormBaseReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaseReporte.Designer.cs">
+    <Compile Include="FormBase\FormBaseReporte.Designer.cs">
       <DependentUpon>FormBaseReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMantenimientoBanco.cs">
@@ -214,10 +214,10 @@
     <Compile Include="FormMantenimientoPatologia.Designer.cs">
       <DependentUpon>FormMantenimientoPatologia.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBaseMantenimientoPersona.cs">
+    <Compile Include="FormBase\FormBaseMantenimientoPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBaseMantenimientoPersona.Designer.cs">
+    <Compile Include="FormBase\FormBaseMantenimientoPersona.Designer.cs">
       <DependentUpon>FormBaseMantenimientoPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMantenimientoPregunta.cs">
@@ -433,28 +433,28 @@
     <Compile Include="PostgreSQL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormBase.resx">
+    <EmbeddedResource Include="FormBase\FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaseConsulta.resx">
+    <EmbeddedResource Include="FormBase\FormBaseConsulta.resx">
       <DependentUpon>FormBaseConsulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaseConsultaPersona.resx">
+    <EmbeddedResource Include="FormBase\FormBaseConsultaPersona.resx">
       <DependentUpon>FormBaseConsultaPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaseMantenimiento.resx">
+    <EmbeddedResource Include="FormBase\FormBaseMantenimiento.resx">
       <DependentUpon>FormBaseMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaseMantenimientoGeneral.resx">
+    <EmbeddedResource Include="FormBase\FormBaseMantenimientoGeneral.resx">
       <DependentUpon>FormBaseMantenimientoGeneral.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaseMantenimientoRegion.resx">
+    <EmbeddedResource Include="FormBase\FormBaseMantenimientoRegion.resx">
       <DependentUpon>FormBaseMantenimientoRegion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaseProceso.resx">
+    <EmbeddedResource Include="FormBase\FormBaseProceso.resx">
       <DependentUpon>FormBaseProceso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaseReporte.resx">
+    <EmbeddedResource Include="FormBase\FormBaseReporte.resx">
       <DependentUpon>FormBaseReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMantenimientoBanco.resx">
@@ -481,7 +481,7 @@
     <EmbeddedResource Include="FormMantenimientoPaciente.resx">
       <DependentUpon>FormMantenimientoPaciente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBaseMantenimientoPersona.resx">
+    <EmbeddedResource Include="FormBase\FormBaseMantenimientoPersona.resx">
       <DependentUpon>FormBaseMantenimientoPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMantenimientoPregunta.resx">
