@@ -34,11 +34,13 @@ namespace Efos
             {
                 PostgreSQL.FillComboBox(comboTipoServicio, "coditise", "desctise", "tipo_servicio_encabezado", filter: "estado=true");
                 PostgreSQL.FillComboBox(columnaTipoPrecioServicio,"coditips","desctips","tipo_precio_servicio_encabezado",filter:"estado=true");
+                PostgreSQL.FillComboBox(columnaInsumo, "codiinsu", "descinsu", "insumo_encabezado", filter: "estado=true");
             }
             else
             {
                 PostgreSQL.FillComboBox(comboTipoServicio, "coditise", "desctise", "tipo_servicio_encabezado");
                 PostgreSQL.FillComboBox(columnaTipoPrecioServicio,"coditips","desctips","tipo_precio_servicio_encabezado");
+                PostgreSQL.FillComboBox(columnaInsumo, "codiinsu", "descinsu", "insumo_encabezado");
             }
         }
         private void campoDescripcion_Validated(object sender, EventArgs e)
@@ -81,6 +83,7 @@ namespace Efos
                         PostgreSQL.Execute(cmd);
                     }
                 }
+
                 data.Dispose();
                 cmd = null;
                 datos = null;
@@ -136,6 +139,16 @@ namespace Efos
                 campoFechaCreacion.Enabled = false;
                 txtCodigo.Text = 0.ToString();
             }
+        }
+
+        private void efosDataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            eliminarFila(dataGridInsumo, e.ColumnIndex, e.RowIndex);
+        }
+
+        private void botonCancelar_Click(object sender, EventArgs e)
+        {
+            //limpiarControles(this.Controls);            
         }
     }
 }

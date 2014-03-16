@@ -631,6 +631,30 @@ namespace Efos
             FormMantenimientoTipoTelefono Form = new FormMantenimientoTipoTelefono(titulo, "tipo_servicio_encabezado", "coditise", "desctise", "estado");
             Form.MdiParent = this;
             Form.Show();
+        }
+
+        private void insumoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string titulo = "Mantenimiento de Insumo";
+            if(checkForm(titulo))
+                return;
+
+            FormMantenimientoInsumo Form = new FormMantenimientoInsumo(titulo);
+            Form.MdiParent = this;
+            Form.Show();
+
+        }
+
+        private void servicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string titulo = "Mantenimiento de Servicio";
+            if (checkForm(titulo))
+                return;
+
+            FormMantenimientoServicio Form = new FormMantenimientoServicio();
+            Form.MdiParent = this;
+            Form.Show();
+
         }     
     }
 }

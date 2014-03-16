@@ -166,6 +166,12 @@
     <Compile Include="FormMantenimientoIngrediente.Designer.cs">
       <DependentUpon>FormMantenimientoIngrediente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMantenimientoInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimientoInsumo.Designer.cs">
+      <DependentUpon>FormMantenimientoInsumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMantenimientoLadoPiezaDental.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -459,6 +465,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMantenimientoEstadoTrabajo.resx">
       <DependentUpon>FormMantenimientoEstadoTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimientoInsumo.resx">
+      <DependentUpon>FormMantenimientoInsumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMantenimientoNacionalidad.resx">
       <DependentUpon>FormMantenimientoNacionalidad.cs</DependentUpon>

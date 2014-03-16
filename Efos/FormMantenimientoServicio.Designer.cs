@@ -43,9 +43,20 @@
             this.efosPanel1 = new ControlesEfos.efosPanel();
             this.efosPanel2 = new ControlesEfos.efosPanel();
             this.efosPanel3 = new ControlesEfos.efosPanel();
+            this.efosTabControl1 = new ControlesEfos.efosTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridInsumo = new ControlesEfos.efosDataGridView();
+            this.columnaInsumo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaBotonEliminarInsumo = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.efosPanel4 = new ControlesEfos.efosPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPrecioServicio)).BeginInit();
             this.efosPanel3.SuspendLayout();
+            this.efosTabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridInsumo)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textTitulo
@@ -68,37 +79,38 @@
             // 
             // checkEstado
             // 
-            this.checkEstado.Location = new System.Drawing.Point(138, 384);
+            this.checkEstado.Location = new System.Drawing.Point(138, 486);
             // 
             // labelEstado
             // 
-            this.labelEstado.Location = new System.Drawing.Point(28, 390);
+            this.labelEstado.Location = new System.Drawing.Point(28, 492);
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(299, 435);
+            this.botonCancelar.Location = new System.Drawing.Point(299, 537);
+            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
             // botonSalir
             // 
-            this.botonSalir.Location = new System.Drawing.Point(489, 435);
+            this.botonSalir.Location = new System.Drawing.Point(489, 537);
             // 
             // botonGuardar
             // 
-            this.botonGuardar.Location = new System.Drawing.Point(111, 435);
+            this.botonGuardar.Location = new System.Drawing.Point(111, 537);
             this.botonGuardar.Click += new System.EventHandler(this.botonGuardar_Click);
             // 
             // botonEditar
             // 
-            this.botonEditar.Location = new System.Drawing.Point(204, 435);
+            this.botonEditar.Location = new System.Drawing.Point(204, 537);
             // 
             // botonNuevo
             // 
-            this.botonNuevo.Location = new System.Drawing.Point(12, 435);
+            this.botonNuevo.Location = new System.Drawing.Point(12, 537);
             this.botonNuevo.Click += new System.EventHandler(this.botonNuevo_Click);
             // 
             // botonBuscar
             // 
-            this.botonBuscar.Location = new System.Drawing.Point(393, 435);
+            this.botonBuscar.Location = new System.Drawing.Point(393, 537);
             // 
             // efosLetrero1
             // 
@@ -133,10 +145,10 @@
             this.columnaTipoPrecioServicio,
             this.columnaPrecioServicio,
             this.columnaBotonEliminar});
-            this.dataGridPrecioServicio.Location = new System.Drawing.Point(78, 3);
+            this.dataGridPrecioServicio.Location = new System.Drawing.Point(63, 6);
             this.dataGridPrecioServicio.Name = "dataGridPrecioServicio";
             this.dataGridPrecioServicio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridPrecioServicio.Size = new System.Drawing.Size(398, 150);
+            this.dataGridPrecioServicio.Size = new System.Drawing.Size(419, 214);
             this.dataGridPrecioServicio.StandardTab = true;
             this.dataGridPrecioServicio.TabIndex = 18;
             this.dataGridPrecioServicio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.efosDataGridView1_CellClick);
@@ -159,7 +171,7 @@
             this.columnaBotonEliminar.Text = "Eliminar";
             this.columnaBotonEliminar.ToolTipText = "Eliminar";
             this.columnaBotonEliminar.UseColumnTextForButtonValue = true;
-            this.columnaBotonEliminar.Width = 50;
+            this.columnaBotonEliminar.Width = 75;
             // 
             // efosLetrero2
             // 
@@ -248,16 +260,84 @@
             // efosPanel3
             // 
             this.efosPanel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.efosPanel3.Controls.Add(this.dataGridPrecioServicio);
+            this.efosPanel3.Controls.Add(this.efosTabControl1);
             this.efosPanel3.Location = new System.Drawing.Point(13, 205);
             this.efosPanel3.Name = "efosPanel3";
-            this.efosPanel3.Size = new System.Drawing.Size(551, 164);
+            this.efosPanel3.Size = new System.Drawing.Size(551, 265);
             this.efosPanel3.TabIndex = 27;
+            // 
+            // efosTabControl1
+            // 
+            this.efosTabControl1.Controls.Add(this.tabPage1);
+            this.efosTabControl1.Controls.Add(this.tabPage2);
+            this.efosTabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosTabControl1.Location = new System.Drawing.Point(3, 3);
+            this.efosTabControl1.Name = "efosTabControl1";
+            this.efosTabControl1.SelectedIndex = 0;
+            this.efosTabControl1.Size = new System.Drawing.Size(541, 255);
+            this.efosTabControl1.TabIndex = 19;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridInsumo);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(533, 226);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Insumos";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridInsumo
+            // 
+            this.dataGridInsumo.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridInsumo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridInsumo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridInsumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridInsumo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnaInsumo,
+            this.columnaCantidad,
+            this.columnaBotonEliminarInsumo});
+            this.dataGridInsumo.Location = new System.Drawing.Point(62, 6);
+            this.dataGridInsumo.Name = "dataGridInsumo";
+            this.dataGridInsumo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridInsumo.Size = new System.Drawing.Size(424, 150);
+            this.dataGridInsumo.StandardTab = true;
+            this.dataGridInsumo.TabIndex = 0;
+            this.dataGridInsumo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.efosDataGridView1_CellClick_1);
+            // 
+            // columnaInsumo
+            // 
+            this.columnaInsumo.HeaderText = "Insumo";
+            this.columnaInsumo.Name = "columnaInsumo";
+            this.columnaInsumo.Width = 200;
+            // 
+            // columnaCantidad
+            // 
+            this.columnaCantidad.HeaderText = "Cantidad";
+            this.columnaCantidad.Name = "columnaCantidad";
+            // 
+            // columnaBotonEliminarInsumo
+            // 
+            this.columnaBotonEliminarInsumo.HeaderText = "Eliminar";
+            this.columnaBotonEliminarInsumo.Name = "columnaBotonEliminarInsumo";
+            this.columnaBotonEliminarInsumo.Width = 80;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridPrecioServicio);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(533, 226);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Precios";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // efosPanel4
             // 
             this.efosPanel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.efosPanel4.Location = new System.Drawing.Point(13, 374);
+            this.efosPanel4.Location = new System.Drawing.Point(13, 476);
             this.efosPanel4.Name = "efosPanel4";
             this.efosPanel4.Size = new System.Drawing.Size(551, 45);
             this.efosPanel4.TabIndex = 28;
@@ -266,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 493);
+            this.ClientSize = new System.Drawing.Size(584, 594);
             this.Controls.Add(this.campoCostoServicio);
             this.Controls.Add(this.efosLetrero4);
             this.Controls.Add(this.efosLetrero3);
@@ -307,6 +387,10 @@
             this.Controls.SetChildIndex(this.campoCostoServicio, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPrecioServicio)).EndInit();
             this.efosPanel3.ResumeLayout(false);
+            this.efosTabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridInsumo)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,9 +401,6 @@
         private ControlesEfos.efosLetrero efosLetrero1;
         private ControlesEfos.efosCampo campoFechaCreacion;
         private ControlesEfos.efosDataGridView dataGridPrecioServicio;
-        private System.Windows.Forms.DataGridViewComboBoxColumn columnaTipoPrecioServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioServicio;
-        private System.Windows.Forms.DataGridViewButtonColumn columnaBotonEliminar;
         private ControlesEfos.efosLetrero efosLetrero2;
         private ControlesEfos.efosCampo campoDescripcion;
         private ControlesEfos.efosCombo comboTipoServicio;
@@ -330,5 +411,15 @@
         private ControlesEfos.efosPanel efosPanel2;
         private ControlesEfos.efosPanel efosPanel3;
         private ControlesEfos.efosPanel efosPanel4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn columnaTipoPrecioServicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioServicio;
+        private System.Windows.Forms.DataGridViewButtonColumn columnaBotonEliminar;
+        private ControlesEfos.efosTabControl efosTabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private ControlesEfos.efosDataGridView dataGridInsumo;
+        private System.Windows.Forms.DataGridViewComboBoxColumn columnaInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantidad;
+        private System.Windows.Forms.DataGridViewButtonColumn columnaBotonEliminarInsumo;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

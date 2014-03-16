@@ -129,6 +129,7 @@
             this.respuestaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.telefonoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilitariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculadoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notepadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,6 +139,7 @@
             this.estadoConexion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.efosCalendar1 = new ControlesEfos.efosCalendar();
+            this.servicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -543,7 +545,9 @@
             this.ingredienteToolStripMenuItem,
             this.nacionalidadToolStripMenuItem,
             this.productoToolStripMenuItem,
-            this.miscelaneosToolStripMenuItem1});
+            this.miscelaneosToolStripMenuItem1,
+            this.insumoToolStripMenuItem,
+            this.servicioToolStripMenuItem});
             this.miscelaneosToolStripMenuItem.Image = global::Efos.Properties.Resources.notepad;
             this.miscelaneosToolStripMenuItem.Name = "miscelaneosToolStripMenuItem";
             this.miscelaneosToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
@@ -911,6 +915,13 @@
             this.telefonoToolStripMenuItem.Text = "Telefono";
             this.telefonoToolStripMenuItem.Click += new System.EventHandler(this.telefonoToolStripMenuItem_Click);
             // 
+            // insumoToolStripMenuItem
+            // 
+            this.insumoToolStripMenuItem.Name = "insumoToolStripMenuItem";
+            this.insumoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.insumoToolStripMenuItem.Text = "Insumo";
+            this.insumoToolStripMenuItem.Click += new System.EventHandler(this.insumoToolStripMenuItem_Click);
+            // 
             // utilitariosToolStripMenuItem
             // 
             this.utilitariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -983,6 +994,13 @@
             this.efosCalendar1.Name = "efosCalendar1";
             this.efosCalendar1.ShowWeekNumbers = true;
             this.efosCalendar1.TabIndex = 4;
+            // 
+            // servicioToolStripMenuItem
+            // 
+            this.servicioToolStripMenuItem.Name = "servicioToolStripMenuItem";
+            this.servicioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.servicioToolStripMenuItem.Text = "Servicio";
+            this.servicioToolStripMenuItem.Click += new System.EventHandler(this.servicioToolStripMenuItem_Click);
             // 
             // MDIParent
             // 
@@ -1118,6 +1136,8 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem precioProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem insumoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem servicioToolStripMenuItem;
     }
 }
 
