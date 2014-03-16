@@ -68,7 +68,7 @@ namespace Efos
 
             try
             {
-                string cmd = String.Format("SELECT inserta_servicio_encabezado({0},'{1}',{2},{3},{4})",datos);
+                string cmd = String.Format("SELECT inserta_servicio_encabezado({0},'{1}',{2},{3},{4});",datos);
                 
                 DataTable data = PostgreSQL.Execute(cmd);
                 var codigo = data.Rows[0][0].ToString();
@@ -83,7 +83,16 @@ namespace Efos
                         PostgreSQL.Execute(cmd);
                     }
                 }
-
+                cmd = String.Format("SELECT limpiaCodigoServicioInsumo({0});", codigo);
+                PostgreSQL.Execute(cmd);
+                foreach (DataGridViewRow row in dataGridInsumo.Rows)
+                {
+                    if (row.Cells[1].Value != null)
+                    {
+                        cmd = String.Format("SELECT inserta_servicio_vs_insumo_detalle({0},{1},{2});", codigo, row.Cells[0].Value, row.Cells[1].Value.ToString());
+                        PostgreSQL.Execute(cmd);
+                    }
+                }
                 data.Dispose();
                 cmd = null;
                 datos = null;
