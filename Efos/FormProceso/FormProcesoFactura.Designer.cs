@@ -85,6 +85,14 @@
             this.botonNuevo.TabIndex = 15;
             this.botonNuevo.Click += new System.EventHandler(this.botonNuevo_Click);
             // 
+            // txtCodigoPaciente
+            // 
+            this.txtCodigoPaciente.Validated += new System.EventHandler(this.txtCodigoPaciente_Validated);
+            // 
+            // lupaPaciente
+            // 
+            this.lupaPaciente.Click += new System.EventHandler(this.lupaPaciente_Click);
+            // 
             // efosLetrero4
             // 
             this.efosLetrero4.AutoSize = true;
@@ -212,6 +220,7 @@
             this.lupaProducto.TabIndex = 25;
             this.lupaProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lupaProducto.UseVisualStyleBackColor = true;
+            this.lupaProducto.Click += new System.EventHandler(this.lupaProducto_Click);
             // 
             // efosGroupBox1
             // 
@@ -318,7 +327,7 @@
             this.campoTotal.Enabled = false;
             this.campoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoTotal.Limpiar = true;
-            this.campoTotal.Location = new System.Drawing.Point(523, 11);
+            this.campoTotal.Location = new System.Drawing.Point(523, 13);
             this.campoTotal.Name = "campoTotal";
             this.campoTotal.Size = new System.Drawing.Size(96, 21);
             this.campoTotal.SoloLectura = true;
@@ -328,7 +337,7 @@
             // 
             this.efosLetrero9.AutoSize = true;
             this.efosLetrero9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero9.Location = new System.Drawing.Point(474, 14);
+            this.efosLetrero9.Location = new System.Drawing.Point(474, 16);
             this.efosLetrero9.Name = "efosLetrero9";
             this.efosLetrero9.Size = new System.Drawing.Size(43, 15);
             this.efosLetrero9.TabIndex = 0;
@@ -378,6 +387,16 @@
             this.Controls.Add(this.efosGroupBox3);
             this.Name = "FormProcesoFactura";
             this.Text = "FormProcesoFactura";
+            this.Controls.SetChildIndex(this.efosGroupBoxPadre, 0);
+            this.Controls.SetChildIndex(this.efosLetrero1, 0);
+            this.Controls.SetChildIndex(this.efosLetrero2, 0);
+            this.Controls.SetChildIndex(this.txtFechaAsunto, 0);
+            this.Controls.SetChildIndex(this.txtNumeroAsunto, 0);
+            this.Controls.SetChildIndex(this.txtCodigoPaciente, 0);
+            this.Controls.SetChildIndex(this.efosLetrero3, 0);
+            this.Controls.SetChildIndex(this.lupaPaciente, 0);
+            this.Controls.SetChildIndex(this.lupaAsunto, 0);
+            this.Controls.SetChildIndex(this.letreroNombrePaciente, 0);
             this.Controls.SetChildIndex(this.efosGroupBox3, 0);
             this.Controls.SetChildIndex(this.efosGroupBox1, 0);
             this.Controls.SetChildIndex(this.botonProcesar, 0);
