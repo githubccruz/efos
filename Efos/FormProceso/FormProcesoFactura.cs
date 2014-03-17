@@ -62,6 +62,7 @@ namespace Efos
             dataGridFactura.Rows[newRow].Cells[3].Value = campoPrecio.Text.ToString().Trim();
             limpiarDatosProducto();
         }
+
         private void limpiarDatosProducto()
         {
             campoCodigo.Text = "";
@@ -136,14 +137,15 @@ namespace Efos
                 return;
             try
             {
-                string cmd = String.Format("SELECT * FROM vista_persona_consulta WHERE codigo in (SELECT coditerc FROM paciente_encabezado) AND codigo={0} AND estado='ACTIVADO'", txtCodigoPaciente.Text);
-                DataTable data = PostgreSQL.Execute(cmd);
-                letreroNombrePaciente.Text = data.Rows[0]["nombre"].ToString();
-                data.Dispose();
+                string cmd = String.Format("SELECT * FROM vista_persona_consulta WHERE codigo in (SELECT coditerc FROM paciente_encabezado) AND codigo={0} AND estado=true", txtCodigoPaciente.Text);                
+                DataTable data = PostgreSQL.Execute(cmd);                
+                letreroNombrePaciente.Text = data.Rows[0]["nombre"].ToString();                
+                data.Dispose();                
             }
             catch (Exception)
             {
-                if (MessageBox.Show("No existe informacion con el codigo <<" + txtCodigoPaciente.Text + ">>, ¿Desea usar el Buscador?", "Consejo || Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                letreroNombrePaciente.Text = "";
+                if (MessageBox.Show("No existe informacion o el Paciente esta Inactivo, con el codigo digitado ==>" + txtCodigoPaciente.Text + "\n, ¿Desea usar el Buscador?", "Consejo || Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     lupaPaciente_Click(null, null);
                 }
