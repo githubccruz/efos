@@ -54,6 +54,7 @@
             this.efosLetrero9 = new ControlesEfos.efosLetrero();
             this.efosLetrero10 = new ControlesEfos.efosLetrero();
             this.efosGroupBox3 = new ControlesEfos.efosGroupBox();
+            this.efosLetrero11 = new ControlesEfos.efosLetrero();
             this.efosGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).BeginInit();
             this.efosGroupBox2.SuspendLayout();
@@ -350,9 +351,9 @@
             this.efosLetrero10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.efosLetrero10.Location = new System.Drawing.Point(399, 7);
             this.efosLetrero10.Name = "efosLetrero10";
-            this.efosLetrero10.Size = new System.Drawing.Size(34, 15);
+            this.efosLetrero10.Size = new System.Drawing.Size(38, 15);
             this.efosLetrero10.TabIndex = 2;
-            this.efosLetrero10.Text = "NCF";
+            this.efosLetrero10.Text = "NCF:";
             this.efosLetrero10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // efosGroupBox3
@@ -364,11 +365,23 @@
             this.efosGroupBox3.TabIndex = 29;
             this.efosGroupBox3.TabStop = false;
             // 
+            // efosLetrero11
+            // 
+            this.efosLetrero11.AutoSize = true;
+            this.efosLetrero11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosLetrero11.Location = new System.Drawing.Point(444, 7);
+            this.efosLetrero11.Name = "efosLetrero11";
+            this.efosLetrero11.Size = new System.Drawing.Size(159, 15);
+            this.efosLetrero11.TabIndex = 30;
+            this.efosLetrero11.Text = "A010010100100000001";
+            this.efosLetrero11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormProcesoFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 475);
+            this.Controls.Add(this.efosLetrero11);
             this.Controls.Add(this.efosLetrero10);
             this.Controls.Add(this.efosGroupBox2);
             this.Controls.Add(this.dataGridFactura);
@@ -418,6 +431,7 @@
             this.Controls.SetChildIndex(this.dataGridFactura, 0);
             this.Controls.SetChildIndex(this.efosGroupBox2, 0);
             this.Controls.SetChildIndex(this.efosLetrero10, 0);
+            this.Controls.SetChildIndex(this.efosLetrero11, 0);
             this.efosGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).EndInit();
             this.efosGroupBox2.ResumeLayout(false);
@@ -454,5 +468,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaSubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn columnaBotonEliminar;
+        private ControlesEfos.efosLetrero efosLetrero11;
     }
 }
