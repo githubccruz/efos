@@ -120,13 +120,8 @@ namespace Efos
             datos[2] = cmbNacionalidad.SelectedValue.ToString();
             datos[3] = cmbNivelAcademico.SelectedValue.ToString();
             datos[4] = cmbEstadoCivil.SelectedValue.ToString();
-            string estado;
-            if (checkEstado.Checked){
-                estado = 1.ToString();
-            }
-            else
-                estado = 2.ToString();
-            datos[5] = estado;
+            
+            datos[5] = checkEstado.Checked.ToString();
             datos[6] = cmpNombre1.Text.Trim();
             datos[7] = cmpNombre2.Text.Trim();
 
@@ -136,6 +131,7 @@ namespace Efos
 
             string cmd = (String.Format("SELECT inserta_persona_encabezado({0}, {1}, {2}, {3}, {4}, {5}, '{6}', '{7}', '{8}', '{9}', '{10}');",datos));
             //MessageBox.Show("Query is ==> "+cmd);
+            
             string codigo = PostgreSQL.Execute(cmd).Rows[0][0].ToString();
             imagePerson.Enabled = false;
             codigoGenerado = codigo;
@@ -240,13 +236,8 @@ namespace Efos
                 cmpApellido1.Text = data.Rows[0]["apellido1"].ToString();
                 cmpApellido2.Text = data.Rows[0]["apellido2"].ToString();
                 cmpFechaNacimiento.Text = data.Rows[0]["fechanacimiento"].ToString();
-                
 
-                string estado = data.Rows[0]["estado"].ToString();
-                if (estado == "ACTIVADO")                
-                    checkEstado.Checked = true;                
-                else
-                    checkEstado.Checked = false;                
+                checkEstado.Checked = Convert.ToBoolean(data.Rows[0]["estado"].ToString());
 
                 cmbEstadoCivil.SelectedIndex =cmbEstadoCivil.FindString(data.Rows[0]["estadocivil"].ToString());
                 cmbNacionalidad.SelectedIndex = cmbNacionalidad.FindString(data.Rows[0]["nacionalidad"].ToString());
@@ -297,7 +288,6 @@ namespace Efos
                 }
                 AccionCodigoValidado();
                 imagePerson.Enabled = false;
-                estado = null;
             }
             catch
             {
