@@ -47,6 +47,12 @@
             this.efosCampo6 = new ControlesEfos.efosCampo();
             this.efosLetrero9 = new ControlesEfos.efosLetrero();
             this.efosLetrero10 = new ControlesEfos.efosLetrero();
+            this.columnaCodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.efosGroupBox3 = new ControlesEfos.efosGroupBox();
             this.efosGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.efosDataGridView1)).BeginInit();
             this.efosGroupBox2.SuspendLayout();
@@ -54,23 +60,23 @@
             // 
             // botonProcesar
             // 
-            this.botonProcesar.Location = new System.Drawing.Point(210, 419);
+            this.botonProcesar.Location = new System.Drawing.Point(209, 419);
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(312, 419);
+            this.botonCancelar.Location = new System.Drawing.Point(311, 419);
             // 
             // botonBuscar
             // 
-            this.botonBuscar.Location = new System.Drawing.Point(420, 419);
+            this.botonBuscar.Location = new System.Drawing.Point(419, 419);
             // 
             // botonSalir
             // 
-            this.botonSalir.Location = new System.Drawing.Point(522, 419);
+            this.botonSalir.Location = new System.Drawing.Point(521, 419);
             // 
             // botonNuevo
             // 
-            this.botonNuevo.Location = new System.Drawing.Point(104, 419);
+            this.botonNuevo.Location = new System.Drawing.Point(103, 419);
             // 
             // efosLetrero4
             // 
@@ -222,10 +228,16 @@
             this.efosDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.efosDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.efosDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.efosDataGridView1.Location = new System.Drawing.Point(10, 202);
+            this.efosDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnaCodigoProducto,
+            this.columnaDescripcionProducto,
+            this.columnaCantidad,
+            this.columnaPrecioProducto,
+            this.columnaSubTotal});
+            this.efosDataGridView1.Location = new System.Drawing.Point(20, 206);
             this.efosDataGridView1.Name = "efosDataGridView1";
             this.efosDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.efosDataGridView1.Size = new System.Drawing.Size(677, 150);
+            this.efosDataGridView1.Size = new System.Drawing.Size(660, 150);
             this.efosDataGridView1.StandardTab = true;
             this.efosDataGridView1.TabIndex = 27;
             // 
@@ -234,9 +246,9 @@
             this.efosGroupBox2.Controls.Add(this.efosCampo6);
             this.efosGroupBox2.Controls.Add(this.efosLetrero9);
             this.efosGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosGroupBox2.Location = new System.Drawing.Point(10, 357);
+            this.efosGroupBox2.Location = new System.Drawing.Point(10, 368);
             this.efosGroupBox2.Name = "efosGroupBox2";
-            this.efosGroupBox2.Size = new System.Drawing.Size(677, 56);
+            this.efosGroupBox2.Size = new System.Drawing.Size(677, 40);
             this.efosGroupBox2.TabIndex = 28;
             this.efosGroupBox2.TabStop = false;
             // 
@@ -245,7 +257,7 @@
             this.efosCampo6.CampoBD = null;
             this.efosCampo6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.efosCampo6.Limpiar = true;
-            this.efosCampo6.Location = new System.Drawing.Point(521, 17);
+            this.efosCampo6.Location = new System.Drawing.Point(523, 11);
             this.efosCampo6.Name = "efosCampo6";
             this.efosCampo6.Size = new System.Drawing.Size(96, 21);
             this.efosCampo6.SoloLectura = false;
@@ -255,7 +267,7 @@
             // 
             this.efosLetrero9.AutoSize = true;
             this.efosLetrero9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero9.Location = new System.Drawing.Point(472, 20);
+            this.efosLetrero9.Location = new System.Drawing.Point(474, 14);
             this.efosLetrero9.Name = "efosLetrero9";
             this.efosLetrero9.Size = new System.Drawing.Size(43, 15);
             this.efosLetrero9.TabIndex = 0;
@@ -272,6 +284,44 @@
             this.efosLetrero10.TabIndex = 2;
             this.efosLetrero10.Text = "NCF";
             this.efosLetrero10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // columnaCodigoProducto
+            // 
+            this.columnaCodigoProducto.HeaderText = "Codigo";
+            this.columnaCodigoProducto.Name = "columnaCodigoProducto";
+            this.columnaCodigoProducto.Width = 75;
+            // 
+            // columnaDescripcionProducto
+            // 
+            this.columnaDescripcionProducto.HeaderText = "Descripcion Producto";
+            this.columnaDescripcionProducto.Name = "columnaDescripcionProducto";
+            this.columnaDescripcionProducto.Width = 270;
+            // 
+            // columnaCantidad
+            // 
+            this.columnaCantidad.HeaderText = "Cantidad";
+            this.columnaCantidad.Name = "columnaCantidad";
+            this.columnaCantidad.Width = 85;
+            // 
+            // columnaPrecioProducto
+            // 
+            this.columnaPrecioProducto.HeaderText = "Precio";
+            this.columnaPrecioProducto.Name = "columnaPrecioProducto";
+            this.columnaPrecioProducto.Width = 85;
+            // 
+            // columnaSubTotal
+            // 
+            this.columnaSubTotal.HeaderText = "Sub-Total";
+            this.columnaSubTotal.Name = "columnaSubTotal";
+            // 
+            // efosGroupBox3
+            // 
+            this.efosGroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosGroupBox3.Location = new System.Drawing.Point(10, 192);
+            this.efosGroupBox3.Name = "efosGroupBox3";
+            this.efosGroupBox3.Size = new System.Drawing.Size(679, 175);
+            this.efosGroupBox3.TabIndex = 29;
+            this.efosGroupBox3.TabStop = false;
             // 
             // FormProcesoFactura
             // 
@@ -293,9 +343,11 @@
             this.Controls.Add(this.efosLetrero5);
             this.Controls.Add(this.efosLetrero4);
             this.Controls.Add(this.efosGroupBox1);
+            this.Controls.Add(this.efosGroupBox3);
             this.Name = "FormProcesoFactura";
             this.Text = "FormProcesoFactura";
             this.Load += new System.EventHandler(this.FormProcesoFactura_Load);
+            this.Controls.SetChildIndex(this.efosGroupBox3, 0);
             this.Controls.SetChildIndex(this.efosGroupBox1, 0);
             this.Controls.SetChildIndex(this.botonProcesar, 0);
             this.Controls.SetChildIndex(this.botonCancelar, 0);
@@ -345,5 +397,11 @@
         private ControlesEfos.efosLetrero efosLetrero9;
         private ControlesEfos.efosLetrero efosLetrero10;
         private ControlesEfos.efosButton efosButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigoProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDescripcionProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaSubTotal;
+        private ControlesEfos.efosGroupBox efosGroupBox3;
     }
 }
