@@ -138,20 +138,22 @@ namespace Efos
             }
 
         }
-        public void eliminarFila(DataGridView dataGrid, int indiceColumna, int indiceFila)
+        public bool eliminarFila(DataGridView dataGrid, int indiceColumna, int indiceFila)
         {
             if ((dataGrid.ColumnCount - 1) == indiceColumna)
             {
                 try
                 {
                     dataGrid.Rows.RemoveAt(indiceFila);
+                    return true;
                 }
                 catch
                 {
-
+                    return false;
                 }
 
             }
+            return false;
         }
 
         private void FormBase_Load(object sender, EventArgs e)

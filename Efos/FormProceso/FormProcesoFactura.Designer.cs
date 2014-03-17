@@ -33,50 +33,57 @@
             this.efosLetrero5 = new ControlesEfos.efosLetrero();
             this.efosLetrero6 = new ControlesEfos.efosLetrero();
             this.efosLetrero7 = new ControlesEfos.efosLetrero();
-            this.efosCampo1 = new ControlesEfos.efosCampo();
-            this.efosCampo2 = new ControlesEfos.efosCampo();
-            this.efosCampo3 = new ControlesEfos.efosCampo();
-            this.efosCampo4 = new ControlesEfos.efosCampo();
-            this.efosCampo5 = new ControlesEfos.efosCampo();
+            this.campoCantidad = new ControlesEfos.efosCampo();
+            this.campoCodigo = new ControlesEfos.efosCampo();
+            this.campoDescripcion = new ControlesEfos.efosCampo();
+            this.campoPrecio = new ControlesEfos.efosCampo();
+            this.campoSubTotal = new ControlesEfos.efosCampo();
             this.efosLetrero8 = new ControlesEfos.efosLetrero();
-            this.efosButtonBuscador1 = new ControlesEfos.efosButtonBuscador();
+            this.lupaProducto = new ControlesEfos.efosButtonBuscador();
             this.efosGroupBox1 = new ControlesEfos.efosGroupBox();
-            this.efosButton1 = new ControlesEfos.efosButton();
-            this.efosDataGridView1 = new ControlesEfos.efosDataGridView();
-            this.efosGroupBox2 = new ControlesEfos.efosGroupBox();
-            this.efosCampo6 = new ControlesEfos.efosCampo();
-            this.efosLetrero9 = new ControlesEfos.efosLetrero();
-            this.efosLetrero10 = new ControlesEfos.efosLetrero();
+            this.botonAgregar = new ControlesEfos.efosButton();
+            this.dataGridFactura = new ControlesEfos.efosDataGridView();
             this.columnaCodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaDescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaPrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaBotonEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.efosGroupBox2 = new ControlesEfos.efosGroupBox();
+            this.campoTotal = new ControlesEfos.efosCampo();
+            this.efosLetrero9 = new ControlesEfos.efosLetrero();
+            this.efosLetrero10 = new ControlesEfos.efosLetrero();
             this.efosGroupBox3 = new ControlesEfos.efosGroupBox();
             this.efosGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.efosDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).BeginInit();
             this.efosGroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // botonProcesar
             // 
             this.botonProcesar.Location = new System.Drawing.Point(209, 419);
+            this.botonProcesar.TabIndex = 16;
             // 
             // botonCancelar
             // 
             this.botonCancelar.Location = new System.Drawing.Point(311, 419);
+            this.botonCancelar.TabIndex = 17;
             // 
             // botonBuscar
             // 
             this.botonBuscar.Location = new System.Drawing.Point(419, 419);
+            this.botonBuscar.TabIndex = 18;
             // 
             // botonSalir
             // 
             this.botonSalir.Location = new System.Drawing.Point(521, 419);
+            this.botonSalir.TabIndex = 19;
             // 
             // botonNuevo
             // 
             this.botonNuevo.Location = new System.Drawing.Point(103, 419);
+            this.botonNuevo.TabIndex = 15;
+            this.botonNuevo.Click += new System.EventHandler(this.botonNuevo_Click);
             // 
             // efosLetrero4
             // 
@@ -122,60 +129,67 @@
             this.efosLetrero7.Text = "Precio";
             this.efosLetrero7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // efosCampo1
+            // campoCantidad
             // 
-            this.efosCampo1.CampoBD = null;
-            this.efosCampo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCampo1.Limpiar = true;
-            this.efosCampo1.Location = new System.Drawing.Point(354, 160);
-            this.efosCampo1.Name = "efosCampo1";
-            this.efosCampo1.Size = new System.Drawing.Size(70, 21);
-            this.efosCampo1.SoloLectura = false;
-            this.efosCampo1.TabIndex = 19;
+            this.campoCantidad.CampoBD = null;
+            this.campoCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoCantidad.Limpiar = true;
+            this.campoCantidad.Location = new System.Drawing.Point(354, 160);
+            this.campoCantidad.Name = "campoCantidad";
+            this.campoCantidad.Size = new System.Drawing.Size(70, 21);
+            this.campoCantidad.SoloLectura = false;
+            this.campoCantidad.TabIndex = 11;
+            this.campoCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoCantidad_KeyPress);
+            this.campoCantidad.Validated += new System.EventHandler(this.campoCantidad_Validated);
             // 
-            // efosCampo2
+            // campoCodigo
             // 
-            this.efosCampo2.CampoBD = null;
-            this.efosCampo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCampo2.Limpiar = true;
-            this.efosCampo2.Location = new System.Drawing.Point(23, 160);
-            this.efosCampo2.Name = "efosCampo2";
-            this.efosCampo2.Size = new System.Drawing.Size(61, 21);
-            this.efosCampo2.SoloLectura = false;
-            this.efosCampo2.TabIndex = 20;
+            this.campoCodigo.CampoBD = null;
+            this.campoCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoCodigo.Limpiar = true;
+            this.campoCodigo.Location = new System.Drawing.Point(23, 160);
+            this.campoCodigo.Name = "campoCodigo";
+            this.campoCodigo.Size = new System.Drawing.Size(61, 21);
+            this.campoCodigo.SoloLectura = false;
+            this.campoCodigo.TabIndex = 9;
+            this.campoCodigo.Validated += new System.EventHandler(this.campoCodigo_Validated);
             // 
-            // efosCampo3
+            // campoDescripcion
             // 
-            this.efosCampo3.CampoBD = null;
-            this.efosCampo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCampo3.Limpiar = true;
-            this.efosCampo3.Location = new System.Drawing.Point(131, 160);
-            this.efosCampo3.Name = "efosCampo3";
-            this.efosCampo3.Size = new System.Drawing.Size(219, 21);
-            this.efosCampo3.SoloLectura = false;
-            this.efosCampo3.TabIndex = 21;
+            this.campoDescripcion.CampoBD = "descprod";
+            this.campoDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.campoDescripcion.Enabled = false;
+            this.campoDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoDescripcion.Limpiar = true;
+            this.campoDescripcion.Location = new System.Drawing.Point(131, 160);
+            this.campoDescripcion.Name = "campoDescripcion";
+            this.campoDescripcion.Size = new System.Drawing.Size(219, 21);
+            this.campoDescripcion.SoloLectura = true;
+            this.campoDescripcion.TabIndex = 10;
             // 
-            // efosCampo4
+            // campoPrecio
             // 
-            this.efosCampo4.CampoBD = null;
-            this.efosCampo4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCampo4.Limpiar = true;
-            this.efosCampo4.Location = new System.Drawing.Point(427, 160);
-            this.efosCampo4.Name = "efosCampo4";
-            this.efosCampo4.Size = new System.Drawing.Size(100, 21);
-            this.efosCampo4.SoloLectura = false;
-            this.efosCampo4.TabIndex = 22;
+            this.campoPrecio.CampoBD = "coprprod";
+            this.campoPrecio.Enabled = false;
+            this.campoPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoPrecio.Limpiar = true;
+            this.campoPrecio.Location = new System.Drawing.Point(427, 160);
+            this.campoPrecio.Name = "campoPrecio";
+            this.campoPrecio.Size = new System.Drawing.Size(100, 21);
+            this.campoPrecio.SoloLectura = true;
+            this.campoPrecio.TabIndex = 12;
             // 
-            // efosCampo5
+            // campoSubTotal
             // 
-            this.efosCampo5.CampoBD = null;
-            this.efosCampo5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCampo5.Limpiar = true;
-            this.efosCampo5.Location = new System.Drawing.Point(533, 160);
-            this.efosCampo5.Name = "efosCampo5";
-            this.efosCampo5.Size = new System.Drawing.Size(94, 21);
-            this.efosCampo5.SoloLectura = true;
-            this.efosCampo5.TabIndex = 23;
+            this.campoSubTotal.CampoBD = null;
+            this.campoSubTotal.Enabled = false;
+            this.campoSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoSubTotal.Limpiar = true;
+            this.campoSubTotal.Location = new System.Drawing.Point(533, 160);
+            this.campoSubTotal.Name = "campoSubTotal";
+            this.campoSubTotal.Size = new System.Drawing.Size(94, 21);
+            this.campoSubTotal.SoloLectura = true;
+            this.campoSubTotal.TabIndex = 13;
             // 
             // efosLetrero8
             // 
@@ -188,20 +202,20 @@
             this.efosLetrero8.Text = "Sub-Total";
             this.efosLetrero8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // efosButtonBuscador1
+            // lupaProducto
             // 
-            this.efosButtonBuscador1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosButtonBuscador1.Image = ((System.Drawing.Image)(resources.GetObject("efosButtonBuscador1.Image")));
-            this.efosButtonBuscador1.Location = new System.Drawing.Point(90, 155);
-            this.efosButtonBuscador1.Name = "efosButtonBuscador1";
-            this.efosButtonBuscador1.Size = new System.Drawing.Size(35, 30);
-            this.efosButtonBuscador1.TabIndex = 25;
-            this.efosButtonBuscador1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.efosButtonBuscador1.UseVisualStyleBackColor = true;
+            this.lupaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lupaProducto.Image = ((System.Drawing.Image)(resources.GetObject("lupaProducto.Image")));
+            this.lupaProducto.Location = new System.Drawing.Point(90, 155);
+            this.lupaProducto.Name = "lupaProducto";
+            this.lupaProducto.Size = new System.Drawing.Size(35, 30);
+            this.lupaProducto.TabIndex = 25;
+            this.lupaProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lupaProducto.UseVisualStyleBackColor = true;
             // 
             // efosGroupBox1
             // 
-            this.efosGroupBox1.Controls.Add(this.efosButton1);
+            this.efosGroupBox1.Controls.Add(this.botonAgregar);
             this.efosGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.efosGroupBox1.Location = new System.Drawing.Point(10, 121);
             this.efosGroupBox1.Name = "efosGroupBox1";
@@ -210,40 +224,86 @@
             this.efosGroupBox1.TabStop = false;
             this.efosGroupBox1.Text = "Producto para Facturar";
             // 
-            // efosButton1
+            // botonAgregar
             // 
-            this.efosButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosButton1.Image = global::Efos.Properties.Resources.download;
-            this.efosButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.efosButton1.Location = new System.Drawing.Point(619, 34);
-            this.efosButton1.Name = "efosButton1";
-            this.efosButton1.Size = new System.Drawing.Size(35, 30);
-            this.efosButton1.TabIndex = 0;
-            this.efosButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.efosButton1.UseVisualStyleBackColor = true;
+            this.botonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAgregar.Image = global::Efos.Properties.Resources.download;
+            this.botonAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.botonAgregar.Location = new System.Drawing.Point(619, 34);
+            this.botonAgregar.Name = "botonAgregar";
+            this.botonAgregar.Size = new System.Drawing.Size(35, 30);
+            this.botonAgregar.TabIndex = 0;
+            this.botonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.botonAgregar.UseVisualStyleBackColor = true;
+            this.botonAgregar.Click += new System.EventHandler(this.botonAgregar_Click);
             // 
-            // efosDataGridView1
+            // dataGridFactura
             // 
-            this.efosDataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.efosDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.efosDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.efosDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.efosDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridFactura.AllowUserToAddRows = false;
+            this.dataGridFactura.AllowUserToResizeColumns = false;
+            this.dataGridFactura.AllowUserToResizeRows = false;
+            this.dataGridFactura.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaCodigoProducto,
             this.columnaDescripcionProducto,
             this.columnaCantidad,
             this.columnaPrecioProducto,
-            this.columnaSubTotal});
-            this.efosDataGridView1.Location = new System.Drawing.Point(20, 206);
-            this.efosDataGridView1.Name = "efosDataGridView1";
-            this.efosDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.efosDataGridView1.Size = new System.Drawing.Size(660, 150);
-            this.efosDataGridView1.StandardTab = true;
-            this.efosDataGridView1.TabIndex = 27;
+            this.columnaSubTotal,
+            this.columnaBotonEliminar});
+            this.dataGridFactura.Location = new System.Drawing.Point(16, 208);
+            this.dataGridFactura.Name = "dataGridFactura";
+            this.dataGridFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridFactura.Size = new System.Drawing.Size(668, 150);
+            this.dataGridFactura.StandardTab = true;
+            this.dataGridFactura.TabIndex = 14;
+            this.dataGridFactura.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridFactura_CellClick);
+            this.dataGridFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.efosDataGridView1_CellValueChanged);
+            // 
+            // columnaCodigoProducto
+            // 
+            this.columnaCodigoProducto.HeaderText = "Codigo";
+            this.columnaCodigoProducto.Name = "columnaCodigoProducto";
+            this.columnaCodigoProducto.Width = 70;
+            // 
+            // columnaDescripcionProducto
+            // 
+            this.columnaDescripcionProducto.HeaderText = "Descripcion Producto";
+            this.columnaDescripcionProducto.Name = "columnaDescripcionProducto";
+            this.columnaDescripcionProducto.Width = 250;
+            // 
+            // columnaCantidad
+            // 
+            this.columnaCantidad.HeaderText = "Cantidad";
+            this.columnaCantidad.Name = "columnaCantidad";
+            this.columnaCantidad.Width = 80;
+            // 
+            // columnaPrecioProducto
+            // 
+            this.columnaPrecioProducto.HeaderText = "Precio";
+            this.columnaPrecioProducto.Name = "columnaPrecioProducto";
+            this.columnaPrecioProducto.Width = 80;
+            // 
+            // columnaSubTotal
+            // 
+            this.columnaSubTotal.HeaderText = "Sub-Total";
+            this.columnaSubTotal.Name = "columnaSubTotal";
+            this.columnaSubTotal.Width = 90;
+            // 
+            // columnaBotonEliminar
+            // 
+            this.columnaBotonEliminar.HeaderText = "Eliminar";
+            this.columnaBotonEliminar.Name = "columnaBotonEliminar";
+            this.columnaBotonEliminar.Text = "Eliminar";
+            this.columnaBotonEliminar.ToolTipText = "Eliminar";
+            this.columnaBotonEliminar.UseColumnTextForButtonValue = true;
+            this.columnaBotonEliminar.Width = 50;
             // 
             // efosGroupBox2
             // 
-            this.efosGroupBox2.Controls.Add(this.efosCampo6);
+            this.efosGroupBox2.Controls.Add(this.campoTotal);
             this.efosGroupBox2.Controls.Add(this.efosLetrero9);
             this.efosGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.efosGroupBox2.Location = new System.Drawing.Point(10, 368);
@@ -252,16 +312,17 @@
             this.efosGroupBox2.TabIndex = 28;
             this.efosGroupBox2.TabStop = false;
             // 
-            // efosCampo6
+            // campoTotal
             // 
-            this.efosCampo6.CampoBD = null;
-            this.efosCampo6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCampo6.Limpiar = true;
-            this.efosCampo6.Location = new System.Drawing.Point(523, 11);
-            this.efosCampo6.Name = "efosCampo6";
-            this.efosCampo6.Size = new System.Drawing.Size(96, 21);
-            this.efosCampo6.SoloLectura = false;
-            this.efosCampo6.TabIndex = 1;
+            this.campoTotal.CampoBD = null;
+            this.campoTotal.Enabled = false;
+            this.campoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoTotal.Limpiar = true;
+            this.campoTotal.Location = new System.Drawing.Point(523, 11);
+            this.campoTotal.Name = "campoTotal";
+            this.campoTotal.Size = new System.Drawing.Size(96, 21);
+            this.campoTotal.SoloLectura = true;
+            this.campoTotal.TabIndex = 0;
             // 
             // efosLetrero9
             // 
@@ -285,35 +346,6 @@
             this.efosLetrero10.Text = "NCF";
             this.efosLetrero10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // columnaCodigoProducto
-            // 
-            this.columnaCodigoProducto.HeaderText = "Codigo";
-            this.columnaCodigoProducto.Name = "columnaCodigoProducto";
-            this.columnaCodigoProducto.Width = 75;
-            // 
-            // columnaDescripcionProducto
-            // 
-            this.columnaDescripcionProducto.HeaderText = "Descripcion Producto";
-            this.columnaDescripcionProducto.Name = "columnaDescripcionProducto";
-            this.columnaDescripcionProducto.Width = 270;
-            // 
-            // columnaCantidad
-            // 
-            this.columnaCantidad.HeaderText = "Cantidad";
-            this.columnaCantidad.Name = "columnaCantidad";
-            this.columnaCantidad.Width = 85;
-            // 
-            // columnaPrecioProducto
-            // 
-            this.columnaPrecioProducto.HeaderText = "Precio";
-            this.columnaPrecioProducto.Name = "columnaPrecioProducto";
-            this.columnaPrecioProducto.Width = 85;
-            // 
-            // columnaSubTotal
-            // 
-            this.columnaSubTotal.HeaderText = "Sub-Total";
-            this.columnaSubTotal.Name = "columnaSubTotal";
-            // 
             // efosGroupBox3
             // 
             this.efosGroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,14 +362,14 @@
             this.ClientSize = new System.Drawing.Size(699, 475);
             this.Controls.Add(this.efosLetrero10);
             this.Controls.Add(this.efosGroupBox2);
-            this.Controls.Add(this.efosDataGridView1);
-            this.Controls.Add(this.efosButtonBuscador1);
+            this.Controls.Add(this.dataGridFactura);
+            this.Controls.Add(this.lupaProducto);
             this.Controls.Add(this.efosLetrero8);
-            this.Controls.Add(this.efosCampo5);
-            this.Controls.Add(this.efosCampo4);
-            this.Controls.Add(this.efosCampo3);
-            this.Controls.Add(this.efosCampo2);
-            this.Controls.Add(this.efosCampo1);
+            this.Controls.Add(this.campoSubTotal);
+            this.Controls.Add(this.campoPrecio);
+            this.Controls.Add(this.campoDescripcion);
+            this.Controls.Add(this.campoCodigo);
+            this.Controls.Add(this.campoCantidad);
             this.Controls.Add(this.efosLetrero7);
             this.Controls.Add(this.efosLetrero6);
             this.Controls.Add(this.efosLetrero5);
@@ -346,7 +378,6 @@
             this.Controls.Add(this.efosGroupBox3);
             this.Name = "FormProcesoFactura";
             this.Text = "FormProcesoFactura";
-            this.Load += new System.EventHandler(this.FormProcesoFactura_Load);
             this.Controls.SetChildIndex(this.efosGroupBox3, 0);
             this.Controls.SetChildIndex(this.efosGroupBox1, 0);
             this.Controls.SetChildIndex(this.botonProcesar, 0);
@@ -358,18 +389,18 @@
             this.Controls.SetChildIndex(this.efosLetrero5, 0);
             this.Controls.SetChildIndex(this.efosLetrero6, 0);
             this.Controls.SetChildIndex(this.efosLetrero7, 0);
-            this.Controls.SetChildIndex(this.efosCampo1, 0);
-            this.Controls.SetChildIndex(this.efosCampo2, 0);
-            this.Controls.SetChildIndex(this.efosCampo3, 0);
-            this.Controls.SetChildIndex(this.efosCampo4, 0);
-            this.Controls.SetChildIndex(this.efosCampo5, 0);
+            this.Controls.SetChildIndex(this.campoCantidad, 0);
+            this.Controls.SetChildIndex(this.campoCodigo, 0);
+            this.Controls.SetChildIndex(this.campoDescripcion, 0);
+            this.Controls.SetChildIndex(this.campoPrecio, 0);
+            this.Controls.SetChildIndex(this.campoSubTotal, 0);
             this.Controls.SetChildIndex(this.efosLetrero8, 0);
-            this.Controls.SetChildIndex(this.efosButtonBuscador1, 0);
-            this.Controls.SetChildIndex(this.efosDataGridView1, 0);
+            this.Controls.SetChildIndex(this.lupaProducto, 0);
+            this.Controls.SetChildIndex(this.dataGridFactura, 0);
             this.Controls.SetChildIndex(this.efosGroupBox2, 0);
             this.Controls.SetChildIndex(this.efosLetrero10, 0);
             this.efosGroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.efosDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).EndInit();
             this.efosGroupBox2.ResumeLayout(false);
             this.efosGroupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -383,25 +414,26 @@
         private ControlesEfos.efosLetrero efosLetrero5;
         private ControlesEfos.efosLetrero efosLetrero6;
         private ControlesEfos.efosLetrero efosLetrero7;
-        private ControlesEfos.efosCampo efosCampo1;
-        private ControlesEfos.efosCampo efosCampo2;
-        private ControlesEfos.efosCampo efosCampo3;
-        private ControlesEfos.efosCampo efosCampo4;
-        private ControlesEfos.efosCampo efosCampo5;
+        private ControlesEfos.efosCampo campoCantidad;
+        private ControlesEfos.efosCampo campoCodigo;
+        private ControlesEfos.efosCampo campoDescripcion;
+        private ControlesEfos.efosCampo campoPrecio;
+        private ControlesEfos.efosCampo campoSubTotal;
         private ControlesEfos.efosLetrero efosLetrero8;
-        private ControlesEfos.efosButtonBuscador efosButtonBuscador1;
+        private ControlesEfos.efosButtonBuscador lupaProducto;
         private ControlesEfos.efosGroupBox efosGroupBox1;
-        private ControlesEfos.efosDataGridView efosDataGridView1;
+        private ControlesEfos.efosDataGridView dataGridFactura;
         private ControlesEfos.efosGroupBox efosGroupBox2;
-        private ControlesEfos.efosCampo efosCampo6;
+        private ControlesEfos.efosCampo campoTotal;
         private ControlesEfos.efosLetrero efosLetrero9;
         private ControlesEfos.efosLetrero efosLetrero10;
-        private ControlesEfos.efosButton efosButton1;
+        private ControlesEfos.efosButton botonAgregar;
+        private ControlesEfos.efosGroupBox efosGroupBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigoProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaDescripcionProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaSubTotal;
-        private ControlesEfos.efosGroupBox efosGroupBox3;
+        private System.Windows.Forms.DataGridViewButtonColumn columnaBotonEliminar;
     }
 }
