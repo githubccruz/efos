@@ -41,34 +41,36 @@
             this.efosLetrero8 = new ControlesEfos.efosLetrero();
             this.efosButtonBuscador1 = new ControlesEfos.efosButtonBuscador();
             this.efosGroupBox1 = new ControlesEfos.efosGroupBox();
+            this.efosButton1 = new ControlesEfos.efosButton();
             this.efosDataGridView1 = new ControlesEfos.efosDataGridView();
             this.efosGroupBox2 = new ControlesEfos.efosGroupBox();
-            this.efosLetrero9 = new ControlesEfos.efosLetrero();
             this.efosCampo6 = new ControlesEfos.efosCampo();
+            this.efosLetrero9 = new ControlesEfos.efosLetrero();
             this.efosLetrero10 = new ControlesEfos.efosLetrero();
+            this.efosGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.efosDataGridView1)).BeginInit();
             this.efosGroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // botonProcesar
             // 
-            this.botonProcesar.Location = new System.Drawing.Point(196, 452);
+            this.botonProcesar.Location = new System.Drawing.Point(210, 419);
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(298, 452);
+            this.botonCancelar.Location = new System.Drawing.Point(312, 419);
             // 
             // botonBuscar
             // 
-            this.botonBuscar.Location = new System.Drawing.Point(406, 452);
+            this.botonBuscar.Location = new System.Drawing.Point(420, 419);
             // 
             // botonSalir
             // 
-            this.botonSalir.Location = new System.Drawing.Point(508, 452);
+            this.botonSalir.Location = new System.Drawing.Point(522, 419);
             // 
             // botonNuevo
             // 
-            this.botonNuevo.Location = new System.Drawing.Point(90, 452);
+            this.botonNuevo.Location = new System.Drawing.Point(104, 419);
             // 
             // efosLetrero4
             // 
@@ -193,13 +195,26 @@
             // 
             // efosGroupBox1
             // 
+            this.efosGroupBox1.Controls.Add(this.efosButton1);
             this.efosGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.efosGroupBox1.Location = new System.Drawing.Point(10, 121);
             this.efosGroupBox1.Name = "efosGroupBox1";
-            this.efosGroupBox1.Size = new System.Drawing.Size(629, 75);
+            this.efosGroupBox1.Size = new System.Drawing.Size(677, 75);
             this.efosGroupBox1.TabIndex = 26;
             this.efosGroupBox1.TabStop = false;
             this.efosGroupBox1.Text = "Producto para Facturar";
+            // 
+            // efosButton1
+            // 
+            this.efosButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosButton1.Image = global::Efos.Properties.Resources.download;
+            this.efosButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.efosButton1.Location = new System.Drawing.Point(619, 34);
+            this.efosButton1.Name = "efosButton1";
+            this.efosButton1.Size = new System.Drawing.Size(35, 30);
+            this.efosButton1.TabIndex = 0;
+            this.efosButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.efosButton1.UseVisualStyleBackColor = true;
             // 
             // efosDataGridView1
             // 
@@ -210,7 +225,7 @@
             this.efosDataGridView1.Location = new System.Drawing.Point(10, 202);
             this.efosDataGridView1.Name = "efosDataGridView1";
             this.efosDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.efosDataGridView1.Size = new System.Drawing.Size(629, 150);
+            this.efosDataGridView1.Size = new System.Drawing.Size(677, 150);
             this.efosDataGridView1.StandardTab = true;
             this.efosDataGridView1.TabIndex = 27;
             // 
@@ -221,9 +236,20 @@
             this.efosGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.efosGroupBox2.Location = new System.Drawing.Point(10, 357);
             this.efosGroupBox2.Name = "efosGroupBox2";
-            this.efosGroupBox2.Size = new System.Drawing.Size(627, 89);
+            this.efosGroupBox2.Size = new System.Drawing.Size(677, 56);
             this.efosGroupBox2.TabIndex = 28;
             this.efosGroupBox2.TabStop = false;
+            // 
+            // efosCampo6
+            // 
+            this.efosCampo6.CampoBD = null;
+            this.efosCampo6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosCampo6.Limpiar = true;
+            this.efosCampo6.Location = new System.Drawing.Point(521, 17);
+            this.efosCampo6.Name = "efosCampo6";
+            this.efosCampo6.Size = new System.Drawing.Size(96, 21);
+            this.efosCampo6.SoloLectura = false;
+            this.efosCampo6.TabIndex = 1;
             // 
             // efosLetrero9
             // 
@@ -236,22 +262,11 @@
             this.efosLetrero9.Text = "Total:";
             this.efosLetrero9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // efosCampo6
-            // 
-            this.efosCampo6.CampoBD = null;
-            this.efosCampo6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCampo6.Limpiar = true;
-            this.efosCampo6.Location = new System.Drawing.Point(521, 17);
-            this.efosCampo6.Name = "efosCampo6";
-            this.efosCampo6.Size = new System.Drawing.Size(100, 21);
-            this.efosCampo6.SoloLectura = false;
-            this.efosCampo6.TabIndex = 1;
-            // 
             // efosLetrero10
             // 
             this.efosLetrero10.AutoSize = true;
             this.efosLetrero10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero10.Location = new System.Drawing.Point(352, 9);
+            this.efosLetrero10.Location = new System.Drawing.Point(399, 7);
             this.efosLetrero10.Name = "efosLetrero10";
             this.efosLetrero10.Size = new System.Drawing.Size(34, 15);
             this.efosLetrero10.TabIndex = 2;
@@ -262,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 514);
+            this.ClientSize = new System.Drawing.Size(699, 475);
             this.Controls.Add(this.efosLetrero10);
             this.Controls.Add(this.efosGroupBox2);
             this.Controls.Add(this.efosDataGridView1);
@@ -301,6 +316,7 @@
             this.Controls.SetChildIndex(this.efosDataGridView1, 0);
             this.Controls.SetChildIndex(this.efosGroupBox2, 0);
             this.Controls.SetChildIndex(this.efosLetrero10, 0);
+            this.efosGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.efosDataGridView1)).EndInit();
             this.efosGroupBox2.ResumeLayout(false);
             this.efosGroupBox2.PerformLayout();
@@ -328,5 +344,6 @@
         private ControlesEfos.efosCampo efosCampo6;
         private ControlesEfos.efosLetrero efosLetrero9;
         private ControlesEfos.efosLetrero efosLetrero10;
+        private ControlesEfos.efosButton efosButton1;
     }
 }

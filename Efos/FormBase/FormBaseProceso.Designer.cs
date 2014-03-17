@@ -220,7 +220,7 @@
             this.efosGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.efosGroupBox1.Location = new System.Drawing.Point(12, 21);
             this.efosGroupBox1.Name = "efosGroupBox1";
-            this.efosGroupBox1.Size = new System.Drawing.Size(625, 100);
+            this.efosGroupBox1.Size = new System.Drawing.Size(677, 100);
             this.efosGroupBox1.TabIndex = 15;
             this.efosGroupBox1.TabStop = false;
             // 
