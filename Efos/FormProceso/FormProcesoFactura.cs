@@ -96,10 +96,16 @@ namespace Efos
 
         private void cargarInformacionCombo(bool estado = true)
         {
-            if(estado)
-                PostgreSQL.FillComboBox(comboTipoFactura,"coditifa","desctifa","tipo_factura_encabezado",filter:"estado=true");
+            if (estado)
+            {
+                PostgreSQL.FillComboBox(comboTipoFactura, "coditifa", "desctifa", "tipo_factura_encabezado", filter: "estado=true");
+                PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado", filter: "estado=true");
+            }
             else
-                PostgreSQL.FillComboBox(comboTipoFactura, "coditifa", "desctifa","tipo_factura_encabezado");
+            {
+                PostgreSQL.FillComboBox(comboTipoFactura, "coditifa", "desctifa", "tipo_factura_encabezado");
+                PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado");
+            }
         }
 
         private void botonNuevo_Click(object sender, EventArgs e)
