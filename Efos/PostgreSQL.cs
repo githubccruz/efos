@@ -16,10 +16,10 @@ namespace Efos
     {
         #region Connection String
             private static string server = "localhost";
-            private static string port = "5435";
+            private static string port = "5432";
             private static string user = "postgres";
-            private static string password = "strongstoall";
-            private static string dataBase = "test";//"efos";
+            private static string password = "postgres";
+            private static string dataBase = "test";
         #endregion
 
         private static string generarConexion()
