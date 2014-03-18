@@ -94,10 +94,19 @@ namespace Efos
             
         }
 
+        private void cargarInformacionCombo(bool estado = true)
+        {
+            if(estado)
+                PostgreSQL.FillComboBox(comboTipoFactura,"coditifa","desctifa","tipo_factura_encabezado",filter:"estado=true");
+            else
+                PostgreSQL.FillComboBox(comboTipoFactura, "coditifa", "desctifa","tipo_factura_encabezado");
+        }
+
         private void botonNuevo_Click(object sender, EventArgs e)
         {
             limpiarDatosProducto();
             dataGridFactura.Rows.Clear();
+            cargarInformacionCombo();
         }
 
         private void campoCodigo_Validated(object sender, EventArgs e)

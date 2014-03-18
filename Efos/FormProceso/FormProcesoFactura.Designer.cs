@@ -55,6 +55,10 @@
             this.efosLetrero10 = new ControlesEfos.efosLetrero();
             this.efosGroupBox3 = new ControlesEfos.efosGroupBox();
             this.efosLetrero11 = new ControlesEfos.efosLetrero();
+            this.comboTipoFactura = new ControlesEfos.efosCombo();
+            this.efosLetrero12 = new ControlesEfos.efosLetrero();
+            this.comboTipoNCF = new ControlesEfos.efosCombo();
+            this.efosLetrero13 = new ControlesEfos.efosLetrero();
             this.efosGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).BeginInit();
             this.efosGroupBox2.SuspendLayout();
@@ -62,43 +66,79 @@
             // 
             // botonProcesar
             // 
-            this.botonProcesar.Location = new System.Drawing.Point(209, 419);
+            this.botonProcesar.Location = new System.Drawing.Point(209, 428);
             this.botonProcesar.TabIndex = 16;
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(311, 419);
+            this.botonCancelar.Location = new System.Drawing.Point(311, 428);
             this.botonCancelar.TabIndex = 17;
             // 
             // botonBuscar
             // 
-            this.botonBuscar.Location = new System.Drawing.Point(419, 419);
+            this.botonBuscar.Location = new System.Drawing.Point(419, 428);
             this.botonBuscar.TabIndex = 18;
             // 
             // botonSalir
             // 
-            this.botonSalir.Location = new System.Drawing.Point(521, 419);
+            this.botonSalir.Location = new System.Drawing.Point(521, 428);
             this.botonSalir.TabIndex = 19;
             // 
             // botonNuevo
             // 
-            this.botonNuevo.Location = new System.Drawing.Point(103, 419);
+            this.botonNuevo.Location = new System.Drawing.Point(103, 428);
             this.botonNuevo.TabIndex = 15;
             this.botonNuevo.Click += new System.EventHandler(this.botonNuevo_Click);
             // 
+            // efosLetrero1
+            // 
+            this.efosLetrero1.Location = new System.Drawing.Point(22, 51);
+            this.efosLetrero1.Size = new System.Drawing.Size(134, 15);
+            this.efosLetrero1.Text = "Numero de Factura:";
+            // 
+            // efosLetrero2
+            // 
+            this.efosLetrero2.Location = new System.Drawing.Point(399, 51);
+            // 
+            // txtFechaAsunto
+            // 
+            this.txtFechaAsunto.Location = new System.Drawing.Point(523, 48);
+            // 
+            // txtNumeroAsunto
+            // 
+            this.txtNumeroAsunto.Location = new System.Drawing.Point(189, 48);
+            // 
             // txtCodigoPaciente
             // 
+            this.txtCodigoPaciente.Location = new System.Drawing.Point(189, 91);
             this.txtCodigoPaciente.Validated += new System.EventHandler(this.txtCodigoPaciente_Validated);
+            // 
+            // efosLetrero3
+            // 
+            this.efosLetrero3.Location = new System.Drawing.Point(22, 94);
             // 
             // lupaPaciente
             // 
+            this.lupaPaciente.Location = new System.Drawing.Point(153, 86);
             this.lupaPaciente.Click += new System.EventHandler(this.lupaPaciente_Click);
+            // 
+            // lupaAsunto
+            // 
+            this.lupaAsunto.Location = new System.Drawing.Point(153, 43);
+            // 
+            // letreroNombrePaciente
+            // 
+            this.letreroNombrePaciente.Location = new System.Drawing.Point(295, 94);
+            // 
+            // efosGroupBoxPadre
+            // 
+            this.efosGroupBoxPadre.Location = new System.Drawing.Point(12, 30);
             // 
             // efosLetrero4
             // 
             this.efosLetrero4.AutoSize = true;
             this.efosLetrero4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero4.Location = new System.Drawing.Point(357, 143);
+            this.efosLetrero4.Location = new System.Drawing.Point(357, 152);
             this.efosLetrero4.Name = "efosLetrero4";
             this.efosLetrero4.Size = new System.Drawing.Size(64, 15);
             this.efosLetrero4.TabIndex = 15;
@@ -109,7 +149,7 @@
             // 
             this.efosLetrero5.AutoSize = true;
             this.efosLetrero5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero5.Location = new System.Drawing.Point(27, 143);
+            this.efosLetrero5.Location = new System.Drawing.Point(27, 152);
             this.efosLetrero5.Name = "efosLetrero5";
             this.efosLetrero5.Size = new System.Drawing.Size(52, 15);
             this.efosLetrero5.TabIndex = 16;
@@ -120,7 +160,7 @@
             // 
             this.efosLetrero6.AutoSize = true;
             this.efosLetrero6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero6.Location = new System.Drawing.Point(199, 143);
+            this.efosLetrero6.Location = new System.Drawing.Point(199, 152);
             this.efosLetrero6.Name = "efosLetrero6";
             this.efosLetrero6.Size = new System.Drawing.Size(83, 15);
             this.efosLetrero6.TabIndex = 17;
@@ -131,7 +171,7 @@
             // 
             this.efosLetrero7.AutoSize = true;
             this.efosLetrero7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero7.Location = new System.Drawing.Point(453, 142);
+            this.efosLetrero7.Location = new System.Drawing.Point(453, 151);
             this.efosLetrero7.Name = "efosLetrero7";
             this.efosLetrero7.Size = new System.Drawing.Size(48, 15);
             this.efosLetrero7.TabIndex = 18;
@@ -143,7 +183,7 @@
             this.campoCantidad.CampoBD = null;
             this.campoCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoCantidad.Limpiar = true;
-            this.campoCantidad.Location = new System.Drawing.Point(354, 160);
+            this.campoCantidad.Location = new System.Drawing.Point(354, 169);
             this.campoCantidad.Name = "campoCantidad";
             this.campoCantidad.Size = new System.Drawing.Size(70, 21);
             this.campoCantidad.SoloLectura = false;
@@ -156,7 +196,7 @@
             this.campoCodigo.CampoBD = null;
             this.campoCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoCodigo.Limpiar = true;
-            this.campoCodigo.Location = new System.Drawing.Point(23, 160);
+            this.campoCodigo.Location = new System.Drawing.Point(23, 169);
             this.campoCodigo.Name = "campoCodigo";
             this.campoCodigo.Size = new System.Drawing.Size(61, 21);
             this.campoCodigo.SoloLectura = false;
@@ -170,7 +210,7 @@
             this.campoDescripcion.Enabled = false;
             this.campoDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoDescripcion.Limpiar = true;
-            this.campoDescripcion.Location = new System.Drawing.Point(131, 160);
+            this.campoDescripcion.Location = new System.Drawing.Point(131, 169);
             this.campoDescripcion.Name = "campoDescripcion";
             this.campoDescripcion.Size = new System.Drawing.Size(219, 21);
             this.campoDescripcion.SoloLectura = true;
@@ -182,7 +222,7 @@
             this.campoPrecio.Enabled = false;
             this.campoPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoPrecio.Limpiar = true;
-            this.campoPrecio.Location = new System.Drawing.Point(427, 160);
+            this.campoPrecio.Location = new System.Drawing.Point(427, 169);
             this.campoPrecio.Name = "campoPrecio";
             this.campoPrecio.Size = new System.Drawing.Size(100, 21);
             this.campoPrecio.SoloLectura = true;
@@ -194,7 +234,7 @@
             this.campoSubTotal.Enabled = false;
             this.campoSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoSubTotal.Limpiar = true;
-            this.campoSubTotal.Location = new System.Drawing.Point(533, 160);
+            this.campoSubTotal.Location = new System.Drawing.Point(533, 169);
             this.campoSubTotal.Name = "campoSubTotal";
             this.campoSubTotal.Size = new System.Drawing.Size(94, 21);
             this.campoSubTotal.SoloLectura = true;
@@ -204,7 +244,7 @@
             // 
             this.efosLetrero8.AutoSize = true;
             this.efosLetrero8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero8.Location = new System.Drawing.Point(546, 142);
+            this.efosLetrero8.Location = new System.Drawing.Point(546, 151);
             this.efosLetrero8.Name = "efosLetrero8";
             this.efosLetrero8.Size = new System.Drawing.Size(69, 15);
             this.efosLetrero8.TabIndex = 24;
@@ -215,7 +255,7 @@
             // 
             this.lupaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lupaProducto.Image = ((System.Drawing.Image)(resources.GetObject("lupaProducto.Image")));
-            this.lupaProducto.Location = new System.Drawing.Point(90, 155);
+            this.lupaProducto.Location = new System.Drawing.Point(90, 164);
             this.lupaProducto.Name = "lupaProducto";
             this.lupaProducto.Size = new System.Drawing.Size(35, 30);
             this.lupaProducto.TabIndex = 25;
@@ -227,7 +267,7 @@
             // 
             this.efosGroupBox1.Controls.Add(this.botonAgregar);
             this.efosGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosGroupBox1.Location = new System.Drawing.Point(10, 121);
+            this.efosGroupBox1.Location = new System.Drawing.Point(10, 130);
             this.efosGroupBox1.Name = "efosGroupBox1";
             this.efosGroupBox1.Size = new System.Drawing.Size(677, 75);
             this.efosGroupBox1.TabIndex = 26;
@@ -263,7 +303,7 @@
             this.columnaPrecioProducto,
             this.columnaSubTotal,
             this.columnaBotonEliminar});
-            this.dataGridFactura.Location = new System.Drawing.Point(16, 208);
+            this.dataGridFactura.Location = new System.Drawing.Point(16, 217);
             this.dataGridFactura.Name = "dataGridFactura";
             this.dataGridFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridFactura.Size = new System.Drawing.Size(668, 150);
@@ -313,10 +353,12 @@
             // 
             // efosGroupBox2
             // 
+            this.efosGroupBox2.Controls.Add(this.efosLetrero12);
+            this.efosGroupBox2.Controls.Add(this.comboTipoFactura);
             this.efosGroupBox2.Controls.Add(this.campoTotal);
             this.efosGroupBox2.Controls.Add(this.efosLetrero9);
             this.efosGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosGroupBox2.Location = new System.Drawing.Point(10, 368);
+            this.efosGroupBox2.Location = new System.Drawing.Point(10, 377);
             this.efosGroupBox2.Name = "efosGroupBox2";
             this.efosGroupBox2.Size = new System.Drawing.Size(677, 40);
             this.efosGroupBox2.TabIndex = 28;
@@ -328,7 +370,7 @@
             this.campoTotal.Enabled = false;
             this.campoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campoTotal.Limpiar = true;
-            this.campoTotal.Location = new System.Drawing.Point(523, 13);
+            this.campoTotal.Location = new System.Drawing.Point(523, 14);
             this.campoTotal.Name = "campoTotal";
             this.campoTotal.Size = new System.Drawing.Size(96, 21);
             this.campoTotal.SoloLectura = true;
@@ -338,7 +380,7 @@
             // 
             this.efosLetrero9.AutoSize = true;
             this.efosLetrero9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero9.Location = new System.Drawing.Point(474, 16);
+            this.efosLetrero9.Location = new System.Drawing.Point(474, 17);
             this.efosLetrero9.Name = "efosLetrero9";
             this.efosLetrero9.Size = new System.Drawing.Size(43, 15);
             this.efosLetrero9.TabIndex = 0;
@@ -349,7 +391,7 @@
             // 
             this.efosLetrero10.AutoSize = true;
             this.efosLetrero10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero10.Location = new System.Drawing.Point(399, 7);
+            this.efosLetrero10.Location = new System.Drawing.Point(419, 16);
             this.efosLetrero10.Name = "efosLetrero10";
             this.efosLetrero10.Size = new System.Drawing.Size(38, 15);
             this.efosLetrero10.TabIndex = 2;
@@ -359,7 +401,7 @@
             // efosGroupBox3
             // 
             this.efosGroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosGroupBox3.Location = new System.Drawing.Point(10, 192);
+            this.efosGroupBox3.Location = new System.Drawing.Point(10, 201);
             this.efosGroupBox3.Name = "efosGroupBox3";
             this.efosGroupBox3.Size = new System.Drawing.Size(679, 175);
             this.efosGroupBox3.TabIndex = 29;
@@ -369,18 +411,66 @@
             // 
             this.efosLetrero11.AutoSize = true;
             this.efosLetrero11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero11.Location = new System.Drawing.Point(444, 7);
+            this.efosLetrero11.Location = new System.Drawing.Point(464, 16);
             this.efosLetrero11.Name = "efosLetrero11";
             this.efosLetrero11.Size = new System.Drawing.Size(159, 15);
             this.efosLetrero11.TabIndex = 30;
             this.efosLetrero11.Text = "A010010100100000001";
             this.efosLetrero11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // comboTipoFactura
+            // 
+            this.comboTipoFactura.CampoBD = null;
+            this.comboTipoFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTipoFactura.FormattingEnabled = true;
+            this.comboTipoFactura.Location = new System.Drawing.Point(113, 13);
+            this.comboTipoFactura.Name = "comboTipoFactura";
+            this.comboTipoFactura.Size = new System.Drawing.Size(121, 23);
+            this.comboTipoFactura.Sorted = true;
+            this.comboTipoFactura.TabIndex = 31;
+            // 
+            // efosLetrero12
+            // 
+            this.efosLetrero12.AutoSize = true;
+            this.efosLetrero12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosLetrero12.Location = new System.Drawing.Point(12, 17);
+            this.efosLetrero12.Name = "efosLetrero12";
+            this.efosLetrero12.Size = new System.Drawing.Size(91, 15);
+            this.efosLetrero12.TabIndex = 32;
+            this.efosLetrero12.Text = "Tipo Factura:";
+            this.efosLetrero12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // comboTipoNCF
+            // 
+            this.comboTipoNCF.CampoBD = null;
+            this.comboTipoNCF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTipoNCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTipoNCF.FormattingEnabled = true;
+            this.comboTipoNCF.Location = new System.Drawing.Point(99, 12);
+            this.comboTipoNCF.Name = "comboTipoNCF";
+            this.comboTipoNCF.Size = new System.Drawing.Size(175, 23);
+            this.comboTipoNCF.Sorted = true;
+            this.comboTipoNCF.TabIndex = 31;
+            // 
+            // efosLetrero13
+            // 
+            this.efosLetrero13.AutoSize = true;
+            this.efosLetrero13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosLetrero13.Location = new System.Drawing.Point(23, 16);
+            this.efosLetrero13.Name = "efosLetrero13";
+            this.efosLetrero13.Size = new System.Drawing.Size(70, 15);
+            this.efosLetrero13.TabIndex = 32;
+            this.efosLetrero13.Text = "Tipo NCF:";
+            this.efosLetrero13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormProcesoFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 475);
+            this.ClientSize = new System.Drawing.Size(699, 485);
+            this.Controls.Add(this.efosLetrero13);
+            this.Controls.Add(this.comboTipoNCF);
             this.Controls.Add(this.efosLetrero11);
             this.Controls.Add(this.efosLetrero10);
             this.Controls.Add(this.efosGroupBox2);
@@ -432,6 +522,8 @@
             this.Controls.SetChildIndex(this.efosGroupBox2, 0);
             this.Controls.SetChildIndex(this.efosLetrero10, 0);
             this.Controls.SetChildIndex(this.efosLetrero11, 0);
+            this.Controls.SetChildIndex(this.comboTipoNCF, 0);
+            this.Controls.SetChildIndex(this.efosLetrero13, 0);
             this.efosGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).EndInit();
             this.efosGroupBox2.ResumeLayout(false);
@@ -469,5 +561,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaSubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn columnaBotonEliminar;
         private ControlesEfos.efosLetrero efosLetrero11;
+        private ControlesEfos.efosCombo comboTipoFactura;
+        private ControlesEfos.efosLetrero efosLetrero12;
+        private ControlesEfos.efosCombo comboTipoNCF;
+        private ControlesEfos.efosLetrero efosLetrero13;
     }
 }
