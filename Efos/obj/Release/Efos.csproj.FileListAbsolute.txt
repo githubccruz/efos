@@ -50,3 +50,5 @@ C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.pdb
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.Reportes.SimpleReport.resources
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.csprojResolveAssemblyReference.cache
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\RdlCompile.cache
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\RdlCompile.compiled
