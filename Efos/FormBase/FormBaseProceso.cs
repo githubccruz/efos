@@ -83,7 +83,7 @@ namespace Efos
 
             txtNumeroAsunto.Text = 0.ToString();
             txtNumeroAsunto.Enabled = true;
-            ////letreroPersona.Text = "";            
+            letreroNombrePaciente.Text = "";            
         }
         public void AccionBotonBuscar()
         {
@@ -117,6 +117,11 @@ namespace Efos
         private void botonBuscar_Click(object sender, EventArgs e)
         {
             AccionBotonBuscar();
+        }
+
+        private void txtCodigoPaciente_Validated(object sender, EventArgs e)
+        {
+
         }
     }
 }
