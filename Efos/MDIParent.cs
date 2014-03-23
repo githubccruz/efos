@@ -655,6 +655,13 @@ namespace Efos
             Form.MdiParent = this;
             Form.Show();
 
+        }
+
+        private void pacientesToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Reportes.SimpleReport Form = new Reportes.SimpleReport();
+            Form.MdiParent = this;
+            Form.Show();
         }     
     }
 }

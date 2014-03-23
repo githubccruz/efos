@@ -55,6 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetPersonaInforme.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPersonaInforme.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormBase\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -560,6 +565,17 @@
     <EmbeddedResource Include="Reportes\SimpleReport.resx">
       <DependentUpon>SimpleReport.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetPersonaInforme.xsc">
+      <DependentUpon>DataSetPersonaInforme.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPersonaInforme.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPersonaInforme.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetPersonaInforme.xss">
+      <DependentUpon>DataSetPersonaInforme.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
