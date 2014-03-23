@@ -16,5 +16,12 @@ namespace Efos.Reportes
         {
             InitializeComponent();
         }
+
+        private void SimpleReport_Load(object sender, EventArgs e)
+        {
+
+            //this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
