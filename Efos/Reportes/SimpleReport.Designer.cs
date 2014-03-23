@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetPersona = new Efos.Reportes.DataSetPersona();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetPersona = new Efos.Reportes.DataSetPersona();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DataTable1TableAdapter = new Efos.Reportes.DataSetPersonaTableAdapters.DataTable1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetPersona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetPersona)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DataTable1BindingSource
+            // 
+            this.DataTable1BindingSource.DataMember = "DataTable1";
+            this.DataTable1BindingSource.DataSource = this.DataSetPersona;
+            // 
+            // DataSetPersona
+            // 
+            this.DataSetPersona.DataSetName = "DataSetPersona";
+            this.DataSetPersona.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -49,16 +59,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(674, 430);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // DataSetPersona
-            // 
-            this.DataSetPersona.DataSetName = "DataSetPersona";
-            this.DataSetPersona.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DataTable1BindingSource
-            // 
-            this.DataTable1BindingSource.DataMember = "DataTable1";
-            this.DataTable1BindingSource.DataSource = this.DataSetPersona;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // DataTable1TableAdapter
             // 
@@ -73,8 +74,8 @@
             this.Name = "SimpleReport";
             this.Text = "SimpleReport";
             this.Load += new System.EventHandler(this.SimpleReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetPersona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetPersona)).EndInit();
             this.ResumeLayout(false);
 
         }
