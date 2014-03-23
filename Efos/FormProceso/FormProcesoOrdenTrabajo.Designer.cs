@@ -42,19 +42,20 @@
             this.efosLetrero9 = new ControlesEfos.efosLetrero();
             this.campoCantidad = new ControlesEfos.efosCampo();
             this.efosLetrero10 = new ControlesEfos.efosLetrero();
-            this.efosButtonBuscador2 = new ControlesEfos.efosButtonBuscador();
+            this.botonAgregar = new ControlesEfos.efosButtonBuscador();
             this.efosGroupBox1 = new ControlesEfos.efosGroupBox();
             this.dataGridServicios = new ControlesEfos.efosDataGridView();
+            this.comboTipoNCF = new ControlesEfos.efosCombo();
+            this.efosLetrero7 = new ControlesEfos.efosLetrero();
+            this.letreroNCF = new ControlesEfos.efosLetrero();
             this.columnaCodigoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaDescripcionServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaCodigoTipoPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaTipoPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaPrecioServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaBotonEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.comboTipoNCF = new ControlesEfos.efosCombo();
-            this.efosLetrero7 = new ControlesEfos.efosLetrero();
-            this.letreroNCF = new ControlesEfos.efosLetrero();
             this.efosGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridServicios)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +79,7 @@
             // botonNuevo
             // 
             this.botonNuevo.Location = new System.Drawing.Point(153, 467);
+            this.botonNuevo.Click += new System.EventHandler(this.botonNuevo_Click);
             // 
             // efosLetrero1
             // 
@@ -98,6 +100,7 @@
             // txtCodigoPaciente
             // 
             this.txtCodigoPaciente.Location = new System.Drawing.Point(189, 88);
+            this.txtCodigoPaciente.Validated += new System.EventHandler(this.txtCodigoPaciente_Validated);
             // 
             // efosLetrero3
             // 
@@ -106,6 +109,7 @@
             // lupaPaciente
             // 
             this.lupaPaciente.Location = new System.Drawing.Point(153, 83);
+            this.lupaPaciente.Click += new System.EventHandler(this.lupaPaciente_Click);
             // 
             // lupaAsunto
             // 
@@ -257,6 +261,7 @@
             this.campoCantidad.Size = new System.Drawing.Size(88, 21);
             this.campoCantidad.SoloLectura = false;
             this.campoCantidad.TabIndex = 28;
+            this.campoCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoCantidad_KeyPress);
             // 
             // efosLetrero10
             // 
@@ -269,16 +274,17 @@
             this.efosLetrero10.Text = "Cantidad";
             this.efosLetrero10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // efosButtonBuscador2
+            // botonAgregar
             // 
-            this.efosButtonBuscador2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosButtonBuscador2.Image = global::Efos.Properties.Resources.download;
-            this.efosButtonBuscador2.Location = new System.Drawing.Point(717, 169);
-            this.efosButtonBuscador2.Name = "efosButtonBuscador2";
-            this.efosButtonBuscador2.Size = new System.Drawing.Size(35, 30);
-            this.efosButtonBuscador2.TabIndex = 30;
-            this.efosButtonBuscador2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.efosButtonBuscador2.UseVisualStyleBackColor = true;
+            this.botonAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonAgregar.Image = global::Efos.Properties.Resources.download;
+            this.botonAgregar.Location = new System.Drawing.Point(717, 169);
+            this.botonAgregar.Name = "botonAgregar";
+            this.botonAgregar.Size = new System.Drawing.Size(35, 30);
+            this.botonAgregar.TabIndex = 30;
+            this.botonAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.botonAgregar.UseVisualStyleBackColor = true;
+            this.botonAgregar.Click += new System.EventHandler(this.efosButtonBuscador2_Click);
             // 
             // efosGroupBox1
             // 
@@ -302,6 +308,7 @@
             this.dataGridServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnaCodigoServicio,
             this.columnaDescripcionServicio,
+            this.columnaCodigoTipoPrecio,
             this.columnaTipoPrecio,
             this.columnaCantidad,
             this.columnaPrecioServicio,
@@ -314,50 +321,6 @@
             this.dataGridServicios.StandardTab = true;
             this.dataGridServicios.TabIndex = 0;
             this.dataGridServicios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridServicios_CellClick);
-            // 
-            // columnaCodigoServicio
-            // 
-            this.columnaCodigoServicio.HeaderText = "Codigo";
-            this.columnaCodigoServicio.Name = "columnaCodigoServicio";
-            this.columnaCodigoServicio.Width = 75;
-            // 
-            // columnaDescripcionServicio
-            // 
-            this.columnaDescripcionServicio.HeaderText = "Descripcion";
-            this.columnaDescripcionServicio.Name = "columnaDescripcionServicio";
-            this.columnaDescripcionServicio.Width = 180;
-            // 
-            // columnaTipoPrecio
-            // 
-            this.columnaTipoPrecio.HeaderText = "Tipo Precio";
-            this.columnaTipoPrecio.Name = "columnaTipoPrecio";
-            this.columnaTipoPrecio.Width = 125;
-            // 
-            // columnaCantidad
-            // 
-            this.columnaCantidad.HeaderText = "Cantidad";
-            this.columnaCantidad.Name = "columnaCantidad";
-            this.columnaCantidad.Width = 75;
-            // 
-            // columnaPrecioServicio
-            // 
-            this.columnaPrecioServicio.HeaderText = "Precio";
-            this.columnaPrecioServicio.Name = "columnaPrecioServicio";
-            this.columnaPrecioServicio.Width = 75;
-            // 
-            // columnaSubTotal
-            // 
-            this.columnaSubTotal.HeaderText = "Sub-Total";
-            this.columnaSubTotal.Name = "columnaSubTotal";
-            // 
-            // columnaBotonEliminar
-            // 
-            this.columnaBotonEliminar.HeaderText = "Eliminar";
-            this.columnaBotonEliminar.Name = "columnaBotonEliminar";
-            this.columnaBotonEliminar.Text = "Eliminar";
-            this.columnaBotonEliminar.ToolTipText = "Eliminar";
-            this.columnaBotonEliminar.UseColumnTextForButtonValue = true;
-            this.columnaBotonEliminar.Width = 65;
             // 
             // comboTipoNCF
             // 
@@ -393,6 +356,56 @@
             this.letreroNCF.Text = "A010010100100000001";
             this.letreroNCF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // columnaCodigoServicio
+            // 
+            this.columnaCodigoServicio.HeaderText = "Codigo";
+            this.columnaCodigoServicio.Name = "columnaCodigoServicio";
+            this.columnaCodigoServicio.Width = 75;
+            // 
+            // columnaDescripcionServicio
+            // 
+            this.columnaDescripcionServicio.HeaderText = "Descripcion";
+            this.columnaDescripcionServicio.Name = "columnaDescripcionServicio";
+            this.columnaDescripcionServicio.Width = 180;
+            // 
+            // columnaCodigoTipoPrecio
+            // 
+            this.columnaCodigoTipoPrecio.HeaderText = "Column1";
+            this.columnaCodigoTipoPrecio.Name = "columnaCodigoTipoPrecio";
+            this.columnaCodigoTipoPrecio.Visible = false;
+            // 
+            // columnaTipoPrecio
+            // 
+            this.columnaTipoPrecio.HeaderText = "Tipo Precio";
+            this.columnaTipoPrecio.Name = "columnaTipoPrecio";
+            this.columnaTipoPrecio.Width = 125;
+            // 
+            // columnaCantidad
+            // 
+            this.columnaCantidad.HeaderText = "Cantidad";
+            this.columnaCantidad.Name = "columnaCantidad";
+            this.columnaCantidad.Width = 75;
+            // 
+            // columnaPrecioServicio
+            // 
+            this.columnaPrecioServicio.HeaderText = "Precio";
+            this.columnaPrecioServicio.Name = "columnaPrecioServicio";
+            this.columnaPrecioServicio.Width = 75;
+            // 
+            // columnaSubTotal
+            // 
+            this.columnaSubTotal.HeaderText = "Sub-Total";
+            this.columnaSubTotal.Name = "columnaSubTotal";
+            // 
+            // columnaBotonEliminar
+            // 
+            this.columnaBotonEliminar.HeaderText = "Eliminar";
+            this.columnaBotonEliminar.Name = "columnaBotonEliminar";
+            this.columnaBotonEliminar.Text = "Eliminar";
+            this.columnaBotonEliminar.ToolTipText = "Eliminar";
+            this.columnaBotonEliminar.UseColumnTextForButtonValue = true;
+            this.columnaBotonEliminar.Width = 65;
+            // 
             // FormProcesoOrdenTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,7 +414,7 @@
             this.Controls.Add(this.letreroNCF);
             this.Controls.Add(this.efosLetrero7);
             this.Controls.Add(this.comboTipoNCF);
-            this.Controls.Add(this.efosButtonBuscador2);
+            this.Controls.Add(this.botonAgregar);
             this.Controls.Add(this.efosLetrero10);
             this.Controls.Add(this.campoCantidad);
             this.Controls.Add(this.efosLetrero9);
@@ -447,7 +460,7 @@
             this.Controls.SetChildIndex(this.efosLetrero9, 0);
             this.Controls.SetChildIndex(this.campoCantidad, 0);
             this.Controls.SetChildIndex(this.efosLetrero10, 0);
-            this.Controls.SetChildIndex(this.efosButtonBuscador2, 0);
+            this.Controls.SetChildIndex(this.botonAgregar, 0);
             this.Controls.SetChildIndex(this.comboTipoNCF, 0);
             this.Controls.SetChildIndex(this.efosLetrero7, 0);
             this.Controls.SetChildIndex(this.letreroNCF, 0);
@@ -473,19 +486,20 @@
         private ControlesEfos.efosLetrero efosLetrero9;
         private ControlesEfos.efosCampo campoCantidad;
         private ControlesEfos.efosLetrero efosLetrero10;
-        private ControlesEfos.efosButtonBuscador efosButtonBuscador2;
+        private ControlesEfos.efosButtonBuscador botonAgregar;
         private ControlesEfos.efosGroupBox efosGroupBox1;
         private ControlesEfos.efosDataGridView dataGridServicios;
+        private ControlesEfos.efosCombo comboTipoNCF;
+        private ControlesEfos.efosLetrero efosLetrero7;
+        private ControlesEfos.efosLetrero letreroNCF;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigoServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaDescripcionServicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigoTipoPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaTipoPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaPrecioServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaSubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn columnaBotonEliminar;
-        private ControlesEfos.efosCombo comboTipoNCF;
-        private ControlesEfos.efosLetrero efosLetrero7;
-        private ControlesEfos.efosLetrero letreroNCF;
 
     }
 }
