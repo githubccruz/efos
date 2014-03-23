@@ -19,6 +19,8 @@ namespace Efos.Reportes
 
         private void SimpleReport_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'DataSetPersona.DataTable1' Puede moverla o quitarla según sea necesario.
+            this.DataTable1TableAdapter.Fill(this.DataSetPersona.DataTable1);
 
             //this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
