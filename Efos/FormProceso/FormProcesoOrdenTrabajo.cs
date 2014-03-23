@@ -19,5 +19,10 @@ namespace Efos
             
         }
 
+        private void dataGridServicios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            eliminarFila(dataGridServicios, e.ColumnIndex, e.RowIndex);
+        }
+
     }
 }
