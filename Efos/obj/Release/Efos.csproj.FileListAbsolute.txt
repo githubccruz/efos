@@ -48,3 +48,4 @@ C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.csproj.GenerateResource.Cache
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.exe
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.pdb
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.Reportes.SimpleReport.resources

@@ -433,6 +433,22 @@
     <Compile Include="PostgreSQL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\DataSetOrdenTrabajo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOrdenTrabajo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\DataSetReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\SimpleReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\SimpleReport.Designer.cs">
+      <DependentUpon>SimpleReport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormBase\FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -532,6 +548,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\SimpleReport.resx">
+      <DependentUpon>SimpleReport.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -546,6 +565,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\DataSetOrdenTrabajo.xsc">
+      <DependentUpon>DataSetOrdenTrabajo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetOrdenTrabajo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOrdenTrabajo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSetOrdenTrabajo.xss">
+      <DependentUpon>DataSetOrdenTrabajo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetReport.xsc">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSetReport.xss">
+      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
