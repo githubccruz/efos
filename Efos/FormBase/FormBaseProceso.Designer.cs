@@ -114,6 +114,7 @@
             this.txtCodigoPaciente.Size = new System.Drawing.Size(100, 21);
             this.txtCodigoPaciente.SoloLectura = false;
             this.txtCodigoPaciente.TabIndex = 8;
+            this.txtCodigoPaciente.Validated += new System.EventHandler(this.txtCodigoPaciente_Validated);
             // 
             // txtNumeroAsunto
             // 
