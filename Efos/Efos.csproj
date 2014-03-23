@@ -441,6 +441,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetOrdenTrabajo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\DataSetPersona.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPersona.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\DataSetReport.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -578,6 +583,17 @@
     </None>
     <None Include="Reportes\DataSetOrdenTrabajo.xss">
       <DependentUpon>DataSetOrdenTrabajo.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetPersona.xsc">
+      <DependentUpon>DataSetPersona.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSetPersona.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPersona.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSetPersona.xss">
+      <DependentUpon>DataSetPersona.xsd</DependentUpon>
     </None>
     <None Include="Reportes\DataSetReport.xsc">
       <DependentUpon>DataSetReport.xsd</DependentUpon>
