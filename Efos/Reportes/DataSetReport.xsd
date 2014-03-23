@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetReport" targetNamespace="http://tempuri.org/DataSetReport.xsd" xmlns:mstns="http://tempuri.org/DataSetReport.xsd" xmlns="http://tempuri.org/DataSetReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.Efos.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM vista_orden_trabajo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="numero_orden" DataSetColumn="numero_orden" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="codigo_estado" DataSetColumn="codigo_estado" />
+              <Mapping SourceColumn="descripcion_estado" DataSetColumn="descripcion_estado" />
+              <Mapping SourceColumn="codigo_servicio" DataSetColumn="codigo_servicio" />
+              <Mapping SourceColumn="cantidad_servicio" DataSetColumn="cantidad_servicio" />
+              <Mapping SourceColumn="descripcion_servicio" DataSetColumn="descripcion_servicio" />
+              <Mapping SourceColumn="precio_servicio" DataSetColumn="precio_servicio" />
+              <Mapping SourceColumn="estado_servicio" DataSetColumn="estado_servicio" />
+              <Mapping SourceColumn="codigo_tipo_precio" DataSetColumn="codigo_tipo_precio" />
+              <Mapping SourceColumn="descripcion_tipo_precio" DataSetColumn="descripcion_tipo_precio" />
+              <Mapping SourceColumn="estado_precio" DataSetColumn="estado_precio" />
+              <Mapping SourceColumn="codigo_paciente" DataSetColumn="codigo_paciente" />
+              <Mapping SourceColumn="codigo_doctor" DataSetColumn="codigo_doctor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetReport" msprop:Generator_UserDSName="DataSetReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numero_orden" msprop:Generator_ColumnVarNameInTable="columnnumero_orden" msprop:Generator_ColumnPropNameInRow="numero_orden" msprop:Generator_ColumnPropNameInTable="numero_ordenColumn" msprop:Generator_UserColumnName="numero_orden" type="xs:int" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="codigo_estado" msprop:Generator_ColumnVarNameInTable="columncodigo_estado" msprop:Generator_ColumnPropNameInRow="codigo_estado" msprop:Generator_ColumnPropNameInTable="codigo_estadoColumn" msprop:Generator_UserColumnName="codigo_estado" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion_estado" msprop:Generator_ColumnVarNameInTable="columndescripcion_estado" msprop:Generator_ColumnPropNameInRow="descripcion_estado" msprop:Generator_ColumnPropNameInTable="descripcion_estadoColumn" msprop:Generator_UserColumnName="descripcion_estado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_servicio" msprop:Generator_ColumnVarNameInTable="columncodigo_servicio" msprop:Generator_ColumnPropNameInRow="codigo_servicio" msprop:Generator_ColumnPropNameInTable="codigo_servicioColumn" msprop:Generator_UserColumnName="codigo_servicio" type="xs:int" minOccurs="0" />
+              <xs:element name="cantidad_servicio" msprop:Generator_ColumnVarNameInTable="columncantidad_servicio" msprop:Generator_ColumnPropNameInRow="cantidad_servicio" msprop:Generator_ColumnPropNameInTable="cantidad_servicioColumn" msprop:Generator_UserColumnName="cantidad_servicio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="descripcion_servicio" msprop:Generator_ColumnVarNameInTable="columndescripcion_servicio" msprop:Generator_ColumnPropNameInRow="descripcion_servicio" msprop:Generator_ColumnPropNameInTable="descripcion_servicioColumn" msprop:Generator_UserColumnName="descripcion_servicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precio_servicio" msprop:Generator_ColumnVarNameInTable="columnprecio_servicio" msprop:Generator_ColumnPropNameInRow="precio_servicio" msprop:Generator_ColumnPropNameInTable="precio_servicioColumn" msprop:Generator_UserColumnName="precio_servicio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="estado_servicio" msprop:Generator_ColumnVarNameInTable="columnestado_servicio" msprop:Generator_ColumnPropNameInRow="estado_servicio" msprop:Generator_ColumnPropNameInTable="estado_servicioColumn" msprop:Generator_UserColumnName="estado_servicio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_tipo_precio" msprop:Generator_ColumnVarNameInTable="columncodigo_tipo_precio" msprop:Generator_ColumnPropNameInRow="codigo_tipo_precio" msprop:Generator_ColumnPropNameInTable="codigo_tipo_precioColumn" msprop:Generator_UserColumnName="codigo_tipo_precio" type="xs:int" minOccurs="0" />
+              <xs:element name="descripcion_tipo_precio" msprop:Generator_ColumnVarNameInTable="columndescripcion_tipo_precio" msprop:Generator_ColumnPropNameInRow="descripcion_tipo_precio" msprop:Generator_ColumnPropNameInTable="descripcion_tipo_precioColumn" msprop:Generator_UserColumnName="descripcion_tipo_precio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estado_precio" msprop:Generator_ColumnVarNameInTable="columnestado_precio" msprop:Generator_ColumnPropNameInRow="estado_precio" msprop:Generator_ColumnPropNameInTable="estado_precioColumn" msprop:Generator_UserColumnName="estado_precio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo_paciente" msprop:Generator_ColumnVarNameInTable="columncodigo_paciente" msprop:Generator_ColumnPropNameInRow="codigo_paciente" msprop:Generator_ColumnPropNameInTable="codigo_pacienteColumn" msprop:Generator_UserColumnName="codigo_paciente" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo_doctor" msprop:Generator_ColumnVarNameInTable="columncodigo_doctor" msprop:Generator_ColumnPropNameInRow="codigo_doctor" msprop:Generator_ColumnPropNameInTable="codigo_doctorColumn" msprop:Generator_UserColumnName="codigo_doctor" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
