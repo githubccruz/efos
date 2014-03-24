@@ -567,8 +567,11 @@ namespace Efos
             //Form.Show();
             //FormBaseConsulta Form = new FormBaseConsulta("Consulta Tipo de Paciente","tipo_paciente_encabezado","coditipa","desctipa","estado");
             //FormBaseConsultaPersona Form = new FormBaseConsultaPersona();
+            //Form.Show();            
+            //FormProcesoOrdenTrabajo Form = new FormProcesoOrdenTrabajo();
             //Form.Show();
-            FormProcesoOrdenTrabajo Form = new FormProcesoOrdenTrabajo();
+            FormMantenimientoPaciente Form = new FormMantenimientoPaciente();
+            Form.MdiParent = this;
             Form.Show();
         }
 
@@ -655,6 +658,13 @@ namespace Efos
             Form.MdiParent = this;
             Form.Show();
 
+        }
+
+        private void pacientesToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Reportes.SimpleReport Form = new Reportes.SimpleReport();
+            Form.MdiParent = this;
+            Form.Show();
         }     
     }
 }

@@ -89,5 +89,10 @@ namespace Efos
             cmbTipoPaciente.Enabled = false;
             
         }
+
+        private void botonBuscarLupa_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

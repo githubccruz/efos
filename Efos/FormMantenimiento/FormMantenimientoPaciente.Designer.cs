@@ -45,6 +45,10 @@
             // 
             this.txtCodigo.Validated += new System.EventHandler(this.txtCodigo_Validated);
             // 
+            // botonBuscarLupa
+            // 
+            this.botonBuscarLupa.Click += new System.EventHandler(this.botonBuscarLupa_Click);
+            // 
             // botonCancelar
             // 
             this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
