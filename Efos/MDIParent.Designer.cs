@@ -440,19 +440,19 @@
             // itasToolStripMenuItem
             // 
             this.itasToolStripMenuItem.Name = "itasToolStripMenuItem";
-            this.itasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.itasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.itasToolStripMenuItem.Text = "Citas";
             // 
             // facturasToolStripMenuItem3
             // 
             this.facturasToolStripMenuItem3.Name = "facturasToolStripMenuItem3";
-            this.facturasToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.facturasToolStripMenuItem3.Size = new System.Drawing.Size(124, 22);
             this.facturasToolStripMenuItem3.Text = "Facturas";
             // 
             // pacientesToolStripMenuItem2
             // 
             this.pacientesToolStripMenuItem2.Name = "pacientesToolStripMenuItem2";
-            this.pacientesToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.pacientesToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
             this.pacientesToolStripMenuItem2.Text = "Pacientes";
             this.pacientesToolStripMenuItem2.Click += new System.EventHandler(this.pacientesToolStripMenuItem2_Click);
             // 

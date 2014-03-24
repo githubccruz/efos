@@ -28,7 +28,12 @@ namespace Efos.Reportes
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void efosButton1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
