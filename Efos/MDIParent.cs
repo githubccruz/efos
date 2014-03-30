@@ -665,6 +665,11 @@ namespace Efos
             Reportes.SimpleReport Form = new Reportes.SimpleReport();
             Form.MdiParent = this;
             Form.Show();
+        }
+
+        private void cuestionarioToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            
         }     
     }
 }
