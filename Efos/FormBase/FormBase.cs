@@ -29,7 +29,8 @@ namespace Efos
                 {
                     limpiarControles(cltr.Controls);
                 }
-                else if (cltr is TabControl){
+                else if (cltr is TabControl)
+                {
                     limpiarControles(cltr.Controls);
                 }
                 else if (cltr is efosCampo)
@@ -37,15 +38,16 @@ namespace Efos
                     efosCampo efosCltr = (efosCampo)(cltr);
                     if (efosCltr.Limpiar)
                     {
-                        cltr.Text = "";    
-                    }                    
+                        cltr.Text = "";
+                    }
                 }
                 else if (cltr is efosCombo || cltr is ComboBox)
                 {
                     efosCombo cmb = (efosCombo)(cltr);
                     cmb.SelectedIndex = -1;
                 }
-                else if (cltr is DataGridView){
+                else if (cltr is DataGridView)
+                {
                     efosDataGridView data = (efosDataGridView)(cltr);
                     data.Rows.Clear();
                 }
@@ -89,7 +91,7 @@ namespace Efos
         //        }
         //    }
         //}
-        public void habilitarCampos(Control.ControlCollection controles,bool Habilitar)
+        public void habilitarCampos(Control.ControlCollection controles, bool Habilitar)
         {
             foreach (Control cltr in controles)
             {
@@ -161,5 +163,11 @@ namespace Efos
 
         }
 
+        public bool IsEmpty(string input)
+        {
+            if (String.IsNullOrEmpty(input) || String.IsNullOrWhiteSpace(input) || input == 0.ToString())
+                return true;
+            return false;
+        }
     }
 }
