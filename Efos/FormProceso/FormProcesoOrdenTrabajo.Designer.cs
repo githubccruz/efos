@@ -489,7 +489,7 @@
             this.efosGroupBox2.Controls.Add(this.efosLetrero11);
             this.efosGroupBox2.Controls.Add(this.efosCampo1);
             this.efosGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosGroupBox2.Location = new System.Drawing.Point(945, 433);
+            this.efosGroupBox2.Location = new System.Drawing.Point(945, 439);
             this.efosGroupBox2.Name = "efosGroupBox2";
             this.efosGroupBox2.Size = new System.Drawing.Size(235, 47);
             this.efosGroupBox2.TabIndex = 35;
