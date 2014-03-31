@@ -657,7 +657,6 @@ namespace Efos
             FormMantenimientoServicio Form = new FormMantenimientoServicio();
             Form.MdiParent = this;
             Form.Show();
-
         }
 
         private void pacientesToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -665,6 +664,11 @@ namespace Efos
             Reportes.SimpleReport Form = new Reportes.SimpleReport();
             Form.MdiParent = this;
             Form.Show();
+        }
+
+        private void cuestionarioToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            
         }     
     }
 }

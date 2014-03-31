@@ -117,16 +117,16 @@ namespace Efos
                 txtCodigo.Text = "0";
                 txtCodigo.Enabled = false;
             }
-            public bool isEmpty(Control control)
-            {
-                bool result = false;
-                if(String.IsNullOrEmpty(control.Text) || String.IsNullOrWhiteSpace(control.Text))
-                {
-                    result = true;
-                }
+            //public bool isEmpty(Control control)
+            //{
+            //    bool result = false;
+            //    if(String.IsNullOrEmpty(control.Text) || String.IsNullOrWhiteSpace(control.Text))
+            //    {
+            //        result = true;
+            //    }
                 
-                return result;
-            }
+            //    return result;
+            //}
             public void AccionCodigoValidado()
             {
                 HabilitarControl(botonEditar, true);
@@ -146,12 +146,12 @@ namespace Efos
                 {
                     if (control is ControlesEfos.efosCampo)
                     {
-                        if (isEmpty(control))
+                        if (IsEmpty(control.Text))
                             return;
                     }
                     else if(control is ControlesEfos.efosCombo)
                     {
-                        if (isEmpty(control))
+                        if (IsEmpty(control.Text))
                             return;
                     }
                 }

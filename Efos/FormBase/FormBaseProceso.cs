@@ -52,7 +52,7 @@ namespace Efos
             lupaAsunto.Enabled = false;
             lupaPaciente.Enabled = true;
 
-            //letreroPersona.Text = "";
+            letreroNombrePaciente.Text = String.Empty;
             txtCodigoPaciente.Text = 0.ToString();
             txtCodigoPaciente.Enabled = true;
 

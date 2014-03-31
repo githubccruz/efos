@@ -140,6 +140,8 @@
             this.estadoConexion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.efosCalendar1 = new ControlesEfos.efosCalendar();
+            this.cobrosAPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuestionarioToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -467,7 +469,9 @@
             this.recetasToolStripMenuItem,
             this.notasDeDebitoToolStripMenuItem,
             this.notasDeCreditoToolStripMenuItem,
-            this.cuestionarioToolStripMenuItem2});
+            this.cuestionarioToolStripMenuItem2,
+            this.cobrosAPacientesToolStripMenuItem,
+            this.cuestionarioToolStripMenuItem4});
             this.procesosToolStripMenuItem.Image = global::Efos.Properties.Resources.MD_audio;
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
@@ -1003,6 +1007,19 @@
             this.efosCalendar1.ShowWeekNumbers = true;
             this.efosCalendar1.TabIndex = 4;
             // 
+            // cobrosAPacientesToolStripMenuItem
+            // 
+            this.cobrosAPacientesToolStripMenuItem.Name = "cobrosAPacientesToolStripMenuItem";
+            this.cobrosAPacientesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.cobrosAPacientesToolStripMenuItem.Text = "Cobros a Pacientes";
+            // 
+            // cuestionarioToolStripMenuItem4
+            // 
+            this.cuestionarioToolStripMenuItem4.Name = "cuestionarioToolStripMenuItem4";
+            this.cuestionarioToolStripMenuItem4.Size = new System.Drawing.Size(241, 22);
+            this.cuestionarioToolStripMenuItem4.Text = "Cuestionario";
+            this.cuestionarioToolStripMenuItem4.Click += new System.EventHandler(this.cuestionarioToolStripMenuItem4_Click);
+            // 
             // MDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1139,6 +1156,8 @@
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem insumoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem servicioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cobrosAPacientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cuestionarioToolStripMenuItem4;
     }
 }
 

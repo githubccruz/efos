@@ -73,7 +73,7 @@ namespace Efos
             gridPreguntas.Rows.Clear();
             cargarInformacion(); 
             habilitarCampos(this.Controls, true);
-            inicializarValores();
+            //inicializarValores();
             txtCodigo.Enabled = false;
             cmbTipoCuestionario.Enabled = true;
 
@@ -87,26 +87,37 @@ namespace Efos
 
         private void botonGuardar_Click(object sender, EventArgs e)
         {
-            string[] datos = new string[3];
-            datos[0] = txtCodigo.Text.ToString().Trim();
-            datos[1] = cmbTipoCuestionario.SelectedValue.ToString();
-            datos[2] = checkEstado.Checked.ToString();
+            try
+            {            
+                string[] datos = new string[3];
+                datos[0] = txtCodigo.Text.ToString().Trim();
+                datos[1] = cmbTipoCuestionario.SelectedValue.ToString();
+                datos[2] = checkEstado.Checked.ToString();
 
-            string cmd = String.Format("SELECT inserta_cuestionario_encabezado({0},{1},{2})",datos);
-
-            DataTable result = PostgreSQL.Execute(cmd);
-            datos[0] = result.Rows[0][0].ToString(); 
-
-            PostgreSQL.Execute(String.Format("SELECT limpiaCodigoPreguntaCuestionario({0});", datos[0]));
-            foreach (DataGridViewRow row in gridPreguntas.Rows)
-            {                
-                if (Convert.ToBoolean(row.Cells[2].Value))
+                string cmd = String.Format("SELECT inserta_cuestionario_encabezado({0},{1},{2})",datos);
+                DataTable result = PostgreSQL.Execute(cmd);
+                if (result.Rows[0][0].ToString().Equals((-1).ToString()))
                 {
-                    cmd = String.Format("SELECT inserta_cuestionario_vs_pregunta_detalle({0},{1});", datos[0], row.Cells[1].Value);                    
-                    PostgreSQL.Execute(cmd);
+                    MessageBox.Show("Ya existe un cuestionario especifico para " + cmbTipoCuestionario.Text);
+                    return;
                 }
+                datos[0] = result.Rows[0][0].ToString(); 
+
+                PostgreSQL.Execute(String.Format("SELECT limpiaCodigoPreguntaCuestionario({0});", datos[0]));
+                foreach (DataGridViewRow row in gridPreguntas.Rows)
+                {                
+                    if (Convert.ToBoolean(row.Cells[2].Value))
+                    {
+                        cmd = String.Format("SELECT inserta_cuestionario_vs_pregunta_detalle({0},{1});", datos[0], row.Cells[1].Value);                    
+                        PostgreSQL.Execute(cmd);
+                    }
+                }
+                txtCodigo.Text = datos[0];
             }
-            txtCodigo.Text = datos[0];
+            catch (Exception)
+            {
+                MessageBox.Show("Esto es Embarasozo  :-(, Existe un Problema con la Conexion a la Base de Datos");
+            }
         }
 
         private void activarPregunta(string value)
@@ -123,7 +134,7 @@ namespace Efos
 
         private void txtCodigo_Validated(object sender, EventArgs e)
         {
-            if(txtCodigo.Text.Trim()==0.ToString() || String.IsNullOrEmpty(txtCodigo.Text))            
+            if(IsEmpty(txtCodigo.Text.Trim()))            
                 return;
             
             string codigo = txtCodigo.Text.Trim();
