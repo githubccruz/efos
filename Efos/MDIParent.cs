@@ -657,7 +657,6 @@ namespace Efos
             FormMantenimientoServicio Form = new FormMantenimientoServicio();
             Form.MdiParent = this;
             Form.Show();
-
         }
 
         private void pacientesToolStripMenuItem2_Click(object sender, EventArgs e)

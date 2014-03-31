@@ -50,13 +50,13 @@
             this.columnaSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaBotonEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.efosGroupBox2 = new ControlesEfos.efosGroupBox();
+            this.efosLetrero12 = new ControlesEfos.efosLetrero();
+            this.comboTipoFactura = new ControlesEfos.efosCombo();
             this.campoTotal = new ControlesEfos.efosCampo();
             this.efosLetrero9 = new ControlesEfos.efosLetrero();
             this.efosLetrero10 = new ControlesEfos.efosLetrero();
             this.efosGroupBox3 = new ControlesEfos.efosGroupBox();
             this.efosLetrero11 = new ControlesEfos.efosLetrero();
-            this.comboTipoFactura = new ControlesEfos.efosCombo();
-            this.efosLetrero12 = new ControlesEfos.efosLetrero();
             this.comboTipoNCF = new ControlesEfos.efosCombo();
             this.efosLetrero13 = new ControlesEfos.efosLetrero();
             this.efosGroupBox1.SuspendLayout();
@@ -364,6 +364,29 @@
             this.efosGroupBox2.TabIndex = 28;
             this.efosGroupBox2.TabStop = false;
             // 
+            // efosLetrero12
+            // 
+            this.efosLetrero12.AutoSize = true;
+            this.efosLetrero12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosLetrero12.Location = new System.Drawing.Point(12, 17);
+            this.efosLetrero12.Name = "efosLetrero12";
+            this.efosLetrero12.Size = new System.Drawing.Size(91, 15);
+            this.efosLetrero12.TabIndex = 32;
+            this.efosLetrero12.Text = "Tipo Factura:";
+            this.efosLetrero12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // comboTipoFactura
+            // 
+            this.comboTipoFactura.CampoBD = null;
+            this.comboTipoFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboTipoFactura.FormattingEnabled = true;
+            this.comboTipoFactura.Location = new System.Drawing.Point(113, 13);
+            this.comboTipoFactura.Name = "comboTipoFactura";
+            this.comboTipoFactura.Size = new System.Drawing.Size(121, 23);
+            this.comboTipoFactura.Sorted = true;
+            this.comboTipoFactura.TabIndex = 31;
+            // 
             // campoTotal
             // 
             this.campoTotal.CampoBD = null;
@@ -391,7 +414,7 @@
             // 
             this.efosLetrero10.AutoSize = true;
             this.efosLetrero10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero10.Location = new System.Drawing.Point(419, 16);
+            this.efosLetrero10.Location = new System.Drawing.Point(446, 12);
             this.efosLetrero10.Name = "efosLetrero10";
             this.efosLetrero10.Size = new System.Drawing.Size(38, 15);
             this.efosLetrero10.TabIndex = 2;
@@ -411,35 +434,12 @@
             // 
             this.efosLetrero11.AutoSize = true;
             this.efosLetrero11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero11.Location = new System.Drawing.Point(464, 16);
+            this.efosLetrero11.Location = new System.Drawing.Point(491, 12);
             this.efosLetrero11.Name = "efosLetrero11";
             this.efosLetrero11.Size = new System.Drawing.Size(159, 15);
             this.efosLetrero11.TabIndex = 30;
             this.efosLetrero11.Text = "A010010100100000001";
             this.efosLetrero11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // comboTipoFactura
-            // 
-            this.comboTipoFactura.CampoBD = null;
-            this.comboTipoFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboTipoFactura.FormattingEnabled = true;
-            this.comboTipoFactura.Location = new System.Drawing.Point(113, 13);
-            this.comboTipoFactura.Name = "comboTipoFactura";
-            this.comboTipoFactura.Size = new System.Drawing.Size(121, 23);
-            this.comboTipoFactura.Sorted = true;
-            this.comboTipoFactura.TabIndex = 31;
-            // 
-            // efosLetrero12
-            // 
-            this.efosLetrero12.AutoSize = true;
-            this.efosLetrero12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero12.Location = new System.Drawing.Point(12, 17);
-            this.efosLetrero12.Name = "efosLetrero12";
-            this.efosLetrero12.Size = new System.Drawing.Size(91, 15);
-            this.efosLetrero12.TabIndex = 32;
-            this.efosLetrero12.Text = "Tipo Factura:";
-            this.efosLetrero12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // comboTipoNCF
             // 
@@ -447,7 +447,7 @@
             this.comboTipoNCF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTipoNCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboTipoNCF.FormattingEnabled = true;
-            this.comboTipoNCF.Location = new System.Drawing.Point(99, 12);
+            this.comboTipoNCF.Location = new System.Drawing.Point(126, 8);
             this.comboTipoNCF.Name = "comboTipoNCF";
             this.comboTipoNCF.Size = new System.Drawing.Size(175, 23);
             this.comboTipoNCF.Sorted = true;
@@ -457,7 +457,7 @@
             // 
             this.efosLetrero13.AutoSize = true;
             this.efosLetrero13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero13.Location = new System.Drawing.Point(23, 16);
+            this.efosLetrero13.Location = new System.Drawing.Point(50, 12);
             this.efosLetrero13.Name = "efosLetrero13";
             this.efosLetrero13.Size = new System.Drawing.Size(70, 15);
             this.efosLetrero13.TabIndex = 32;
