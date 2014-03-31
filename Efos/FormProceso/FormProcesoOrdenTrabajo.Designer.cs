@@ -255,7 +255,6 @@
             this.campoCantidad.Size = new System.Drawing.Size(88, 21);
             this.campoCantidad.SoloLectura = false;
             this.campoCantidad.TabIndex = 28;
-            this.campoCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoCantidad_KeyPress);
             // 
             // efosLetrero10
             // 
@@ -355,6 +354,7 @@
             this.campoCodigoDoctor.Size = new System.Drawing.Size(87, 21);
             this.campoCodigoDoctor.SoloLectura = false;
             this.campoCodigoDoctor.TabIndex = 36;
+            this.campoCodigoDoctor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoCodigoDoctor_KeyPress);
             this.campoCodigoDoctor.Validated += new System.EventHandler(this.campoCodigoDoctor_Validated);
             // 
             // dataGridServicios

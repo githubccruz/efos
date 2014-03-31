@@ -44,7 +44,7 @@ namespace Efos
             }
             catch (Exception)
             {
-                letreroNombrePaciente.Text = "";
+                letreroNombrePaciente.Text = String.Empty;
                 if (MessageBox.Show("No existe informacion o el Paciente esta Inactivo, con el codigo digitado ==>" + txtCodigoPaciente.Text + "\n, ¿Desea usar el Buscador?", "Consejo || Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     lupaPaciente_Click(null, null);
@@ -65,6 +65,7 @@ namespace Efos
             campoDescripcioServicio.Text = String.Empty;
             campoPrecio.Text = 0.ToString();
             campoCantidad.Text = 0.ToString();
+            campoCantidad.Enabled = false;
 
             comboTipoPrecio.Enabled = false;
             comboTipoPrecio.SelectedIndex = -1;
@@ -78,16 +79,10 @@ namespace Efos
 
         private void cargarInformacionCombo(bool estado = true)
         {
-            if (estado)
-            {
-                //PostgreSQL.FillComboBox(comboTipoPrecio, "coditips", "desctips", "tipo_precio_servicio_encabezado", filter: "estado=true");
-                PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado", filter: "estado=true");
-            }
+            if (estado)                            
+                PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado", filter: "estado=true");            
             else
-            {
-                //PostgreSQL.FillComboBox(comboTipoPrecio, "coditips", "desctips", "tipo_precio_servicio_encabezado");
-                PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado");
-            }
+                PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado");            
         }
 
         private void efosButtonBuscador2_Click(object sender, EventArgs e)
@@ -142,15 +137,6 @@ namespace Efos
             cargarInformacionCombo();
         }
 
-        private void campoCantidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)(Keys.Enter))
-            {
-                efosButtonBuscador2_Click(null, null);                
-                return;
-            }
-        }
-
         private void lupaPaciente_Click(object sender, EventArgs e)
         {
             
@@ -170,12 +156,9 @@ namespace Efos
 
         private void campoCodigo_Validated(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(campoCodigo.Text) ||
-                String.IsNullOrWhiteSpace(campoCodigo.Text) ||
-                campoCodigo.Text == 0.ToString())
-            {
+            if (IsEmpty(campoCodigo.Text))            
                 return;
-            }
+            
             string cmd = String.Format("SELECT * FROM vista_servicio_precios WHERE codiserv={0} and estado_servicio=true and estado_precio=true", campoCodigo.Text);
             try
             {
@@ -188,6 +171,7 @@ namespace Efos
 
                 campoCodigoDoctor.Enabled = true;
                 lupaDoctor.Enabled = true;
+                campoCantidad.Enabled = true;
             }
             catch (Exception)
             {
@@ -240,16 +224,56 @@ namespace Efos
 
         private void botonProcesar_Click(object sender, EventArgs e)
         {
-            if (dataGridServicios.Rows.Count <= 0)
+            try
             {
-                MessageBox.Show("Aun no se ha digitado ningun servicio para procesar");
-                return;
-            }
+                if (dataGridServicios.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Aun no se ha digitado ningun servicio para procesar");
+                    return;
+                }
+                string[] datos = {
+                                 txtNumeroAsunto.Text.Trim(),
+                                 txtCodigoPaciente.Text.Trim(),                                 
+                             };
+                string commando = String.Format("SELECT inserta_orden_trabajo_encabezado(" +
+                    "{0}," +
+                    "(select current_date),"
+                    + "{1}," +
+                    "(select codiesot from estado_orden_trabajo_encabezado where descesot='PENDIENTE' limit 1));", datos);
 
+                MessageBox.Show("Test Query: " + commando);
+                var data = PostgreSQL.Execute(commando);
+                var codigo = data.Rows[0][0].ToString();
+                foreach (DataGridViewRow row in dataGridServicios.Rows)
+                {
+                    commando = String.Format("SELECT inserta_orden_trabajo_detalle({0},{1},{2},{3},{4},{5});",
+                        codigo,
+                        row.Cells[columnaCantidad.Index].Value,
+                        row.Cells[columnaCodigoServicio.Index].Value,
+                        row.Cells[columnaPrecioServicio.Index].Value.ToString(),
+                        row.Cells[columnaCodigoTipoPrecio.Index].Value,
+                        row.Cells[columnaCodigoDoctor.Index].Value
+                        );
+
+                    PostgreSQL.Execute(commando);
+                }
+            }
+            catch(Exception){
+
+            }
             if (MessageBox.Show("¿El pago de esta Orden se hara ahora?", "Confirmacion || Importante", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 return;
             }            
+        }
+
+        private void campoCodigoDoctor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                efosButtonBuscador2_Click(null, null);
+                return;
+            }
         }
     }
 }
