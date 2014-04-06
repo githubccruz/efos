@@ -353,7 +353,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Parameters!tituloReporte.Value</Value>
+                  <Value>Titulo del Reporte</Value>
                   <Style>
                     <FontFamily>Comic Sans MS</FontFamily>
                     <FontSize>18pt</FontSize>
@@ -850,17 +850,6 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <ReportParameters>
-    <ReportParameter Name="tituloReporte">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="codigoPaciente">
-      <DataType>String</DataType>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>ffe36632-4928-43d2-b164-f5916d4f69b2</rd:ReportID>
 </Report>

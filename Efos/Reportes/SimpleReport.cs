@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Efos.Reportes
@@ -19,21 +14,21 @@ namespace Efos.Reportes
 
         private void SimpleReport_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DataSetPersona.DataTable1' Puede moverla o quitarla según sea necesario.
-            this.DataTable1TableAdapter.Fill(this.DataSetPersona.DataTable1);
-
-            //this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
+            var result = PostgreSQL.Execute("SELECT numeortr FROM orden_trabajo_encabezado");
+            ShowReport(result, "ReportOrdenTrabajo");
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
+        public void ShowReport(DataTable dataTable, string nombreReporte)
         {
-            
-        }
+            nombreReporte = @"..\..\Reportes\" + nombreReporte+".rdlc";            
+            var dataSetReport = new ReportDataSource("DataSet",dataTable);
+            reportObject.Reset();
+            reportObject.LocalReport.ReportPath = nombreReporte;
+            reportObject.LocalReport.DataSources.Clear();
+            reportObject.LocalReport.DataSources.Add(dataSetReport);
+            reportObject.LocalReport.Refresh();
+            reportObject.RefreshReport();
 
-        private void efosButton1_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

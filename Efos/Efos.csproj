@@ -11,6 +11,22 @@
     <AssemblyName>Efos</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Carlos\Desktop\efos\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +46,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C94D88750C5DC36F780A3792B57D37DED2051123</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Efos_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlesEfos">
@@ -441,20 +469,14 @@
     <Compile Include="PostgreSQL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\DataSetOrdenTrabajo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetOrdenTrabajo.xsd</DependentUpon>
+    <Compile Include="Reportes\DataSet.cs">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\DataSetPersona.Designer.cs">
+    <Compile Include="Reportes\DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetPersona.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\DataSetReport.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetReport.xsd</DependentUpon>
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\SimpleReport.cs">
       <SubType>Form</SubType>
@@ -562,6 +584,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportOrdenTrabajo.rdlc" />
     <EmbeddedResource Include="Reportes\SimpleReport.resx">
       <DependentUpon>SimpleReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -576,6 +599,7 @@
     <None Include="DataSetPersonaInforme.xss">
       <DependentUpon>DataSetPersonaInforme.xsd</DependentUpon>
     </None>
+    <None Include="Efos_ClaveTemporal.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -590,38 +614,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Reportes\DataSetOrdenTrabajo.xsc">
-      <DependentUpon>DataSetOrdenTrabajo.xsd</DependentUpon>
+    <None Include="Reportes\DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\DataSetOrdenTrabajo.xsd">
+    <None Include="Reportes\DataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetOrdenTrabajo.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reportes\DataSetOrdenTrabajo.xss">
-      <DependentUpon>DataSetOrdenTrabajo.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSetPersona.xsc">
-      <DependentUpon>DataSetPersona.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSetPersona.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetPersona.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSetPersona.xss">
-      <DependentUpon>DataSetPersona.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSetReport.xsc">
-      <DependentUpon>DataSetReport.xsd</DependentUpon>
-    </None>
-    <None Include="Reportes\DataSetReport.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetReport.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reportes\DataSetReport.xss">
-      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    <None Include="Reportes\DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -701,6 +703,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\16x16\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

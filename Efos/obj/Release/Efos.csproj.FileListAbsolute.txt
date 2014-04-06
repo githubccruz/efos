@@ -52,3 +52,7 @@ C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\RdlC
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.exe
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.pdb
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.csprojResolveAssemblyReference.cache
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\bin\Release\Efos.exe.manifest
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\bin\Release\Efos.application
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.exe.manifest
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.application
