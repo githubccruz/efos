@@ -156,18 +156,6 @@
         10zaldLofKgAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="botonBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABZElEQVRYR+2Vi62DMAxFGYER
-        OgIjMAIjMAIjsElH6igdoc2RsGql+diUUKmqpej1JbbviZ2ErvvbqwKP8LM0crXqw8ISxi0Rzxxr+FRt
-        D8AUst4r4OTFB99dJmBx8BwJXzeRMfxlIMic3hgxbksBkFzmKfNQyMqabk+2EtYW9FtJ8Scx/9cMH4Gg
-        HckYK8Cidl/aeQyFr2iQ481yvY7nZSf012tyJsixG0CAJq968Ccmt9HiG0AQRu8kwbgDgJjDAOip14oA
-        1mTNWmAFaHYIrQCL6qOnDfgWr6EVgIMo7/+hD5EVAL9J7eawp9gDgO+sICit/hhRbiAP+RhR8nUbl4gS
-        EWlH6SnHB1+3Ia6/ZCRid9rwWSI/gSGWNXzcFotL0hSEO3ktICcuEGstwSfrNXEgmgFYxK13312Er4pD
-        q0976ko127mUqnSPm4sDkXtQThEHYEhAnCYubdAQp4u7r81PBDwBbK76nmhRAfsAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="botonCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

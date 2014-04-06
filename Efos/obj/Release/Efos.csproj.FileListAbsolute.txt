@@ -42,7 +42,6 @@ C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.FormMantenimientoTipoServicio.resources
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.FormProcesoCita.resources
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.FormProcesoFactura.resources
-C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.FormProcesoOrdenTrabajo.resources
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.MDIParent.resources
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.Properties.Resources.resources
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.Reportes.SimpleReport.resources
@@ -51,8 +50,8 @@ C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\RdlC
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\RdlCompile.compiled
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.exe
 C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.pdb
-C:\Users\Carlos\Documents\Visual Studio 2012\Projects\Efos\Efos\obj\Release\Efos.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\bin\Release\Efos.exe.manifest
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\bin\Release\Efos.application
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.exe.manifest
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.application
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.FormProceso.FormProcesoOrdenTrabajo.resources
