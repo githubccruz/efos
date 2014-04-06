@@ -1,4 +1,4 @@
-﻿namespace Efos
+﻿namespace Efos.FormProceso
 {
     partial class FormProcesoOrdenTrabajo
     {
@@ -58,12 +58,9 @@
             this.columnaCodigoDoctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaNombreDoctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaBotonEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.comboTipoNCF = new ControlesEfos.efosCombo();
-            this.efosLetrero7 = new ControlesEfos.efosLetrero();
-            this.letreroNCF = new ControlesEfos.efosLetrero();
             this.efosGroupBox2 = new ControlesEfos.efosGroupBox();
             this.efosLetrero11 = new ControlesEfos.efosLetrero();
-            this.efosCampo1 = new ControlesEfos.efosCampo();
+            this.campoTotal = new ControlesEfos.efosCampo();
             this.efosGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridServicios)).BeginInit();
             this.efosGroupBox2.SuspendLayout();
@@ -384,6 +381,7 @@
             this.dataGridServicios.StandardTab = true;
             this.dataGridServicios.TabIndex = 0;
             this.dataGridServicios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridServicios_CellClick);
+            this.dataGridServicios.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridServicios_CellValueChanged);
             // 
             // columnaCodigoServicio
             // 
@@ -450,44 +448,10 @@
             this.columnaBotonEliminar.UseColumnTextForButtonValue = true;
             this.columnaBotonEliminar.Width = 65;
             // 
-            // comboTipoNCF
-            // 
-            this.comboTipoNCF.CampoBD = null;
-            this.comboTipoNCF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTipoNCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboTipoNCF.FormattingEnabled = true;
-            this.comboTipoNCF.Location = new System.Drawing.Point(20, 7);
-            this.comboTipoNCF.Name = "comboTipoNCF";
-            this.comboTipoNCF.Size = new System.Drawing.Size(175, 23);
-            this.comboTipoNCF.Sorted = true;
-            this.comboTipoNCF.TabIndex = 32;
-            // 
-            // efosLetrero7
-            // 
-            this.efosLetrero7.AutoSize = true;
-            this.efosLetrero7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero7.Location = new System.Drawing.Point(570, 11);
-            this.efosLetrero7.Name = "efosLetrero7";
-            this.efosLetrero7.Size = new System.Drawing.Size(38, 15);
-            this.efosLetrero7.TabIndex = 33;
-            this.efosLetrero7.Text = "NCF:";
-            this.efosLetrero7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // letreroNCF
-            // 
-            this.letreroNCF.AutoSize = true;
-            this.letreroNCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.letreroNCF.Location = new System.Drawing.Point(608, 11);
-            this.letreroNCF.Name = "letreroNCF";
-            this.letreroNCF.Size = new System.Drawing.Size(159, 15);
-            this.letreroNCF.TabIndex = 34;
-            this.letreroNCF.Text = "A010010100100000001";
-            this.letreroNCF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // efosGroupBox2
             // 
             this.efosGroupBox2.Controls.Add(this.efosLetrero11);
-            this.efosGroupBox2.Controls.Add(this.efosCampo1);
+            this.efosGroupBox2.Controls.Add(this.campoTotal);
             this.efosGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.efosGroupBox2.Location = new System.Drawing.Point(945, 439);
             this.efosGroupBox2.Name = "efosGroupBox2";
@@ -506,16 +470,17 @@
             this.efosLetrero11.Text = "Total:";
             this.efosLetrero11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // efosCampo1
+            // campoTotal
             // 
-            this.efosCampo1.CampoBD = null;
-            this.efosCampo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCampo1.Limpiar = true;
-            this.efosCampo1.Location = new System.Drawing.Point(86, 17);
-            this.efosCampo1.Name = "efosCampo1";
-            this.efosCampo1.Size = new System.Drawing.Size(140, 21);
-            this.efosCampo1.SoloLectura = false;
-            this.efosCampo1.TabIndex = 0;
+            this.campoTotal.CampoBD = null;
+            this.campoTotal.Enabled = false;
+            this.campoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoTotal.Limpiar = true;
+            this.campoTotal.Location = new System.Drawing.Point(86, 17);
+            this.campoTotal.Name = "campoTotal";
+            this.campoTotal.Size = new System.Drawing.Size(140, 21);
+            this.campoTotal.SoloLectura = false;
+            this.campoTotal.TabIndex = 0;
             // 
             // FormProcesoOrdenTrabajo
             // 
@@ -523,9 +488,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1192, 500);
             this.Controls.Add(this.efosGroupBox2);
-            this.Controls.Add(this.letreroNCF);
-            this.Controls.Add(this.efosLetrero7);
-            this.Controls.Add(this.comboTipoNCF);
             this.Controls.Add(this.efosLetrero10);
             this.Controls.Add(this.campoCantidad);
             this.Controls.Add(this.efosLetrero9);
@@ -567,9 +529,6 @@
             this.Controls.SetChildIndex(this.efosLetrero9, 0);
             this.Controls.SetChildIndex(this.campoCantidad, 0);
             this.Controls.SetChildIndex(this.efosLetrero10, 0);
-            this.Controls.SetChildIndex(this.comboTipoNCF, 0);
-            this.Controls.SetChildIndex(this.efosLetrero7, 0);
-            this.Controls.SetChildIndex(this.letreroNCF, 0);
             this.Controls.SetChildIndex(this.efosGroupBox2, 0);
             this.efosGroupBox1.ResumeLayout(false);
             this.efosGroupBox1.PerformLayout();
@@ -597,9 +556,6 @@
         private ControlesEfos.efosButtonBuscador botonAgregar;
         private ControlesEfos.efosGroupBox efosGroupBox1;
         private ControlesEfos.efosDataGridView dataGridServicios;
-        private ControlesEfos.efosCombo comboTipoNCF;
-        private ControlesEfos.efosLetrero efosLetrero7;
-        private ControlesEfos.efosLetrero letreroNCF;
         private ControlesEfos.efosLetrero efosLetrero13;
         private ControlesEfos.efosLetrero efosLetrero12;
         private ControlesEfos.efosButtonBuscador lupaDoctor;
@@ -607,7 +563,7 @@
         private ControlesEfos.efosCampo campoCodigoDoctor;
         private ControlesEfos.efosGroupBox efosGroupBox2;
         private ControlesEfos.efosLetrero efosLetrero11;
-        private ControlesEfos.efosCampo efosCampo1;
+        private ControlesEfos.efosCampo campoTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigoServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaDescripcionServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigoTipoPrecio;

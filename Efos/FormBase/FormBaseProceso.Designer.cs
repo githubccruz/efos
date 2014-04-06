@@ -177,13 +177,13 @@
             // botonBuscar
             // 
             this.botonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonBuscar.Image = ((System.Drawing.Image)(resources.GetObject("botonBuscar.Image")));
+            this.botonBuscar.Image = global::Efos.Properties.Resources.printer;
             this.botonBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.botonBuscar.Location = new System.Drawing.Point(460, 429);
             this.botonBuscar.Name = "botonBuscar";
             this.botonBuscar.Size = new System.Drawing.Size(75, 50);
             this.botonBuscar.TabIndex = 2;
-            this.botonBuscar.Text = "&Buscar";
+            this.botonBuscar.Text = "&Imprimir";
             this.botonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.botonBuscar.UseVisualStyleBackColor = true;
             this.botonBuscar.Click += new System.EventHandler(this.botonBuscar_Click);
