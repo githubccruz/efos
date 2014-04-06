@@ -48,7 +48,7 @@ namespace Efos
             string command = String.Format("select inserta_{0}({1},'{2}','{3}',{4});", datos);
             try
             {
-                txtCodigo.Text = PostgreSQL.Execute(command).Rows[0][0].ToString();
+                txtCodigo.Text = PostgreSql.Execute(command).Rows[0][0].ToString();
             }
             catch
             {
@@ -78,13 +78,13 @@ namespace Efos
                 string command = String.Format("SELECT {0}, {1}, {2}, {3} FROM {4} WHERE {5} = {6}", datos);
                 try
                 {
-                    DataTable informacion = PostgreSQL.Execute(command);                    
-                    PostgreSQL.FillComboBox(combo, this.campoCodigoCombo, this.campoDescripcionCombo, this.tablaCombo);
+                    DataTable informacion = PostgreSql.Execute(command);                    
+                    PostgreSql.FillComboBox(combo, this.campoCodigoCombo, this.campoDescripcionCombo, this.tablaCombo);
                     txtCodigo.Text = informacion.Rows[0][datos[0]].ToString();
                     txtDescripcion.Text = informacion.Rows[0][datos[1]].ToString();
                     int display = Convert.ToInt32(informacion.Rows[0][datos[2]].ToString());
                     string cmd = String.Format("SELECT {0} FROM {1} WHERE {2}={3}", this.campoDescripcionCombo, this.tablaCombo, this.campoCodigoCombo, display.ToString());                    
-                    string descripcion = PostgreSQL.Execute(cmd).Rows[0][0].ToString();
+                    string descripcion = PostgreSql.Execute(cmd).Rows[0][0].ToString();
                     combo.SelectedIndex = combo.FindString(descripcion);
                     checkEstado.Checked = Convert.ToBoolean(informacion.Rows[0][datos[3]].ToString());
 
@@ -111,7 +111,7 @@ namespace Efos
 
         private void AccionNuevo()
         {            
-            PostgreSQL.FillComboBox(combo,this.campoCodigoCombo,this.campoDescripcionCombo,this.tablaCombo,filter:"estado = true");
+            PostgreSql.FillComboBox(combo,this.campoCodigoCombo,this.campoDescripcionCombo,this.tablaCombo,filter:"estado = true");
         }
 
         private void botonNuevo_Click(object sender, EventArgs e)

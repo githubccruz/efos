@@ -34,12 +34,12 @@ namespace Efos
             columnaTipoPrecio.DataSource = null;
 
             if(estado){
-                PostgreSQL.FillComboBox(comboTipoProducto, "coditipr", "desctipr", "tipo_producto_encabezado", filter: "estado=true");
-                PostgreSQL.FillComboBox(columnaTipoPrecio, "coditipr", "desctipr", "tipo_precio_producto_encabezado",filter:"estado=true");
+                PostgreSql.FillComboBox(comboTipoProducto, "coditipr", "desctipr", "tipo_producto_encabezado", filter: "estado=true");
+                PostgreSql.FillComboBox(columnaTipoPrecio, "coditipr", "desctipr", "tipo_precio_producto_encabezado",filter:"estado=true");
             }
             else{
-                PostgreSQL.FillComboBox(comboTipoProducto, "coditipr", "desctipr", "tipo_producto_encabezado");
-                PostgreSQL.FillComboBox(columnaTipoPrecio, "coditipr", "desctipr", "tipo_precio_producto_encabezado");
+                PostgreSql.FillComboBox(comboTipoProducto, "coditipr", "desctipr", "tipo_producto_encabezado");
+                PostgreSql.FillComboBox(columnaTipoPrecio, "coditipr", "desctipr", "tipo_precio_producto_encabezado");
             }
         }
         private void botonNuevo_Click(object sender, EventArgs e)
@@ -76,14 +76,14 @@ namespace Efos
             MessageBox.Show("Query: "+cmd);
             try
             {
-                PostgreSQL.Execute(cmd);
+                PostgreSql.Execute(cmd);
             }
             catch (Exception error)
             {
                 MessageBox.Show("Error!!","Guardando Informacion ===>"+error.Message);                
             }
             cmd = String.Format("SELECT limpiaCodigoProductoPrecio({0})",txtCodigo.Text);
-            PostgreSQL.Execute(cmd);
+            PostgreSql.Execute(cmd);
 
             foreach (DataGridViewRow row in gridPrecioProducto.Rows)
             {
@@ -93,7 +93,7 @@ namespace Efos
 
                     cmd = String.Format("SELECT inserta_producto_vs_precio_detalle({0},{1}::numeric(20,4),{2})", txtCodigo.Text, row.Cells[1].Value.ToString(), row.Cells[0].Value.ToString());
                     MessageBox.Show("Test: " + cmd);
-                    PostgreSQL.Execute(cmd);
+                    PostgreSql.Execute(cmd);
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace Efos
             cargarInformacionCombos(false);
             
             AccionCodigoValidado();
-            DataTable data = PostgreSQL.Execute("SELECT * FROM producto_encabezado WHERE codiprod="+txtCodigo.Text.Trim());
+            DataTable data = PostgreSql.Execute("SELECT * FROM producto_encabezado WHERE codiprod="+txtCodigo.Text.Trim());
             if (data.Rows != null)
             {
                 txtCodigo.Text = data.Rows[0]["codiprod"].ToString();
@@ -118,7 +118,7 @@ namespace Efos
                 campoFechaCreacion.Text = data.Rows[0]["fechprod"].ToString().Substring(0,10);                    
             }
 
-            data = PostgreSQL.Execute("select * from producto_vs_precio_detalle WHERE codiprod="+txtCodigo.Text.Trim());
+            data = PostgreSql.Execute("select * from producto_vs_precio_detalle WHERE codiprod="+txtCodigo.Text.Trim());
             int indexRow = 0;
             gridPrecioProducto.Rows.Clear();
             foreach (DataRow row in data.Rows)

@@ -73,17 +73,14 @@
             this.facturasToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pacientesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cobrosAPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuestionarioToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.facturasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeTrabajoLaboratorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odontogramaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recetasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notasDeDebitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notasDeCreditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuestionarioToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cobrosAPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuestionarioToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.miscelaneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,6 +138,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.estadoConexion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.comprobanteFiscalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -460,21 +458,31 @@
             // procesosToolStripMenuItem
             // 
             this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cobrosAPacientesToolStripMenuItem,
+            this.cuestionarioToolStripMenuItem2,
             this.facturasToolStripMenuItem1,
             this.ordenesDeTrabajoToolStripMenuItem,
             this.ordenesDeTrabajoLaboratorioToolStripMenuItem,
             this.ordenesDeCompraToolStripMenuItem,
             this.odontogramaToolStripMenuItem,
-            this.recetasToolStripMenuItem,
-            this.notasDeDebitoToolStripMenuItem,
-            this.notasDeCreditoToolStripMenuItem,
-            this.cuestionarioToolStripMenuItem2,
-            this.cobrosAPacientesToolStripMenuItem,
-            this.cuestionarioToolStripMenuItem4});
+            this.recetasToolStripMenuItem});
             this.procesosToolStripMenuItem.Image = global::Efos.Properties.Resources.MD_audio;
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.procesosToolStripMenuItem.Text = "Procesos";
+            // 
+            // cobrosAPacientesToolStripMenuItem
+            // 
+            this.cobrosAPacientesToolStripMenuItem.Name = "cobrosAPacientesToolStripMenuItem";
+            this.cobrosAPacientesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.cobrosAPacientesToolStripMenuItem.Text = "Cobros a Pacientes";
+            this.cobrosAPacientesToolStripMenuItem.Click += new System.EventHandler(this.cobrosAPacientesToolStripMenuItem_Click);
+            // 
+            // cuestionarioToolStripMenuItem2
+            // 
+            this.cuestionarioToolStripMenuItem2.Name = "cuestionarioToolStripMenuItem2";
+            this.cuestionarioToolStripMenuItem2.Size = new System.Drawing.Size(241, 22);
+            this.cuestionarioToolStripMenuItem2.Text = "Cuestionario";
             // 
             // facturasToolStripMenuItem1
             // 
@@ -523,46 +531,15 @@
             this.recetasToolStripMenuItem.Text = "Recetas";
             this.recetasToolStripMenuItem.Click += new System.EventHandler(this.recetasToolStripMenuItem_Click);
             // 
-            // notasDeDebitoToolStripMenuItem
-            // 
-            this.notasDeDebitoToolStripMenuItem.Name = "notasDeDebitoToolStripMenuItem";
-            this.notasDeDebitoToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.notasDeDebitoToolStripMenuItem.Text = "Notas de Debito";
-            // 
-            // notasDeCreditoToolStripMenuItem
-            // 
-            this.notasDeCreditoToolStripMenuItem.Name = "notasDeCreditoToolStripMenuItem";
-            this.notasDeCreditoToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.notasDeCreditoToolStripMenuItem.Text = "Notas de Credito";
-            // 
-            // cuestionarioToolStripMenuItem2
-            // 
-            this.cuestionarioToolStripMenuItem2.Name = "cuestionarioToolStripMenuItem2";
-            this.cuestionarioToolStripMenuItem2.Size = new System.Drawing.Size(241, 22);
-            this.cuestionarioToolStripMenuItem2.Text = "Cuestionario";
-            // 
-            // cobrosAPacientesToolStripMenuItem
-            // 
-            this.cobrosAPacientesToolStripMenuItem.Name = "cobrosAPacientesToolStripMenuItem";
-            this.cobrosAPacientesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.cobrosAPacientesToolStripMenuItem.Text = "Cobros a Pacientes";
-            // 
-            // cuestionarioToolStripMenuItem4
-            // 
-            this.cuestionarioToolStripMenuItem4.Name = "cuestionarioToolStripMenuItem4";
-            this.cuestionarioToolStripMenuItem4.Size = new System.Drawing.Size(241, 22);
-            this.cuestionarioToolStripMenuItem4.Text = "Cuestionario";
-            this.cuestionarioToolStripMenuItem4.Click += new System.EventHandler(this.cuestionarioToolStripMenuItem4_Click);
-            // 
             // miscelaneosToolStripMenuItem
             // 
             this.miscelaneosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miscelaneosToolStripMenuItem1,
             this.doctorToolStripMenuItem,
             this.pacienteToolStripMenuItem,
             this.ingredienteToolStripMenuItem,
             this.nacionalidadToolStripMenuItem,
             this.productoToolStripMenuItem,
-            this.miscelaneosToolStripMenuItem1,
             this.insumoToolStripMenuItem,
             this.servicioToolStripMenuItem});
             this.miscelaneosToolStripMenuItem.Image = global::Efos.Properties.Resources.notepad;
@@ -573,35 +550,35 @@
             // doctorToolStripMenuItem
             // 
             this.doctorToolStripMenuItem.Name = "doctorToolStripMenuItem";
-            this.doctorToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.doctorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.doctorToolStripMenuItem.Text = "Doctor";
             this.doctorToolStripMenuItem.Click += new System.EventHandler(this.doctorToolStripMenuItem_Click);
             // 
             // pacienteToolStripMenuItem
             // 
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
-            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pacienteToolStripMenuItem.Text = "Paciente";
             this.pacienteToolStripMenuItem.Click += new System.EventHandler(this.pacienteToolStripMenuItem_Click);
             // 
             // ingredienteToolStripMenuItem
             // 
             this.ingredienteToolStripMenuItem.Name = "ingredienteToolStripMenuItem";
-            this.ingredienteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.ingredienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ingredienteToolStripMenuItem.Text = "Ingrediente";
             this.ingredienteToolStripMenuItem.Click += new System.EventHandler(this.ingredienteToolStripMenuItem_Click);
             // 
             // nacionalidadToolStripMenuItem
             // 
             this.nacionalidadToolStripMenuItem.Name = "nacionalidadToolStripMenuItem";
-            this.nacionalidadToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.nacionalidadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nacionalidadToolStripMenuItem.Text = "Nacionalidad";
             this.nacionalidadToolStripMenuItem.Click += new System.EventHandler(this.nacionalidadToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
@@ -619,7 +596,7 @@
             this.medicosToolStripMenuItem1,
             this.tiposToolStripMenuItem});
             this.miscelaneosToolStripMenuItem1.Name = "miscelaneosToolStripMenuItem1";
-            this.miscelaneosToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.miscelaneosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.miscelaneosToolStripMenuItem1.Text = "Miscelaneos";
             // 
             // bancosToolStripMenuItem
@@ -801,6 +778,7 @@
             // tiposToolStripMenuItem
             // 
             this.tiposToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comprobanteFiscalToolStripMenuItem,
             this.cuestionariosToolStripMenuItem,
             this.descuentosEmpleadosToolStripMenuItem,
             this.empleadosToolStripMenuItem,
@@ -935,14 +913,14 @@
             // insumoToolStripMenuItem
             // 
             this.insumoToolStripMenuItem.Name = "insumoToolStripMenuItem";
-            this.insumoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.insumoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.insumoToolStripMenuItem.Text = "Insumo";
             this.insumoToolStripMenuItem.Click += new System.EventHandler(this.insumoToolStripMenuItem_Click);
             // 
             // servicioToolStripMenuItem
             // 
             this.servicioToolStripMenuItem.Name = "servicioToolStripMenuItem";
-            this.servicioToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.servicioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.servicioToolStripMenuItem.Text = "Servicio";
             this.servicioToolStripMenuItem.Click += new System.EventHandler(this.servicioToolStripMenuItem_Click);
             // 
@@ -1005,6 +983,13 @@
             this.estadoConexion.Size = new System.Drawing.Size(58, 17);
             this.estadoConexion.Text = "Estado";
             this.estadoConexion.Click += new System.EventHandler(this.confirmarConexion);
+            // 
+            // comprobanteFiscalToolStripMenuItem
+            // 
+            this.comprobanteFiscalToolStripMenuItem.Name = "comprobanteFiscalToolStripMenuItem";
+            this.comprobanteFiscalToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.comprobanteFiscalToolStripMenuItem.Text = "Comprobante Fiscal";
+            this.comprobanteFiscalToolStripMenuItem.Click += new System.EventHandler(this.comprobanteFiscalToolStripMenuItem_Click);
             // 
             // MDIParent
             // 
@@ -1130,8 +1115,6 @@
         private System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ingredienteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nacionalidadToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem notasDeDebitoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem notasDeCreditoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuestionarioToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem cuestionarioToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem testFormToolStripMenuItem;
@@ -1141,7 +1124,7 @@
         private System.Windows.Forms.ToolStripMenuItem insumoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem servicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cobrosAPacientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cuestionarioToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem comprobanteFiscalToolStripMenuItem;
     }
 }
 

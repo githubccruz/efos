@@ -94,14 +94,14 @@ namespace Efos
 
             tabPanel.SelectedTab = tabDatosPersonales;
 
-            PostgreSQL.FillComboBox(columnTipoIdentificacion, "coditiid", "desctiid", "tipo_identificacion_encabezado", filter: "estado=true");
-            PostgreSQL.FillComboBox(columnTipoTelefono, "coditite", "desctite", "tipo_telefono_encabezado", filter: "estado=true");
-            PostgreSQL.FillComboBox(columnSector, "codisect", "descsect", "sector_encabezado", filter: "estado=true");
+            PostgreSql.FillComboBox(columnTipoIdentificacion, "coditiid", "desctiid", "tipo_identificacion_encabezado", filter: "estado=true");
+            PostgreSql.FillComboBox(columnTipoTelefono, "coditite", "desctite", "tipo_telefono_encabezado", filter: "estado=true");
+            PostgreSql.FillComboBox(columnSector, "codisect", "descsect", "sector_encabezado", filter: "estado=true");
 
-            PostgreSQL.FillComboBox(cmbNacionalidad, "codinaci", "descnaci", "nacionalidad_encabezado", filter: "estado=true");
-            PostgreSQL.FillComboBox(cmbSexo, "codisexo", "descsexo", "sexo_encabezado", filter: "estado=true");
-            PostgreSQL.FillComboBox(cmbEstadoCivil, "codiesci", "descesci", "estado_civil_encabezado", filter: "estado=true");
-            PostgreSQL.FillComboBox(cmbNivelAcademico, "codiniac", "descniac", "nivel_academico_encabezado", filter: "estado=true");
+            PostgreSql.FillComboBox(cmbNacionalidad, "codinaci", "descnaci", "nacionalidad_encabezado", filter: "estado=true");
+            PostgreSql.FillComboBox(cmbSexo, "codisexo", "descsexo", "sexo_encabezado", filter: "estado=true");
+            PostgreSql.FillComboBox(cmbEstadoCivil, "codiesci", "descesci", "estado_civil_encabezado", filter: "estado=true");
+            PostgreSql.FillComboBox(cmbNivelAcademico, "codiniac", "descniac", "nivel_academico_encabezado", filter: "estado=true");
         }
 
         private void botonNuevo_Click(object sender, EventArgs e)
@@ -132,10 +132,10 @@ namespace Efos
             string cmd = (String.Format("SELECT inserta_persona_encabezado({0}, {1}, {2}, {3}, {4}, {5}, '{6}', '{7}', '{8}', '{9}', '{10}');",datos));
             //MessageBox.Show("Query is ==> "+cmd);
             
-            string codigo = PostgreSQL.Execute(cmd).Rows[0][0].ToString();
+            string codigo = PostgreSql.Execute(cmd).Rows[0][0].ToString();
             imagePerson.Enabled = false;
             codigoGenerado = codigo;
-            PostgreSQL.Execute(String.Format("SELECT limpiaCodigoIdentificacionPersona({0})",codigo));
+            PostgreSql.Execute(String.Format("SELECT limpiaCodigoIdentificacionPersona({0})",codigo));
             
             foreach (DataGridViewRow row in gridIdentificacion.Rows)
             {
@@ -143,19 +143,19 @@ namespace Efos
                 {
                     cmd = String.Format("SELECT inserta_persona_vs_identificacion_detalle({0},{1},'{2}');", codigo, row.Cells[0].Value.ToString(), row.Cells[1].Value);
 
-                    PostgreSQL.Execute(cmd);
+                    PostgreSql.Execute(cmd);
                 }
             }
-            PostgreSQL.Execute(String.Format("SELECT limpiaCodigoTelefonoPersona({0})", codigo));
+            PostgreSql.Execute(String.Format("SELECT limpiaCodigoTelefonoPersona({0})", codigo));
             foreach (DataGridViewRow row in gridTelefono.Rows)
             {
                 if (row.Cells[0].Value != null && !String.IsNullOrEmpty(row.Cells[0].Value.ToString()))
                 {
                     cmd = String.Format("SELECT inserta_persona_vs_telefono_detalle({0},'{2}',{1});", codigo, row.Cells[0].Value.ToString(), row.Cells[1].Value);
-                    PostgreSQL.Execute(cmd);
+                    PostgreSql.Execute(cmd);
                 }
             }
-            PostgreSQL.Execute(String.Format("SELECT limpiaCodigoDireccionPersona({0})", codigo));
+            PostgreSql.Execute(String.Format("SELECT limpiaCodigoDireccionPersona({0})", codigo));
             foreach (DataGridViewRow row in gridDireccion.Rows)
             {
                 if (row.Cells[0].Value != null && !String.IsNullOrEmpty(row.Cells[0].Value.ToString()))
@@ -163,12 +163,12 @@ namespace Efos
                     cmd = String.Format("SELECT inserta_persona_vs_direccion_detalle({0},'{1}','{2}','{3}','{4}',{5});",
                         codigo, row.Cells[0].Value, row.Cells[1].Value,row.Cells[2].Value,row.Cells[3].Value,row.Cells[4].Value.ToString());
                     //MessageBox.Show("Test Query: "+cmd);
-                    PostgreSQL.Execute(cmd);
+                    PostgreSql.Execute(cmd);
                 }
             }
             HabilitarDataGrid(false);
             if (!String.IsNullOrEmpty(imagePerson.RutaImagen) && imagePerson.RutaImagen.Trim() != "")
-                PostgreSQL.guardarImagen("persona_encabezado", "coditerc", "imagpers", codigo, imagePerson.RutaImagen);
+                PostgreSql.guardarImagen("persona_encabezado", "coditerc", "imagpers", codigo, imagePerson.RutaImagen);
         }
 
         private void botonBuscarLupa_Click(object sender, EventArgs e)
@@ -228,7 +228,7 @@ namespace Efos
                 cargarInformacion();
                 string codigo = txtCodigo.Text.ToString().Trim();
                 limpiarControles(this.Controls);                
-                DataTable data = PostgreSQL.Execute("SELECT * FROM vista_persona_datosPersonales where codigo=" + codigo);                
+                DataTable data = PostgreSql.Execute("SELECT * FROM vista_persona_datosPersonales where codigo=" + codigo);                
                 txtCodigo.Text = data.Rows[0]["codigo"].ToString();                
                 cmpFechaCreacion.Text = data.Rows[0]["fechacreacion"].ToString().Substring(0,10);                
                 cmpNombre1.Text = data.Rows[0]["nombre1"].ToString();
@@ -243,7 +243,7 @@ namespace Efos
                 cmbNacionalidad.SelectedIndex = cmbNacionalidad.FindString(data.Rows[0]["nacionalidad"].ToString());
                 cmbSexo.SelectedIndex = cmbSexo.FindString(data.Rows[0]["sexo"].ToString());
                 cmbNivelAcademico.SelectedIndex = cmbNivelAcademico.FindString(data.Rows[0]["nivelacademico"].ToString());
-                data = PostgreSQL.Execute("SELECT * FROM vista_identificacion WHERE codigo=" + codigo);
+                data = PostgreSql.Execute("SELECT * FROM vista_identificacion WHERE codigo=" + codigo);
 
                 int indexRow = 0;
                 if (data!=null)
@@ -254,7 +254,7 @@ namespace Efos
                     gridIdentificacion.Rows[indexRow].Cells[1].Value = row["referencia"].ToString(); 
                     indexRow++;                    
 	            }                
-                data = PostgreSQL.Execute("SELECT * FROM vista_direccion_persona WHERE codigo=" + codigo);
+                data = PostgreSql.Execute("SELECT * FROM vista_direccion_persona WHERE codigo=" + codigo);
                 indexRow = 0;
                 if (data != null)
                 foreach (DataRow row in data.Rows)
@@ -267,7 +267,7 @@ namespace Efos
                     gridDireccion.Rows[indexRow].Cells[4].Value = Convert.ToInt32(row["sector"]);                    
                     indexRow++;                    
                 }                
-                data = PostgreSQL.Execute("SELECT * FROM vista_telefono_persona WHERE codigo=" + codigo);
+                data = PostgreSql.Execute("SELECT * FROM vista_telefono_persona WHERE codigo=" + codigo);
                 indexRow = 0;
                 if (data != null)
                 foreach (DataRow row in data.Rows)
@@ -278,7 +278,7 @@ namespace Efos
                     indexRow++;                    
                 }
                 
-                Image imagen = PostgreSQL.extraerImagen(codigo);
+                Image imagen = PostgreSql.extraerImagen(codigo);
 
                 if (imagen != null)
                     imagePerson.Image = imagen;

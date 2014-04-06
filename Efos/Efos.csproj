@@ -298,6 +298,12 @@
     <Compile Include="FormMantenimiento\FormMantenimientoSexo.Designer.cs">
       <DependentUpon>FormMantenimientoSexo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMantenimiento\FormMantenimientoTipoComprobanteFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMantenimiento\FormMantenimientoTipoComprobanteFiscal.Designer.cs">
+      <DependentUpon>FormMantenimientoTipoComprobanteFiscal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMantenimiento\FormMantenimientoTipoCuestionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -551,6 +557,9 @@
     <EmbeddedResource Include="FormMantenimiento\FormMantenimientoServicio.resx">
       <DependentUpon>FormMantenimientoServicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMantenimiento\FormMantenimientoTipoComprobanteFiscal.resx">
+      <DependentUpon>FormMantenimientoTipoComprobanteFiscal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMantenimiento\FormMantenimientoTipoPrecioServicio.resx">
       <DependentUpon>FormMantenimientoTipoPrecioServicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -574,6 +583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProceso\FormProcesoOrdenTrabajo.resx">
       <DependentUpon>FormProcesoOrdenTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProceso\FormProcesoPago.resx">
+      <DependentUpon>FormProcesoPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>

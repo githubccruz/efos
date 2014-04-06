@@ -27,7 +27,7 @@ namespace Efos
         }
         private void cargarInformacion()
         {
-            PostgreSQL.FillComboBox(cmbTipoPaciente,"coditipa","desctipa","tipo_paciente_encabezado",filter:"estado=true");
+            PostgreSql.FillComboBox(cmbTipoPaciente,"coditipa","desctipa","tipo_paciente_encabezado",filter:"estado=true");
         }
 
         private void botonNuevo_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace Efos
             if (cmbTipoPaciente.SelectedIndex != -1)
             {
                 string cmd = String.Format("SELECT inserta_paciente_encabezado({0},{1})", codigoGenerado, cmbTipoPaciente.SelectedValue);
-                PostgreSQL.Execute(cmd);
+                PostgreSql.Execute(cmd);
                 txtCodigo.Text = codigoGenerado;
             }
             else
@@ -75,7 +75,7 @@ namespace Efos
             {
                 return;
             }            
-            DataTable data = PostgreSQL.Execute("SELECT * FROM vista_paciente_tipo WHERE codigo=" + txtCodigo.Text);
+            DataTable data = PostgreSql.Execute("SELECT * FROM vista_paciente_tipo WHERE codigo=" + txtCodigo.Text);
             try
             {
                 cmbTipoPaciente.SelectedValue = Convert.ToInt32(data.Rows[0][1].ToString());

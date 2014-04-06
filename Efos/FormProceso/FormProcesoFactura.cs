@@ -98,13 +98,13 @@ namespace Efos
         {
             if (estado)
             {
-                PostgreSQL.FillComboBox(comboTipoFactura, "coditifa", "desctifa", "tipo_factura_encabezado", filter: "estado=true");
-                PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado", filter: "estado=true");
+                PostgreSql.FillComboBox(comboTipoFactura, "coditifa", "desctifa", "tipo_factura_encabezado", filter: "estado=true");
+                PostgreSql.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado", filter: "estado=true");
             }
             else
             {
-                PostgreSQL.FillComboBox(comboTipoFactura, "coditifa", "desctifa", "tipo_factura_encabezado");
-                PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado");
+                PostgreSql.FillComboBox(comboTipoFactura, "coditifa", "desctifa", "tipo_factura_encabezado");
+                PostgreSql.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado");
             }
         }
 
@@ -123,7 +123,7 @@ namespace Efos
             string cmd = String.Format("SELECT * FROM producto_encabezado WHERE codiprod={0}",campoCodigo.Text);
             try
             {
-                DataTable data = PostgreSQL.Execute(cmd);
+                DataTable data = PostgreSql.Execute(cmd);
                 campoDescripcion.Text = data.Rows[0][campoDescripcion.CampoBD].ToString();
                 campoPrecio.Text = data.Rows[0][campoPrecio.CampoBD].ToString();
                 campoCantidad.Focus();
@@ -153,7 +153,7 @@ namespace Efos
             try
             {
                 string cmd = String.Format("SELECT * FROM vista_persona_consulta WHERE codigo in (SELECT coditerc FROM paciente_encabezado) AND codigo={0} AND estado=true", txtCodigoPaciente.Text);                
-                DataTable data = PostgreSQL.Execute(cmd);                
+                DataTable data = PostgreSql.Execute(cmd);                
                 letreroNombrePaciente.Text = data.Rows[0]["nombre"].ToString();                
                 data.Dispose();                
             }

@@ -30,7 +30,7 @@ namespace Efos.FormProceso
             try
             {
                 var cmd = String.Format("SELECT * FROM vista_persona_consulta WHERE codigo in (SELECT coditerc FROM paciente_encabezado) AND codigo={0} AND estado=true", txtCodigoPaciente.Text);
-                DataTable data = PostgreSQL.Execute(cmd);
+                DataTable data = PostgreSql.Execute(cmd);
                 letreroNombrePaciente.Text = data.Rows[0]["nombre"].ToString();
                 data.Dispose();
                 campoCodigo.Enabled = true;
@@ -157,7 +157,7 @@ namespace Efos.FormProceso
             var cmd = String.Format("SELECT * FROM vista_servicio_precios WHERE codiserv={0} AND estado_servicio=true AND estado_precio=true", campoCodigo.Text);
             try
             {
-                _data = PostgreSQL.Execute(cmd);
+                _data = PostgreSql.Execute(cmd);
 
                 campoDescripcioServicio.Text = _data.Rows[0][campoDescripcioServicio.CampoBD].ToString();
                 comboTipoPrecio.DataSource = _data;
@@ -207,7 +207,7 @@ namespace Efos.FormProceso
                         "select * from vista_persona_consulta where codigo in (select coditerc from doctor_encabezado ) and codigo={0}",
                         campoCodigoDoctor.Text);                
 
-                DataTable data = PostgreSQL.Execute(cmd);
+                DataTable data = PostgreSql.Execute(cmd);
                 campoDescripcionDoctor.Text = data.Rows[0]["nombre"].ToString();
 
             }
@@ -239,7 +239,7 @@ namespace Efos.FormProceso
                     "(select codiesot from estado_orden_trabajo_encabezado where descesot='PENDIENTE' limit 1));", datos);
 
                 //MessageBox.Show("Test Query: " + commando);
-                var data = PostgreSQL.Execute(commando);
+                var data = PostgreSql.Execute(commando);
                 var codigo = data.Rows[0][0].ToString();
                 foreach (DataGridViewRow row in dataGridServicios.Rows)
                 {
@@ -252,7 +252,7 @@ namespace Efos.FormProceso
                         row.Cells[columnaCodigoDoctor.Index].Value
                         );
 
-                    PostgreSQL.Execute(commando);
+                    PostgreSql.Execute(commando);
                 }
             }
             catch(Exception){

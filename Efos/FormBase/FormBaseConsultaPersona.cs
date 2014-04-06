@@ -57,7 +57,7 @@ namespace Efos
             }
             
             
-            DataTable data = PostgreSQL.Execute(cmd);
+            DataTable data = PostgreSql.Execute(cmd);
             DataGrid.Rows.Clear();
             int indexRow= 0;
             foreach (DataRow row in data.Rows)

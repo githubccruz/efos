@@ -36,7 +36,7 @@ namespace Efos
             {
                 string[] datos = { txtCodigo.Text, txtDescripcion.Text, txtCosto.Text, checkEstado.Checked.ToString(),txtExistencia.Text};
                 string cmd = String.Format("SELECT inserta_insumo_encabezado({0},'{1}',{2},{3},{4});", datos);
-                DataTable data = PostgreSQL.Execute(cmd);
+                DataTable data = PostgreSql.Execute(cmd);
                 txtCodigo.Text = data.Rows[0][0].ToString();
                 data.Dispose();
             }
@@ -55,7 +55,7 @@ namespace Efos
             {
                 string codigo = txtCodigo.Text.ToString().Trim();
                 string cmd = String.Format("SELECT * FROM insumo_encabezado WHERE codiinsu={0}", codigo);
-                DataTable data = PostgreSQL.Execute(cmd);
+                DataTable data = PostgreSql.Execute(cmd);
                 txtDescripcion.Text = data.Rows[0][txtDescripcion.CampoBD].ToString();
                 txtCosto.Text = data.Rows[0][txtCosto.CampoBD].ToString();
                 checkEstado.Checked = Convert.ToBoolean(data.Rows[0][checkEstado.CampoBD].ToString());

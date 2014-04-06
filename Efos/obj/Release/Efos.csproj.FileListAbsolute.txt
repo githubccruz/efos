@@ -55,3 +55,6 @@ C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\bin\Release\Efos
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.exe.manifest
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.application
 C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.FormProceso.FormProcesoOrdenTrabajo.resources
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.csprojResolveAssemblyReference.cache
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.FormProceso.FormProcesoPago.resources
+C:\Users\Carlos\documents\visual studio 2012\Projects\efos\Efos\obj\Release\Efos.FormMantenimiento.FormMantenimientoTipoComprobanteFiscal.resources
