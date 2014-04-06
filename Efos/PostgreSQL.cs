@@ -61,6 +61,7 @@ namespace Efos
             if (string.IsNullOrEmpty(filter) == false)
             {
                 cmd += String.Format(" where {0} order by {1}" , filter,displayMember);
+
             }
             combo.DataSource = Execute(cmd);            
             combo.DisplayMember = displayMember;
