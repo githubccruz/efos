@@ -82,6 +82,8 @@
             this.notasDeDebitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notasDeCreditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuestionarioToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cobrosAPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuestionarioToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.miscelaneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,9 +141,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.estadoConexion = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.efosCalendar1 = new ControlesEfos.efosCalendar();
-            this.cobrosAPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cuestionarioToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -541,6 +540,19 @@
             this.cuestionarioToolStripMenuItem2.Name = "cuestionarioToolStripMenuItem2";
             this.cuestionarioToolStripMenuItem2.Size = new System.Drawing.Size(241, 22);
             this.cuestionarioToolStripMenuItem2.Text = "Cuestionario";
+            // 
+            // cobrosAPacientesToolStripMenuItem
+            // 
+            this.cobrosAPacientesToolStripMenuItem.Name = "cobrosAPacientesToolStripMenuItem";
+            this.cobrosAPacientesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.cobrosAPacientesToolStripMenuItem.Text = "Cobros a Pacientes";
+            // 
+            // cuestionarioToolStripMenuItem4
+            // 
+            this.cuestionarioToolStripMenuItem4.Name = "cuestionarioToolStripMenuItem4";
+            this.cuestionarioToolStripMenuItem4.Size = new System.Drawing.Size(241, 22);
+            this.cuestionarioToolStripMenuItem4.Text = "Cuestionario";
+            this.cuestionarioToolStripMenuItem4.Click += new System.EventHandler(this.cuestionarioToolStripMenuItem4_Click);
             // 
             // miscelaneosToolStripMenuItem
             // 
@@ -994,38 +1006,11 @@
             this.estadoConexion.Text = "Estado";
             this.estadoConexion.Click += new System.EventHandler(this.confirmarConexion);
             // 
-            // efosCalendar1
-            // 
-            this.efosCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
-            this.efosCalendar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.efosCalendar1.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.efosCalendar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCalendar1.Location = new System.Drawing.Point(598, 24);
-            this.efosCalendar1.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
-            this.efosCalendar1.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
-            this.efosCalendar1.Name = "efosCalendar1";
-            this.efosCalendar1.ShowWeekNumbers = true;
-            this.efosCalendar1.TabIndex = 4;
-            // 
-            // cobrosAPacientesToolStripMenuItem
-            // 
-            this.cobrosAPacientesToolStripMenuItem.Name = "cobrosAPacientesToolStripMenuItem";
-            this.cobrosAPacientesToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.cobrosAPacientesToolStripMenuItem.Text = "Cobros a Pacientes";
-            // 
-            // cuestionarioToolStripMenuItem4
-            // 
-            this.cuestionarioToolStripMenuItem4.Name = "cuestionarioToolStripMenuItem4";
-            this.cuestionarioToolStripMenuItem4.Size = new System.Drawing.Size(241, 22);
-            this.cuestionarioToolStripMenuItem4.Text = "Cuestionario";
-            this.cuestionarioToolStripMenuItem4.Click += new System.EventHandler(this.cuestionarioToolStripMenuItem4_Click);
-            // 
             // MDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 451);
-            this.Controls.Add(this.efosCalendar1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -1136,7 +1121,6 @@
         private System.Windows.Forms.ToolStripMenuItem pagoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem personaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem precioToolStripMenuItem1;
-        private ControlesEfos.efosCalendar efosCalendar1;
         private System.Windows.Forms.ToolStripMenuItem itasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem pacientesToolStripMenuItem2;

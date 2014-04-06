@@ -241,7 +241,7 @@ namespace Efos
                     + "{1}," +
                     "(select codiesot from estado_orden_trabajo_encabezado where descesot='PENDIENTE' limit 1));", datos);
 
-                MessageBox.Show("Test Query: " + commando);
+                //MessageBox.Show("Test Query: " + commando);
                 var data = PostgreSQL.Execute(commando);
                 var codigo = data.Rows[0][0].ToString();
                 foreach (DataGridViewRow row in dataGridServicios.Rows)
@@ -272,7 +272,6 @@ namespace Efos
             if (e.KeyChar == (char)(Keys.Enter))
             {
                 efosButtonBuscador2_Click(null, null);
-                return;
             }
         }
     }
