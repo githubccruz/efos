@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Efos.FormMantenimiento;
 using Efos.FormProceso;
 
 namespace Efos
@@ -29,7 +30,7 @@ namespace Efos
         }
         private void confirmar()
         {
-            DataTable data = PostgreSQL.Execute("SELECT 1 as One");
+            DataTable data = PostgreSql.Execute("SELECT 1 as One");
             CambiarEstadoConexion(true);
             if (data == null)
                 CambiarEstadoConexion(false);
@@ -651,25 +652,30 @@ namespace Efos
 
         private void servicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string titulo = "Mantenimiento de Servicio";
+            const string titulo = "Mantenimiento de Servicio";
             if (checkForm(titulo))
                 return;
 
-            FormMantenimientoServicio Form = new FormMantenimientoServicio();
-            Form.MdiParent = this;
-            Form.Show();
+            var form = new FormMantenimientoServicio {MdiParent = this};
+            form.Show();
         }
 
         private void pacientesToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Reportes.SimpleReport Form = new Reportes.SimpleReport();
-            Form.MdiParent = this;
-            Form.Show();
+            var form = new Reportes.SimpleReport {MdiParent = this};
+            form.Show();
         }
 
-        private void cuestionarioToolStripMenuItem4_Click(object sender, EventArgs e)
+        private void cobrosAPacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            var formProcesoPago = new FormProcesoPago {MdiParent = this};
+            formProcesoPago.Show();
+        }
+
+        private void comprobanteFiscalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new FormMantenimientoTipoComprobanteFiscal {MdiParent = this};
+            form.Show();
         }     
     }
 }

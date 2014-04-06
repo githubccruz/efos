@@ -53,10 +53,10 @@ namespace Efos
 
         private void cargarInformacion()
         {
-            PostgreSQL.FillComboBox(cmbTipoCuestionario, "coditicu", "descticu", "tipo_cuestionario_encabezado", filter: "estado=true");
+            PostgreSql.FillComboBox(cmbTipoCuestionario, "coditicu", "descticu", "tipo_cuestionario_encabezado", filter: "estado=true");
             string cmd = String.Format("SELECT * FROM pregunta_encabezado WHERE estado={0} ORDER BY descpreg",true);
             
-            DataTable datos = PostgreSQL.Execute(cmd);
+            DataTable datos = PostgreSql.Execute(cmd);
             int indexRow = 0;
             gridPreguntas.Rows.Clear();
             foreach (DataRow row in datos.Rows)
@@ -95,7 +95,7 @@ namespace Efos
                 datos[2] = checkEstado.Checked.ToString();
 
                 string cmd = String.Format("SELECT inserta_cuestionario_encabezado({0},{1},{2})",datos);
-                DataTable result = PostgreSQL.Execute(cmd);
+                DataTable result = PostgreSql.Execute(cmd);
                 if (result.Rows[0][0].ToString().Equals((-1).ToString()))
                 {
                     MessageBox.Show("Ya existe un cuestionario especifico para " + cmbTipoCuestionario.Text);
@@ -103,13 +103,13 @@ namespace Efos
                 }
                 datos[0] = result.Rows[0][0].ToString(); 
 
-                PostgreSQL.Execute(String.Format("SELECT limpiaCodigoPreguntaCuestionario({0});", datos[0]));
+                PostgreSql.Execute(String.Format("SELECT limpiaCodigoPreguntaCuestionario({0});", datos[0]));
                 foreach (DataGridViewRow row in gridPreguntas.Rows)
                 {                
                     if (Convert.ToBoolean(row.Cells[2].Value))
                     {
                         cmd = String.Format("SELECT inserta_cuestionario_vs_pregunta_detalle({0},{1});", datos[0], row.Cells[1].Value);                    
-                        PostgreSQL.Execute(cmd);
+                        PostgreSql.Execute(cmd);
                     }
                 }
                 txtCodigo.Text = datos[0];
@@ -142,7 +142,7 @@ namespace Efos
             {
                 cargarInformacion();
                 string cmd = String.Format("SELECT * FROM cuestionario_encabezado WHERE codicues={0}", codigo);
-                DataTable data = PostgreSQL.Execute(cmd);
+                DataTable data = PostgreSql.Execute(cmd);
 
                 cmpFechaCreacion.Text = data.Rows[0]["fechcues"].ToString().Substring(0,10);
                 cmbTipoCuestionario.SelectedValue = Convert.ToInt32(data.Rows[0]["coditicu"]);
@@ -159,7 +159,7 @@ namespace Efos
             try
             {
                 string cmd = String.Format("SELECT * FROM cuestionario_vs_pregunta_detalle WHERE codicues={0}",codigo);
-                DataTable data = PostgreSQL.Execute(cmd);
+                DataTable data = PostgreSql.Execute(cmd);
 
                 this.AccionCodigoValidado();
                 foreach (DataRow row in data.Rows)

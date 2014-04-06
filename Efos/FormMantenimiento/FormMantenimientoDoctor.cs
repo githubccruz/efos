@@ -22,9 +22,9 @@ namespace Efos
         private void cargarInformacion(bool estado)
         {
             if (estado)
-                PostgreSQL.FillComboBox(cmbTipoDoctor, "coditido", "desctido", "tipo_doctor_encabezado", filter: "estado="+estado);
+                PostgreSql.FillComboBox(cmbTipoDoctor, "coditido", "desctido", "tipo_doctor_encabezado", filter: "estado="+estado);
             else
-                PostgreSQL.FillComboBox(cmbTipoDoctor, "coditido", "desctido", "tipo_doctor_encabezado");
+                PostgreSql.FillComboBox(cmbTipoDoctor, "coditido", "desctido", "tipo_doctor_encabezado");
         }
 
         private void botonNuevo_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace Efos
             {                
                 cargarInformacion(false);
                 string cmd = String.Format("SELECT * FROM doctor_encabezado WHERE coditerc={0}",txtCodigo.Text);
-                DataTable result = PostgreSQL.Execute(cmd);
+                DataTable result = PostgreSql.Execute(cmd);
                 cmpExequeatur.Text = result.Rows[0]["exeqdoct"].ToString();
                 cmbTipoDoctor.SelectedValue = Convert.ToInt32(result.Rows[0]["coditido"].ToString());
                 checkEstado.Checked = Convert.ToBoolean(result.Rows[0]["estado"].ToString());
@@ -81,7 +81,7 @@ namespace Efos
             
             string cmd = String.Format("SELECT inserta_doctor_encabezado({0},'{1}', {2}, {3});", datos);
             
-            PostgreSQL.Execute(cmd);
+            PostgreSql.Execute(cmd);
 
             txtCodigo.Text = codigoGenerado;
         }

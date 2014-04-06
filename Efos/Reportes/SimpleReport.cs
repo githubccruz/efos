@@ -14,7 +14,7 @@ namespace Efos.Reportes
 
         private void SimpleReport_Load(object sender, EventArgs e)
         {
-            var result = PostgreSQL.Execute("SELECT numeortr FROM orden_trabajo_encabezado");
+            var result = PostgreSql.Execute("SELECT numeortr FROM orden_trabajo_encabezado");
             ShowReport(result, "ReportOrdenTrabajo");
         }
 

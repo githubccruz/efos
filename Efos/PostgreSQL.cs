@@ -12,7 +12,7 @@ using System.Drawing;
 
 namespace Efos
 {
-    public class PostgreSQL
+    public class PostgreSql
     {
         #region Connection String
             private static string server = "localhost";
@@ -22,7 +22,7 @@ namespace Efos
             private static string dataBase = "test";//"efos";
         #endregion
 
-        private static string generarConexion()
+        private static string GenerarConexion()
         {
             return string.Format("Server={0}; port={1}; Database={2}; User ID={3}; Password={4};",
                 server, port, dataBase, user, password);
@@ -30,7 +30,7 @@ namespace Efos
 
         public static DataTable Execute(string command)
         {
-            string connstring = generarConexion();
+            string connstring = GenerarConexion();
 
             DataTable dtReturn = new DataTable();
             
@@ -57,11 +57,11 @@ namespace Efos
 
         public static void FillComboBox(efosCombo combo, string valueMember, string displayMember, string tableData, string filter = "")
         {
-            String cmd = String.Format("SELECT {0}, {1} FROM {2}", valueMember, displayMember, tableData);
+            var cmd = String.Format("SELECT {0}, {1} FROM {2}", valueMember, displayMember, tableData);
+            
             if (string.IsNullOrEmpty(filter) == false)
-            {
                 cmd += String.Format(" where {0} order by {1}" , filter,displayMember);
-            }
+            
             combo.DataSource = Execute(cmd);            
             combo.DisplayMember = displayMember;
             combo.ValueMember = valueMember;            
@@ -69,7 +69,7 @@ namespace Efos
 
         public static void FillComboBox(DataGridViewComboBoxColumn combo, string valueMember, string displayMember, string tableData, string filter = "")
         {
-            string cmd = String.Format("SELECT {0}, {1} FROM {2}", valueMember, displayMember, tableData);
+            var cmd = String.Format("SELECT {0}, {1} FROM {2}", valueMember, displayMember, tableData);
             if (!String.IsNullOrEmpty(filter))
             {
                 cmd += " where " + filter;
@@ -81,7 +81,7 @@ namespace Efos
 
         public static DataTable FillList(efosList lista, string valueMember, string displayMember, string tableData, string filter = "")
         {
-            string cmd = String.Format("SELECT {0}, {1} FROM {2}", valueMember, displayMember, tableData);
+            var cmd = String.Format("SELECT {0}, {1} FROM {2}", valueMember, displayMember, tableData);
             if (!String.IsNullOrEmpty(filter))
             {
                 cmd += " where " + filter;
@@ -94,7 +94,7 @@ namespace Efos
             return result;
         }
 
-        public static string getXML(DataTable dt, string rowName)
+        public static string GetXml(DataTable dt, string rowName)
         {
             if (String.IsNullOrEmpty(rowName))
                 rowName = "row";
@@ -122,7 +122,7 @@ namespace Efos
         public static void guardarImagen(string tablaBD, string campoCodigo, string campoImagen, string codigo, string productImageFilePath)
         {
             string command = String.Format("UPDATE {0} SET {1} = @imagen WHERE {2}={3}", tablaBD, campoImagen, campoCodigo, codigo);
-            string constring = generarConexion();
+            string constring = GenerarConexion();
 
             using (NpgsqlConnection pgConnection = new NpgsqlConnection(constring))
             {
@@ -159,7 +159,7 @@ namespace Efos
 
         public static Image extraerImagen(string codigo)
         {
-            string connstring = generarConexion();
+            string connstring = GenerarConexion();
 
             using (NpgsqlConnection pgConnection = new NpgsqlConnection(connstring))
             {

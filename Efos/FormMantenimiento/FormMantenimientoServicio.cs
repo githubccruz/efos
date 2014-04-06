@@ -32,15 +32,15 @@ namespace Efos
         {
             if(estado)
             {
-                PostgreSQL.FillComboBox(comboTipoServicio, "coditise", "desctise", "tipo_servicio_encabezado", filter: "estado=true");
-                PostgreSQL.FillComboBox(columnaTipoPrecioServicio,"coditips","desctips","tipo_precio_servicio_encabezado",filter:"estado=true");
-                PostgreSQL.FillComboBox(columnaInsumo, "codiinsu", "descinsu", "insumo_encabezado", filter: "estado=true");
+                PostgreSql.FillComboBox(comboTipoServicio, "coditise", "desctise", "tipo_servicio_encabezado", filter: "estado=true");
+                PostgreSql.FillComboBox(columnaTipoPrecioServicio,"coditips","desctips","tipo_precio_servicio_encabezado",filter:"estado=true");
+                PostgreSql.FillComboBox(columnaInsumo, "codiinsu", "descinsu", "insumo_encabezado", filter: "estado=true");
             }
             else
             {
-                PostgreSQL.FillComboBox(comboTipoServicio, "coditise", "desctise", "tipo_servicio_encabezado");
-                PostgreSQL.FillComboBox(columnaTipoPrecioServicio,"coditips","desctips","tipo_precio_servicio_encabezado");
-                PostgreSQL.FillComboBox(columnaInsumo, "codiinsu", "descinsu", "insumo_encabezado");
+                PostgreSql.FillComboBox(comboTipoServicio, "coditise", "desctise", "tipo_servicio_encabezado");
+                PostgreSql.FillComboBox(columnaTipoPrecioServicio,"coditips","desctips","tipo_precio_servicio_encabezado");
+                PostgreSql.FillComboBox(columnaInsumo, "codiinsu", "descinsu", "insumo_encabezado");
             }
         }
         private void campoDescripcion_Validated(object sender, EventArgs e)
@@ -70,27 +70,27 @@ namespace Efos
             {
                 string cmd = String.Format("SELECT inserta_servicio_encabezado({0},'{1}',{2},{3},{4});",datos);
                 
-                DataTable data = PostgreSQL.Execute(cmd);
+                DataTable data = PostgreSql.Execute(cmd);
                 var codigo = data.Rows[0][0].ToString();
                 cmd = String.Format("SELECT limpiaCodigoServicioPrecio({0});",codigo);              
-                PostgreSQL.Execute(cmd);
+                PostgreSql.Execute(cmd);
 
                 foreach (DataGridViewRow row in dataGridPrecioServicio.Rows)
                 {                    
                     if (row.Cells[1].Value!=null)
                     {
                         cmd = String.Format("SELECT inserta_servicio_vs_precio_detalle({0},{1},{2});",codigo,row.Cells[0].Value,row.Cells[1].Value.ToString());
-                        PostgreSQL.Execute(cmd);
+                        PostgreSql.Execute(cmd);
                     }
                 }
                 cmd = String.Format("SELECT limpiaCodigoServicioInsumo({0});", codigo);
-                PostgreSQL.Execute(cmd);
+                PostgreSql.Execute(cmd);
                 foreach (DataGridViewRow row in dataGridInsumo.Rows)
                 {
                     if (row.Cells[1].Value != null)
                     {
                         cmd = String.Format("SELECT inserta_servicio_vs_insumo_detalle({0},{1},{2});", codigo, row.Cells[0].Value, row.Cells[1].Value.ToString());
-                        PostgreSQL.Execute(cmd);
+                        PostgreSql.Execute(cmd);
                     }
                 }
                 data.Dispose();
@@ -114,7 +114,7 @@ namespace Efos
             try
             {
                 string cmd = "SELECT * FROM servicio_encabezado WHERE codiserv=" + txtCodigo.Text;
-                DataTable data = PostgreSQL.Execute(cmd);
+                DataTable data = PostgreSql.Execute(cmd);
                 cargaInformacionCombo(false);
                 campoDescripcion.Text = data.Rows[0]["descserv"].ToString();
                 campoCostoServicio.Text = data.Rows[0]["costserv"].ToString();
@@ -123,7 +123,7 @@ namespace Efos
                 campoFechaCreacion.Text = data.Rows[0]["fechserv"].ToString().Substring(0, 10);
 
                 cmd = "SELECT * FROM servicio_vs_precio_detalle WHERE codiserv=" + txtCodigo.Text.Trim();
-                data = PostgreSQL.Execute(cmd);
+                data = PostgreSql.Execute(cmd);
                 dataGridPrecioServicio.Rows.Clear();
 
                 int indexRows = 0;
@@ -136,7 +136,7 @@ namespace Efos
                 }
 
                 cmd = "SELECT * FROM servicio_vs_insumo_detalle WHERE codiserv="+ txtCodigo.Text.Trim();
-                data = PostgreSQL.Execute(cmd);
+                data = PostgreSql.Execute(cmd);
                 dataGridInsumo.Rows.Clear();
 
                 indexRows = 0;

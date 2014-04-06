@@ -36,7 +36,7 @@ namespace Efos
             listaRespuestasDisponibles.Items.Clear();
             listaRespuestasElegidas.Items.Clear();
 
-            DataTable dt =  PostgreSQL.Execute("SELECT "+listaRespuestasDisponibles.campoDescripcion+" FROM "+listaRespuestasDisponibles.tablaBD+" WHERE estado=true");
+            DataTable dt =  PostgreSql.Execute("SELECT "+listaRespuestasDisponibles.campoDescripcion+" FROM "+listaRespuestasDisponibles.tablaBD+" WHERE estado=true");
             
             foreach (System.Data.DataRow row in dt.Rows)            
                 listaRespuestasDisponibles.Items.Add(row["descresp"]);
@@ -85,11 +85,11 @@ namespace Efos
         }
         private void botonGuardar_Click(object sender, EventArgs e)
         {
-            PostgreSQL.Execute(String.Format("select limpiaCodigoRespuesta({0})",txtCodigo.Text));
+            PostgreSql.Execute(String.Format("select limpiaCodigoRespuesta({0})",txtCodigo.Text));
 
             foreach (string item in listaRespuestasElegidas.Items)
 	        {
-                txtCodigo.Text = PostgreSQL.Execute(String.Format("SELECT inserta_pregunta_vs_respuesta_detalle({0},'{1}');", txtCodigo.Text, item)).Rows[0][0].ToString();
+                txtCodigo.Text = PostgreSql.Execute(String.Format("SELECT inserta_pregunta_vs_respuesta_detalle({0},'{1}');", txtCodigo.Text, item)).Rows[0][0].ToString();
 	        }
             HabilitarControl(listaRespuestasElegidas, false);
             HabilitarControl(listaRespuestasDisponibles, false);
@@ -125,7 +125,7 @@ namespace Efos
                     txtCodigo.CampoBD,
                     txtCodigo.Text);
 
-            DataTable dt = PostgreSQL.Execute(cmd);
+            DataTable dt = PostgreSql.Execute(cmd);
             List<string> lista = new List<string>();
 
             foreach (DataRow item in dt.Rows)
@@ -149,7 +149,7 @@ namespace Efos
 
             cmd = String.Format("SELECT descresp FROM respuesta_encabezado WHERE codiresp not in ({0})",cmd);
 
-            dt = PostgreSQL.Execute(cmd);
+            dt = PostgreSql.Execute(cmd);
             
             foreach (DataRow item in dt.Rows)
             {

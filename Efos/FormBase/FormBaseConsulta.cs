@@ -60,7 +60,7 @@ namespace Efos
             parametros[4] = txtDescripcion.Text.Trim().ToUpper();
             string cmd;
             cmd = String.Format("SELECT {0}, {1}, {2} FROM {3} WHERE {1} like '{4}%' ORDER BY {1};",parametros);
-            DataTable dataDB = PostgreSQL.Execute(cmd);
+            DataTable dataDB = PostgreSql.Execute(cmd);
             int indexRow = 0;
             DataGrid.Rows.Clear();
             foreach (DataRow row in dataDB.Rows)
