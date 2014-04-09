@@ -603,9 +603,11 @@ namespace Efos
             string titulo = "Mantenimiento Tipo de Producto";
             if (checkForm(titulo))
                 return;
-            FormMantenimientoTipoProducto Form = new FormMantenimientoTipoProducto(titulo, "tipo_producto_encabezado", "coditipr", "desctipr", "estado");
-            Form.MdiParent = this;
-            Form.Show();
+            var form = new FormMantenimientoTipoProducto(titulo, "tipo_producto_encabezado", "coditipr", "desctipr", "estado")
+            {
+                MdiParent = this
+            };
+            form.Show();
         }
 
         private void preguntaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -613,9 +615,11 @@ namespace Efos
             string titulo = "Mantenimiento Tipo de Pregunta";
             if (checkForm(titulo))
                 return;
-            FormMantenimientoTipoPregunta Form = new FormMantenimientoTipoPregunta(titulo, "tipo_pregunta_encabezado", "coditipr", "desctipr", "estado");
-            Form.MdiParent = this;
-            Form.Show();
+            var form = new FormMantenimientoTipoPregunta(titulo, "tipo_pregunta_encabezado", "coditipr", "desctipr", "estado")
+            {
+                MdiParent = this
+            };
+            form.Show();
         }
 
         private void telefonoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -623,9 +627,9 @@ namespace Efos
             string titulo = "Mantenimiento Tipo de Telefono";
             if (checkForm(titulo))
                 return;
-            FormMantenimientoTipoTelefono Form = new FormMantenimientoTipoTelefono(titulo, "tipo_telefono_encabezado", "coditite", "desctite", "estado");
-            Form.MdiParent = this;
-            Form.Show();
+            var form = new FormMantenimientoTipoTelefono(titulo, "tipo_telefono_encabezado", "coditite", "desctite", "estado");
+            form.MdiParent = this;
+            form.Show();
         }
 
         private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -633,20 +637,21 @@ namespace Efos
             string titulo = "Mantenimiento Tipo de Servicios";
             if (checkForm(titulo))
                 return;
-            FormMantenimientoTipoTelefono Form = new FormMantenimientoTipoTelefono(titulo, "tipo_servicio_encabezado", "coditise", "desctise", "estado");
-            Form.MdiParent = this;
+            var Form = new FormMantenimientoTipoServicio(titulo, "tipo_servicio_encabezado", "coditise", "desctise", "estado")
+            {
+                MdiParent = this
+            };
             Form.Show();
         }
 
         private void insumoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string titulo = "Mantenimiento de Insumo";
+            const string titulo = "Mantenimiento de Insumo";
             if(checkForm(titulo))
                 return;
 
-            FormMantenimientoInsumo Form = new FormMantenimientoInsumo(titulo);
-            Form.MdiParent = this;
-            Form.Show();
+            var form = new FormMantenimientoInsumo(titulo) {MdiParent = this};            
+            form.Show();
 
         }
 

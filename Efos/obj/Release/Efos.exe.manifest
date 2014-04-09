@@ -43,11 +43,6 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="DevComponents.DotNetBar2" version="11.2.0.1" publicKeyToken="7EB7C3A35B91DE04" language="neutral" processorArchitecture="msil" />
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="Microsoft.ReportViewer.Common" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
@@ -84,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Efos.exe" size="495616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Efos.exe" size="475648">
       <assemblyIdentity name="Efos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VaTkmuHGC0awuD17aC5b1P+512om0V8vdriu1S5vkPU=</dsig:DigestValue>
+        <dsig:DigestValue>PCGHj0bYmpos9H4uIpM9oMhK6d8ohyYqMWl9N344wRo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
