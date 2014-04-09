@@ -54,6 +54,7 @@
             // botonCancelar
             // 
             this.botonCancelar.Location = new System.Drawing.Point(365, 459);
+            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
             // botonBuscar
             // 
@@ -66,6 +67,7 @@
             // botonNuevo
             // 
             this.botonNuevo.Location = new System.Drawing.Point(157, 459);
+            this.botonNuevo.Click += new System.EventHandler(this.botonNuevo_Click);
             // 
             // efosLetrero1
             // 
@@ -73,19 +75,20 @@
             // 
             // efosLetrero2
             // 
-            this.efosLetrero2.Location = new System.Drawing.Point(549, 100);
+            this.efosLetrero2.Location = new System.Drawing.Point(549, 101);
             // 
             // txtFechaAsunto
             // 
-            this.txtFechaAsunto.Location = new System.Drawing.Point(673, 97);
+            this.txtFechaAsunto.Location = new System.Drawing.Point(673, 98);
             // 
             // txtNumeroAsunto
             // 
-            this.txtNumeroAsunto.Location = new System.Drawing.Point(197, 97);
+            this.txtNumeroAsunto.Location = new System.Drawing.Point(197, 98);
             // 
             // txtCodigoPaciente
             // 
             this.txtCodigoPaciente.Location = new System.Drawing.Point(197, 140);
+            this.txtCodigoPaciente.Validated += new System.EventHandler(this.txtCodigoPaciente_Validated);
             // 
             // efosLetrero3
             // 
@@ -97,7 +100,7 @@
             // 
             // lupaAsunto
             // 
-            this.lupaAsunto.Location = new System.Drawing.Point(161, 92);
+            this.lupaAsunto.Location = new System.Drawing.Point(161, 93);
             // 
             // letreroNombrePaciente
             // 
