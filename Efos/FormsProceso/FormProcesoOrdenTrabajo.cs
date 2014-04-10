@@ -2,6 +2,7 @@
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using Efos.Reportes;
 using System.Windows.Forms;
 
 namespace Efos.FormProceso
@@ -9,12 +10,20 @@ namespace Efos.FormProceso
     public partial class FormProcesoOrdenTrabajo : FormBaseProceso
     {
         DataTable _data;
+        string _numerOrden;
 
         public FormProcesoOrdenTrabajo()
         {
             InitializeComponent();
             
             dataGridServicios_CellValueChanged(null, null);
+        }
+        public FormProcesoOrdenTrabajo(string numeroOrden)
+        {
+            InitializeComponent();
+            dataGridServicios_CellValueChanged(null, null);
+            txtNumeroAsunto.Text = numeroOrden;
+            _numerOrden = numeroOrden;
         }
 
         private void txtCodigoPaciente_Validated(object sender, EventArgs e)
@@ -73,14 +82,6 @@ namespace Efos.FormProceso
             campoCodigo.Focus();
         }
 
-        //private void cargarInformacionCombo(bool estado = true)
-        //{
-        //    if (estado)                            
-        //        //PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado", filter: "estado=true");            
-        //    else
-        //        //PostgreSQL.FillComboBox(comboTipoNCF, "coditico", "desctico", "tipo_comprobante_fiscal_encabezado");            
-        //}
-
         private void efosButtonBuscador2_Click(object sender, EventArgs e)
         {
             if (campoCodigo.Text == 0.ToString() ||
@@ -129,7 +130,6 @@ namespace Efos.FormProceso
         {
             LimpiarDatosServicio();
             dataGridServicios.Rows.Clear();
-            //cargarInformacionCombo();
         }
 
         private void lupaPaciente_Click(object sender, EventArgs e)
@@ -281,6 +281,12 @@ namespace Efos.FormProceso
                 total = Convert.ToDouble(row.Cells[columnaSubTotal.Index].Value);
             }
             campoTotal.Text = total.ToString();
+        }
+
+        private void txtNumeroAsunto_Validated(object sender, EventArgs e)
+        {
+            botonNuevo_Click(null, null);
+
         }
     }
 }

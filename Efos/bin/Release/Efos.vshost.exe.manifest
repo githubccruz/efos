@@ -74,19 +74,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5oaRIsk4oA2cCO8ldnHBVv0R6qaD6IENpmG/zjoXf5I=</dsig:DigestValue>
+        <dsig:DigestValue>OzDMmOBHcSrNvonWXtdGmuJBbEkGIbbG8fJPIqYTnc0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Efos.exe" size="475648">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Efos.exe" size="492544">
       <assemblyIdentity name="Efos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PCGHj0bYmpos9H4uIpM9oMhK6d8ohyYqMWl9N344wRo=</dsig:DigestValue>
+        <dsig:DigestValue>tvSYKtJgkf57nl7nDICQu+zyJrneLrL62NNkB4GlrdA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

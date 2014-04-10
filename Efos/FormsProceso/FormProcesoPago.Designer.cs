@@ -35,16 +35,20 @@
             this.columnaFechaOrdenTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaTotalOrdenTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaBalancePedienteOrdenTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaCantidadAPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaBalanceRestante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaMontoAPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaBalanceRestanteOrdenTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaBotonVerOrdenTrabajo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.efosGroupBox1 = new ControlesEfos.efosGroupBox();
             this.efosLetrero5 = new ControlesEfos.efosLetrero();
-            this.efosCampo1 = new ControlesEfos.efosCampo();
+            this.campoMontoAPagar = new ControlesEfos.efosCampo();
             this.botonAplicar = new System.Windows.Forms.Button();
             this.efosGroupBox2 = new ControlesEfos.efosGroupBox();
+            this.efosGroupBox3 = new ControlesEfos.efosGroupBox();
+            this.efosLetrero6 = new ControlesEfos.efosLetrero();
+            this.campoDevuelta = new ControlesEfos.efosCampo();
             this.efosGroupBoxPadre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrdenTrabajo)).BeginInit();
+            this.efosGroupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // botonProcesar
@@ -104,7 +108,7 @@
             // 
             // letreroNombrePaciente
             // 
-            this.letreroNombrePaciente.Location = new System.Drawing.Point(303, 110);
+            this.letreroNombrePaciente.Location = new System.Drawing.Point(303, 144);
             // 
             // efosGroupBoxPadre
             // 
@@ -120,6 +124,7 @@
             this.comboTipoComprobanteFiscal.FormattingEnabled = true;
             this.comboTipoComprobanteFiscal.Location = new System.Drawing.Point(20, 18);
             this.comboTipoComprobanteFiscal.Name = "comboTipoComprobanteFiscal";
+            this.comboTipoComprobanteFiscal.NoLimpiar = true;
             this.comboTipoComprobanteFiscal.Size = new System.Drawing.Size(313, 23);
             this.comboTipoComprobanteFiscal.Sorted = true;
             this.comboTipoComprobanteFiscal.TabIndex = 0;
@@ -139,6 +144,8 @@
             // 
             this.dataGridOrdenTrabajo.AllowUserToAddRows = false;
             this.dataGridOrdenTrabajo.AllowUserToDeleteRows = false;
+            this.dataGridOrdenTrabajo.AllowUserToResizeColumns = false;
+            this.dataGridOrdenTrabajo.AllowUserToResizeRows = false;
             this.dataGridOrdenTrabajo.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridOrdenTrabajo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridOrdenTrabajo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
@@ -148,16 +155,17 @@
             this.columnaFechaOrdenTrabajo,
             this.columnaTotalOrdenTrabajo,
             this.columnaBalancePedienteOrdenTrabajo,
-            this.columnaCantidadAPagar,
-            this.columnaBalanceRestante,
+            this.columnaMontoAPagar,
+            this.columnaBalanceRestanteOrdenTrabajo,
             this.columnaBotonVerOrdenTrabajo});
             this.dataGridOrdenTrabajo.Location = new System.Drawing.Point(33, 250);
             this.dataGridOrdenTrabajo.Name = "dataGridOrdenTrabajo";
             this.dataGridOrdenTrabajo.ReadOnly = true;
             this.dataGridOrdenTrabajo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridOrdenTrabajo.Size = new System.Drawing.Size(744, 192);
+            this.dataGridOrdenTrabajo.Size = new System.Drawing.Size(744, 136);
             this.dataGridOrdenTrabajo.StandardTab = true;
             this.dataGridOrdenTrabajo.TabIndex = 16;
+            this.dataGridOrdenTrabajo.Sorted += new System.EventHandler(this.dataGridOrdenTrabajo_Sorted);
             // 
             // columnaNumeroOrdenTrabajo
             // 
@@ -183,24 +191,24 @@
             this.columnaBalancePedienteOrdenTrabajo.Name = "columnaBalancePedienteOrdenTrabajo";
             this.columnaBalancePedienteOrdenTrabajo.ReadOnly = true;
             // 
-            // columnaCantidadAPagar
+            // columnaMontoAPagar
             // 
-            this.columnaCantidadAPagar.HeaderText = "Monto a Pagar";
-            this.columnaCantidadAPagar.Name = "columnaCantidadAPagar";
-            this.columnaCantidadAPagar.ReadOnly = true;
+            this.columnaMontoAPagar.HeaderText = "Monto a Pagar";
+            this.columnaMontoAPagar.Name = "columnaMontoAPagar";
+            this.columnaMontoAPagar.ReadOnly = true;
             // 
-            // columnaBalanceRestante
+            // columnaBalanceRestanteOrdenTrabajo
             // 
-            this.columnaBalanceRestante.HeaderText = "Balance Restante";
-            this.columnaBalanceRestante.Name = "columnaBalanceRestante";
-            this.columnaBalanceRestante.ReadOnly = true;
+            this.columnaBalanceRestanteOrdenTrabajo.HeaderText = "Balance Restante";
+            this.columnaBalanceRestanteOrdenTrabajo.Name = "columnaBalanceRestanteOrdenTrabajo";
+            this.columnaBalanceRestanteOrdenTrabajo.ReadOnly = true;
             // 
             // columnaBotonVerOrdenTrabajo
             // 
             this.columnaBotonVerOrdenTrabajo.HeaderText = "Ver Orden";
             this.columnaBotonVerOrdenTrabajo.Name = "columnaBotonVerOrdenTrabajo";
             this.columnaBotonVerOrdenTrabajo.ReadOnly = true;
-            this.columnaBotonVerOrdenTrabajo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.columnaBotonVerOrdenTrabajo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.columnaBotonVerOrdenTrabajo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.columnaBotonVerOrdenTrabajo.Text = "Ver Orden";
             this.columnaBotonVerOrdenTrabajo.ToolTipText = "Ver Orden";
@@ -211,7 +219,7 @@
             this.efosGroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.efosGroupBox1.Location = new System.Drawing.Point(20, 233);
             this.efosGroupBox1.Name = "efosGroupBox1";
-            this.efosGroupBox1.Size = new System.Drawing.Size(766, 215);
+            this.efosGroupBox1.Size = new System.Drawing.Size(766, 166);
             this.efosGroupBox1.TabIndex = 17;
             this.efosGroupBox1.TabStop = false;
             this.efosGroupBox1.Text = "Ordenes de Trabajo";
@@ -227,19 +235,20 @@
             this.efosLetrero5.Text = "Monto a Pagar:";
             this.efosLetrero5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // efosCampo1
+            // campoMontoAPagar
             // 
-            this.efosCampo1.CampoBD = null;
-            this.efosCampo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosCampo1.Limpiar = true;
-            this.efosCampo1.Location = new System.Drawing.Point(144, 191);
-            this.efosCampo1.Name = "efosCampo1";
-            this.efosCampo1.Size = new System.Drawing.Size(100, 21);
-            this.efosCampo1.SoloLectura = false;
-            this.efosCampo1.TabIndex = 19;
+            this.campoMontoAPagar.CampoBD = null;
+            this.campoMontoAPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoMontoAPagar.Limpiar = true;
+            this.campoMontoAPagar.Location = new System.Drawing.Point(144, 191);
+            this.campoMontoAPagar.Name = "campoMontoAPagar";
+            this.campoMontoAPagar.Size = new System.Drawing.Size(100, 21);
+            this.campoMontoAPagar.SoloLectura = false;
+            this.campoMontoAPagar.TabIndex = 19;
             // 
             // botonAplicar
             // 
+            this.botonAplicar.Enabled = false;
             this.botonAplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.botonAplicar.Location = new System.Drawing.Point(248, 192);
             this.botonAplicar.Name = "botonAplicar";
@@ -247,6 +256,7 @@
             this.botonAplicar.TabIndex = 20;
             this.botonAplicar.Text = "&Aplicar Pago";
             this.botonAplicar.UseVisualStyleBackColor = true;
+            this.botonAplicar.Click += new System.EventHandler(this.botonAplicar_Click);
             // 
             // efosGroupBox2
             // 
@@ -257,13 +267,49 @@
             this.efosGroupBox2.TabIndex = 21;
             this.efosGroupBox2.TabStop = false;
             // 
+            // efosGroupBox3
+            // 
+            this.efosGroupBox3.Controls.Add(this.efosLetrero6);
+            this.efosGroupBox3.Controls.Add(this.campoDevuelta);
+            this.efosGroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosGroupBox3.Location = new System.Drawing.Point(20, 406);
+            this.efosGroupBox3.Name = "efosGroupBox3";
+            this.efosGroupBox3.Size = new System.Drawing.Size(766, 47);
+            this.efosGroupBox3.TabIndex = 22;
+            this.efosGroupBox3.TabStop = false;
+            // 
+            // efosLetrero6
+            // 
+            this.efosLetrero6.AutoSize = true;
+            this.efosLetrero6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosLetrero6.Location = new System.Drawing.Point(552, 19);
+            this.efosLetrero6.Name = "efosLetrero6";
+            this.efosLetrero6.Size = new System.Drawing.Size(67, 15);
+            this.efosLetrero6.TabIndex = 1;
+            this.efosLetrero6.Text = "Devuelta:";
+            this.efosLetrero6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // campoDevuelta
+            // 
+            this.campoDevuelta.CampoBD = null;
+            this.campoDevuelta.Enabled = false;
+            this.campoDevuelta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoDevuelta.Limpiar = true;
+            this.campoDevuelta.Location = new System.Drawing.Point(651, 16);
+            this.campoDevuelta.Name = "campoDevuelta";
+            this.campoDevuelta.Size = new System.Drawing.Size(100, 21);
+            this.campoDevuelta.SoloLectura = false;
+            this.campoDevuelta.TabIndex = 0;
+            this.campoDevuelta.Text = "0.00";
+            // 
             // FormProcesoPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 518);
+            this.Controls.Add(this.efosGroupBox3);
             this.Controls.Add(this.botonAplicar);
-            this.Controls.Add(this.efosCampo1);
+            this.Controls.Add(this.campoMontoAPagar);
             this.Controls.Add(this.efosLetrero5);
             this.Controls.Add(this.dataGridOrdenTrabajo);
             this.Controls.Add(this.comboTipoComprobanteFiscal);
@@ -291,11 +337,14 @@
             this.Controls.SetChildIndex(this.letreroNombrePaciente, 0);
             this.Controls.SetChildIndex(this.dataGridOrdenTrabajo, 0);
             this.Controls.SetChildIndex(this.efosLetrero5, 0);
-            this.Controls.SetChildIndex(this.efosCampo1, 0);
+            this.Controls.SetChildIndex(this.campoMontoAPagar, 0);
             this.Controls.SetChildIndex(this.botonAplicar, 0);
+            this.Controls.SetChildIndex(this.efosGroupBox3, 0);
             this.efosGroupBoxPadre.ResumeLayout(false);
             this.efosGroupBoxPadre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrdenTrabajo)).EndInit();
+            this.efosGroupBox3.ResumeLayout(false);
+            this.efosGroupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,17 +355,20 @@
         private ControlesEfos.efosLetrero efosLetrero4;
         private ControlesEfos.efosCombo comboTipoComprobanteFiscal;
         private ControlesEfos.efosDataGridView dataGridOrdenTrabajo;
+        private ControlesEfos.efosGroupBox efosGroupBox1;
+        private ControlesEfos.efosLetrero efosLetrero5;
+        private ControlesEfos.efosCampo campoMontoAPagar;
+        private System.Windows.Forms.Button botonAplicar;
+        private ControlesEfos.efosGroupBox efosGroupBox2;
+        private ControlesEfos.efosGroupBox efosGroupBox3;
+        private ControlesEfos.efosLetrero efosLetrero6;
+        private ControlesEfos.efosCampo campoDevuelta;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaNumeroOrdenTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaFechaOrdenTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaTotalOrdenTrabajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaBalancePedienteOrdenTrabajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantidadAPagar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaBalanceRestante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaMontoAPagar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaBalanceRestanteOrdenTrabajo;
         private System.Windows.Forms.DataGridViewButtonColumn columnaBotonVerOrdenTrabajo;
-        private ControlesEfos.efosGroupBox efosGroupBox1;
-        private ControlesEfos.efosLetrero efosLetrero5;
-        private ControlesEfos.efosCampo efosCampo1;
-        private System.Windows.Forms.Button botonAplicar;
-        private ControlesEfos.efosGroupBox efosGroupBox2;
     }
 }

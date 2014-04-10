@@ -44,7 +44,8 @@ namespace Efos
                 else if (cltr is efosCombo || cltr is ComboBox)
                 {
                     efosCombo cmb = (efosCombo)(cltr);
-                    cmb.SelectedIndex = -1;
+                    if(!cmb.NoLimpiar)
+                        cmb.SelectedIndex = -1;
                 }
                 else if (cltr is DataGridView)
                 {
