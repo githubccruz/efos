@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Efos.exe" size="494592">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Efos.exe" size="495616">
       <assemblyIdentity name="Efos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2LP17Xlgiyul6OaoX7pWZR0P1aTG/3/QJUiKtb8AcNI=</dsig:DigestValue>
+        <dsig:DigestValue>JcFJb+eFWJQxC2Yzk9het7NEDTAudbhc0lZ3J92e6FU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

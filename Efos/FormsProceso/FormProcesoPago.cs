@@ -24,8 +24,21 @@ namespace Efos.FormProceso
                 return;
             try
             {
-                var command = String.Format("SELECT numero_orden,fecha,codigo_paciente, sum(cantidad_servicio*precio_servicio) as Total,codigo_estado FROM vista_orden_trabajo "
-                                            + "GROUP BY numero_orden,fecha,codigo_paciente,codigo_estado HAVING codigo_paciente={0}  AND codigo_estado=2 ORDER BY fecha ASC ;", txtCodigoPaciente.Text);
+                var command = String.Format("select 	trabajo.numero_orden, "+
+	                                                        "trabajo.fecha, "+
+	                                                        "trabajo.codigo_paciente, "+
+	                                                        "trabajo.codigo_servicio, "+
+	                                                        "sum(trabajo.cantidad_servicio*trabajo.precio_servicio) as Total, "+
+	                                                        "((sum(detalle.montcobr))-(sum(trabajo.cantidad_servicio*trabajo.precio_servicio))) as Pendiente "+
+	                                                    "from vista_orden_trabajo as trabajo left join "+
+                                                            "cobro_detalle as detalle on detalle.numeortr=trabajo.numero_orden left join "+
+                                                            "cobro_encabezado as encabezado on encabezado.numecobr=detalle.numecobr "+
+	                                                    "GROUP BY "+
+		                                                    "trabajo.numero_orden, "+
+		                                                    "trabajo.fecha, "+
+		                                                    "trabajo.codigo_paciente, "+
+		                                                    "trabajo.codigo_servicio "+
+                                                        "HAVING codigo_paciente={0} ORDER BY fecha ASC;", txtCodigoPaciente.Text);
                 
                 var data = PostgreSql.Execute(command);
                 letreroNombrePaciente.Text = PostgreSql.Execute("SELECT nombre FROM vista_persona_consulta WHERE codigo="+txtCodigoPaciente.Text+";").Rows[0][0].ToString();
