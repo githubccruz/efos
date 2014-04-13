@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.comboTipoComprobanteFiscal = new ControlesEfos.efosCombo();
-            this.efosLetrero4 = new ControlesEfos.efosLetrero();
+            this.letreroNCF = new ControlesEfos.efosLetrero();
             this.dataGridOrdenTrabajo = new ControlesEfos.efosDataGridView();
             this.columnaNumeroOrdenTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaFechaOrdenTrabajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +44,10 @@
             this.botonAplicar = new System.Windows.Forms.Button();
             this.efosGroupBox2 = new ControlesEfos.efosGroupBox();
             this.efosGroupBox3 = new ControlesEfos.efosGroupBox();
+            this.campoBalancePendiente = new ControlesEfos.efosCampo();
+            this.efosLetrero9 = new ControlesEfos.efosLetrero();
+            this.campoTotal = new ControlesEfos.efosCampo();
+            this.efosLetrero7 = new ControlesEfos.efosLetrero();
             this.efosLetrero6 = new ControlesEfos.efosLetrero();
             this.campoDevuelta = new ControlesEfos.efosCampo();
             this.efosGroupBoxPadre.SuspendLayout();
@@ -54,6 +58,7 @@
             // botonProcesar
             // 
             this.botonProcesar.Location = new System.Drawing.Point(263, 459);
+            this.botonProcesar.Click += new System.EventHandler(this.botonProcesar_Click);
             // 
             // botonCancelar
             // 
@@ -112,7 +117,7 @@
             // 
             // efosGroupBoxPadre
             // 
-            this.efosGroupBoxPadre.Controls.Add(this.efosLetrero4);
+            this.efosGroupBoxPadre.Controls.Add(this.letreroNCF);
             this.efosGroupBoxPadre.Location = new System.Drawing.Point(20, 46);
             this.efosGroupBoxPadre.Size = new System.Drawing.Size(766, 126);
             // 
@@ -129,16 +134,16 @@
             this.comboTipoComprobanteFiscal.Sorted = true;
             this.comboTipoComprobanteFiscal.TabIndex = 0;
             // 
-            // efosLetrero4
+            // letreroNCF
             // 
-            this.efosLetrero4.AutoSize = true;
-            this.efosLetrero4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero4.Location = new System.Drawing.Point(261, 17);
-            this.efosLetrero4.Name = "efosLetrero4";
-            this.efosLetrero4.Size = new System.Drawing.Size(262, 26);
-            this.efosLetrero4.TabIndex = 1;
-            this.efosLetrero4.Text = "A010010100100000001";
-            this.efosLetrero4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.letreroNCF.AutoSize = true;
+            this.letreroNCF.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.letreroNCF.Location = new System.Drawing.Point(261, 17);
+            this.letreroNCF.Name = "letreroNCF";
+            this.letreroNCF.Size = new System.Drawing.Size(262, 26);
+            this.letreroNCF.TabIndex = 1;
+            this.letreroNCF.Text = "A010010100100000001";
+            this.letreroNCF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dataGridOrdenTrabajo
             // 
@@ -165,7 +170,8 @@
             this.dataGridOrdenTrabajo.Size = new System.Drawing.Size(744, 136);
             this.dataGridOrdenTrabajo.StandardTab = true;
             this.dataGridOrdenTrabajo.TabIndex = 16;
-            this.dataGridOrdenTrabajo.Sorted += new System.EventHandler(this.dataGridOrdenTrabajo_Sorted);
+            this.dataGridOrdenTrabajo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrdenTrabajo_CellClick);
+            this.dataGridOrdenTrabajo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrdenTrabajo_CellValueChanged);
             // 
             // columnaNumeroOrdenTrabajo
             // 
@@ -245,12 +251,13 @@
             this.campoMontoAPagar.Size = new System.Drawing.Size(100, 21);
             this.campoMontoAPagar.SoloLectura = false;
             this.campoMontoAPagar.TabIndex = 19;
+            this.campoMontoAPagar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campoMontoAPagar_KeyPress);
             // 
             // botonAplicar
             // 
             this.botonAplicar.Enabled = false;
             this.botonAplicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonAplicar.Location = new System.Drawing.Point(248, 192);
+            this.botonAplicar.Location = new System.Drawing.Point(248, 190);
             this.botonAplicar.Name = "botonAplicar";
             this.botonAplicar.Size = new System.Drawing.Size(107, 23);
             this.botonAplicar.TabIndex = 20;
@@ -269,6 +276,10 @@
             // 
             // efosGroupBox3
             // 
+            this.efosGroupBox3.Controls.Add(this.campoBalancePendiente);
+            this.efosGroupBox3.Controls.Add(this.efosLetrero9);
+            this.efosGroupBox3.Controls.Add(this.campoTotal);
+            this.efosGroupBox3.Controls.Add(this.efosLetrero7);
             this.efosGroupBox3.Controls.Add(this.efosLetrero6);
             this.efosGroupBox3.Controls.Add(this.campoDevuelta);
             this.efosGroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,12 +288,61 @@
             this.efosGroupBox3.Size = new System.Drawing.Size(766, 47);
             this.efosGroupBox3.TabIndex = 22;
             this.efosGroupBox3.TabStop = false;
+            this.efosGroupBox3.Text = "Totales";
+            // 
+            // campoBalancePendiente
+            // 
+            this.campoBalancePendiente.CampoBD = null;
+            this.campoBalancePendiente.Enabled = false;
+            this.campoBalancePendiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoBalancePendiente.Limpiar = true;
+            this.campoBalancePendiente.Location = new System.Drawing.Point(400, 16);
+            this.campoBalancePendiente.Name = "campoBalancePendiente";
+            this.campoBalancePendiente.Size = new System.Drawing.Size(100, 21);
+            this.campoBalancePendiente.SoloLectura = false;
+            this.campoBalancePendiente.TabIndex = 7;
+            this.campoBalancePendiente.Text = "0.00";
+            // 
+            // efosLetrero9
+            // 
+            this.efosLetrero9.AutoSize = true;
+            this.efosLetrero9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosLetrero9.Location = new System.Drawing.Point(320, 19);
+            this.efosLetrero9.Name = "efosLetrero9";
+            this.efosLetrero9.Size = new System.Drawing.Size(76, 15);
+            this.efosLetrero9.TabIndex = 6;
+            this.efosLetrero9.Text = "Pendiente:";
+            this.efosLetrero9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // campoTotal
+            // 
+            this.campoTotal.CampoBD = null;
+            this.campoTotal.Enabled = false;
+            this.campoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoTotal.Limpiar = true;
+            this.campoTotal.Location = new System.Drawing.Point(112, 16);
+            this.campoTotal.Name = "campoTotal";
+            this.campoTotal.Size = new System.Drawing.Size(100, 21);
+            this.campoTotal.SoloLectura = false;
+            this.campoTotal.TabIndex = 5;
+            this.campoTotal.Text = "0.00";
+            // 
+            // efosLetrero7
+            // 
+            this.efosLetrero7.AutoSize = true;
+            this.efosLetrero7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.efosLetrero7.Location = new System.Drawing.Point(43, 19);
+            this.efosLetrero7.Name = "efosLetrero7";
+            this.efosLetrero7.Size = new System.Drawing.Size(65, 15);
+            this.efosLetrero7.TabIndex = 2;
+            this.efosLetrero7.Text = "Ordenes:";
+            this.efosLetrero7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // efosLetrero6
             // 
             this.efosLetrero6.AutoSize = true;
             this.efosLetrero6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.efosLetrero6.Location = new System.Drawing.Point(552, 19);
+            this.efosLetrero6.Location = new System.Drawing.Point(580, 19);
             this.efosLetrero6.Name = "efosLetrero6";
             this.efosLetrero6.Size = new System.Drawing.Size(67, 15);
             this.efosLetrero6.TabIndex = 1;
@@ -352,7 +412,7 @@
 
         #endregion
 
-        private ControlesEfos.efosLetrero efosLetrero4;
+        private ControlesEfos.efosLetrero letreroNCF;
         private ControlesEfos.efosCombo comboTipoComprobanteFiscal;
         private ControlesEfos.efosDataGridView dataGridOrdenTrabajo;
         private ControlesEfos.efosGroupBox efosGroupBox1;
@@ -370,5 +430,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaMontoAPagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaBalanceRestanteOrdenTrabajo;
         private System.Windows.Forms.DataGridViewButtonColumn columnaBotonVerOrdenTrabajo;
+        private ControlesEfos.efosCampo campoTotal;
+        private ControlesEfos.efosLetrero efosLetrero7;
+        private ControlesEfos.efosCampo campoBalancePendiente;
+        private ControlesEfos.efosLetrero efosLetrero9;
     }
 }

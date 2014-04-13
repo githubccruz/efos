@@ -24,8 +24,8 @@ namespace Efos.FormProceso
                 return;
             try
             {
-                var command = String.Format("SELECT numero_orden,fecha,codigo_paciente, sum(cantidad_servicio*precio_servicio) as Total FROM vista_orden_trabajo "
-                                            +"GROUP BY numero_orden,fecha,codigo_paciente HAVING codigo_paciente={0} ORDER BY fecha DESC;", txtCodigoPaciente.Text);
+                var command = String.Format("SELECT numero_orden,fecha,codigo_paciente, sum(cantidad_servicio*precio_servicio) as Total,codigo_estado FROM vista_orden_trabajo "
+                                            + "GROUP BY numero_orden,fecha,codigo_paciente,codigo_estado HAVING codigo_paciente={0}  AND codigo_estado=2 ORDER BY fecha ASC ;", txtCodigoPaciente.Text);
                 
                 var data = PostgreSql.Execute(command);
                 letreroNombrePaciente.Text = PostgreSql.Execute("SELECT nombre FROM vista_persona_consulta WHERE codigo="+txtCodigoPaciente.Text+";").Rows[0][0].ToString();
@@ -38,6 +38,7 @@ namespace Efos.FormProceso
                     dataGridOrdenTrabajo.Rows[newRow].Cells[columnaFechaOrdenTrabajo.Index].Value =  Convert.ToDateTime(row["fecha"]).ToString().Substring(0,10);
                     dataGridOrdenTrabajo.Rows[newRow].Cells[columnaTotalOrdenTrabajo.Index].Value = row["Total"].ToString();
                     dataGridOrdenTrabajo.Rows[newRow].Cells[columnaBalancePedienteOrdenTrabajo.Index].Value = row["Total"].ToString();
+                    dataGridOrdenTrabajo.Rows[newRow].Cells[columnaBalanceRestanteOrdenTrabajo.Index].Value = row["Total"].ToString();
                     newRow++;
                 }
                 botonAplicar.Enabled = true;
@@ -76,6 +77,7 @@ namespace Efos.FormProceso
             }
             DistribuirPagos(Total);
         }
+
         private void DistribuirPagos(Double Total)
         {
             foreach (DataGridViewRow row in dataGridOrdenTrabajo.Rows)
@@ -85,14 +87,12 @@ namespace Efos.FormProceso
                 {
                     if ((celda - Total) == 0)
                     {
-                        //row.Cells[columnaBalancePedienteOrdenTrabajo.Index].Value = 0;
                         row.Cells[columnaBalanceRestanteOrdenTrabajo.Index].Value = 0;
                         row.Cells[columnaMontoAPagar.Index].Value = Total;
                         Total = 0;
                     }
                     else if ((Total - celda) > 0)
                     {
-                        //row.Cells[columnaBalancePedienteOrdenTrabajo.Index].Value = 0;
                         row.Cells[columnaBalanceRestanteOrdenTrabajo.Index].Value = 0;
                         row.Cells[columnaMontoAPagar.Index].Value = celda;
                         Total -= celda;
@@ -101,12 +101,10 @@ namespace Efos.FormProceso
                     {
                         row.Cells[columnaBalanceRestanteOrdenTrabajo.Index].Value = Convert.ToDouble(row.Cells[columnaBalancePedienteOrdenTrabajo.Index].Value) - Total;
                         row.Cells[columnaMontoAPagar.Index].Value = Total;
-                        
                         Total = 0;
                     }
                 }
             }
-            
             campoDevuelta.Text = Total.ToString();
         }
 
@@ -120,14 +118,54 @@ namespace Efos.FormProceso
                 Efos.Reportes.SimpleReport report = new Reportes.SimpleReport();
                 report.ShowReport(Data, "ReportOrdenTrabajo");
                 report.Show();
-                //MessageBox.Show("Numero de Orden: "+numeroOrden);
-                //var form = new FormProcesoOrdenTrabajo(numeroOrden);
-                //form.ShowDialog();
             }
         }
 
-        private void dataGridOrdenTrabajo_Sorted(object sender, EventArgs e)
+        private void dataGridOrdenTrabajo_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            var totalRestante = 0.00;
+            var totalOrdenes = 0.00;
+            foreach (DataGridViewRow row in dataGridOrdenTrabajo.Rows)
+            {
+                totalRestante += Convert.ToDouble(row.Cells[columnaBalanceRestanteOrdenTrabajo.Index].Value);                
+                totalOrdenes += Convert.ToDouble(row.Cells[columnaTotalOrdenTrabajo.Index].Value);
+            }
+            campoTotal.Text = totalOrdenes.ToString();
+            campoBalancePendiente.Text = totalRestante.ToString();
+        }
+
+        private void botonProcesar_Click(object sender, EventArgs e)
+        {
+            object[] data = {txtNumeroAsunto.Text,comboTipoComprobanteFiscal.SelectedValue};
+            var commando = String.Format("SELECT inserta_cobro_encabezado({0},{1});",data);            
+            var dataCobro = PostgreSql.Execute(commando);
+
+            foreach (DataGridViewRow row in dataGridOrdenTrabajo.Rows)
+            {
+                if ((row.Cells[columnaMontoAPagar.Index].Value!=null && !IsEmpty((row.Cells[columnaMontoAPagar.Index].Value).ToString())))
+                {
+                    MessageBox.Show("Test: "+row.Cells[columnaMontoAPagar.Index].Value);
+                    commando = String.Format("SELECT inserta_cobro_detalle({0},{1},{2});",
+                        dataCobro.Rows[0][0].ToString(),
+                        row.Cells[columnaNumeroOrdenTrabajo.Index].Value,
+                        row.Cells[columnaMontoAPagar.Index].Value);
+
+                    PostgreSql.Execute(commando);
+                }
+            }
+            letreroNCF.Text = PostgreSql.Execute("SELECT numecncf FROM cobro_encabezado WHERE numecobr=" + dataCobro.Rows[0][0].ToString()).Rows[0][0].ToString();
+            txtNumeroAsunto.Text = dataCobro.Rows[0][0].ToString();
+
+            txtNumeroAsunto.Enabled = true;
+            lupaAsunto.Enabled = true;
+            comboTipoComprobanteFiscal.Enabled = true;
+
+        }
+
+        private void campoMontoAPagar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))            
+                botonAplicar_Click(null, null);                
             
         }
     }
