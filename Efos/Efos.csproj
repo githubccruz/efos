@@ -590,6 +590,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportCobroPaciente.rdlc" />
     <EmbeddedResource Include="Reportes\ReportOrdenTrabajo.rdlc" />
     <EmbeddedResource Include="Reportes\SimpleReport.resx">
       <DependentUpon>SimpleReport.cs</DependentUpon>

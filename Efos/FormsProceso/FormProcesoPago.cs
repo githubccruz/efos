@@ -41,12 +41,8 @@ namespace Efos.FormProceso
 
                     dataGridOrdenTrabajo.Rows[newRow].Cells[columnaFechaOrdenTrabajo.Index].Value = Convert.ToDateTime(row["fecha"]).ToString().Substring(0, 10);
                     dataGridOrdenTrabajo.Rows[newRow].Cells[columnaTotalOrdenTrabajo.Index].Value = row["total"].ToString();
-                    
-                    //dataGridOrdenTrabajo.Rows[newRow].Cells[columnaBalancePedienteOrdenTrabajo.Index].Value = row["Pendiente"].ToString();
-                    //dataGridOrdenTrabajo.Rows[newRow].Cells[columnaBalanceRestanteOrdenTrabajo.Index].Value = row["Pendiente"].ToString();
 
                     newRow++;
-                    
                 }
 
                 foreach (DataGridViewRow row in dataGridOrdenTrabajo.Rows)
