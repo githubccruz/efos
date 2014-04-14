@@ -22,37 +22,53 @@ namespace Efos.FormProceso
         {
             if (IsEmpty(txtCodigoPaciente.Text))            
                 return;
+
             try
             {
-                var command = String.Format("select 	trabajo.numero_orden, "+
-	                                                        "trabajo.fecha, "+
-	                                                        "trabajo.codigo_paciente, "+
-	                                                        "trabajo.codigo_servicio, "+
-	                                                        "sum(trabajo.cantidad_servicio*trabajo.precio_servicio) as Total, "+
-	                                                        "((sum(detalle.montcobr))-(sum(trabajo.cantidad_servicio*trabajo.precio_servicio))) as Pendiente "+
-	                                                    "from vista_orden_trabajo as trabajo left join "+
-                                                            "cobro_detalle as detalle on detalle.numeortr=trabajo.numero_orden left join "+
-                                                            "cobro_encabezado as encabezado on encabezado.numecobr=detalle.numecobr "+
-	                                                    "GROUP BY "+
-		                                                    "trabajo.numero_orden, "+
-		                                                    "trabajo.fecha, "+
-		                                                    "trabajo.codigo_paciente, "+
-		                                                    "trabajo.codigo_servicio "+
-                                                        "HAVING codigo_paciente={0} ORDER BY fecha ASC;", txtCodigoPaciente.Text);
-                
+                var command = String.Format("SELECT numero_orden, fecha, sum(cantidad_servicio*precio_servicio) as Total, codigo_paciente from vista_orden_trabajo "+
+                                            "GROUP BY numero_orden,fecha,codigo_paciente "+
+                                            "HAVING codigo_paciente={0} ORDER BY fecha ASC;", txtCodigoPaciente.Text);
+
                 var data = PostgreSql.Execute(command);
                 letreroNombrePaciente.Text = PostgreSql.Execute("SELECT nombre FROM vista_persona_consulta WHERE codigo="+txtCodigoPaciente.Text+";").Rows[0][0].ToString();
                 var newRow = 0;
+
                 dataGridOrdenTrabajo.Rows.Clear();
                 foreach (DataRow row in data.Rows)
                 {
                     dataGridOrdenTrabajo.Rows.Add(1);
                     dataGridOrdenTrabajo.Rows[newRow].Cells[columnaNumeroOrdenTrabajo.Index].Value = row["numero_orden"];
-                    dataGridOrdenTrabajo.Rows[newRow].Cells[columnaFechaOrdenTrabajo.Index].Value =  Convert.ToDateTime(row["fecha"]).ToString().Substring(0,10);
-                    dataGridOrdenTrabajo.Rows[newRow].Cells[columnaTotalOrdenTrabajo.Index].Value = row["Total"].ToString();
-                    dataGridOrdenTrabajo.Rows[newRow].Cells[columnaBalancePedienteOrdenTrabajo.Index].Value = row["Total"].ToString();
-                    dataGridOrdenTrabajo.Rows[newRow].Cells[columnaBalanceRestanteOrdenTrabajo.Index].Value = row["Total"].ToString();
+
+                    dataGridOrdenTrabajo.Rows[newRow].Cells[columnaFechaOrdenTrabajo.Index].Value = Convert.ToDateTime(row["fecha"]).ToString().Substring(0, 10);
+                    dataGridOrdenTrabajo.Rows[newRow].Cells[columnaTotalOrdenTrabajo.Index].Value = row["total"].ToString();
+                    
+                    //dataGridOrdenTrabajo.Rows[newRow].Cells[columnaBalancePedienteOrdenTrabajo.Index].Value = row["Pendiente"].ToString();
+                    //dataGridOrdenTrabajo.Rows[newRow].Cells[columnaBalanceRestanteOrdenTrabajo.Index].Value = row["Pendiente"].ToString();
+
                     newRow++;
+                    
+                }
+
+                foreach (DataGridViewRow row in dataGridOrdenTrabajo.Rows)
+                {
+                    /// Cuanto se ha pagado de la Orden de Trabajo ///
+                    command = "SELECT numeortr, sum(montcobr) AS total FROM cobro_detalle as detalle inner join " +
+                              " cobro_encabezado AS encabezado ON detalle.numecobr=encabezado.numecobr " +
+                              "GROUP BY numeortr HAVING numeortr=" + row.Cells[columnaNumeroOrdenTrabajo.Index].Value;
+
+                    data = PostgreSql.Execute(command);
+                    if (data.Rows.Count>0)
+                    {
+                        row.Cells[columnaBalancePedienteOrdenTrabajo.Index].Value
+                                = (Convert.ToDouble(row.Cells[columnaTotalOrdenTrabajo.Index].Value.ToString()) - Convert.ToDouble(data.Rows[0]["total"].ToString())).ToString();                                           
+                    }
+                    else
+                    {
+                        row.Cells[columnaBalancePedienteOrdenTrabajo.Index].Value = row.Cells[columnaTotalOrdenTrabajo.Index].Value;
+                    }
+                    if(IsEmpty(row.Cells[columnaBalancePedienteOrdenTrabajo.Index].Value.ToString())){
+                        dataGridOrdenTrabajo.Rows.RemoveAt(row.Index);
+                    }
                 }
                 botonAplicar.Enabled = true;
             }

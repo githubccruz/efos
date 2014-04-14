@@ -301,6 +301,10 @@ namespace Efos.Reportes {
             
             private global::System.Data.DataColumn columnnombre_paciente;
             
+            private global::System.Data.DataColumn columncantidad_servicio;
+            
+            private global::System.Data.DataColumn columnTotalOrden;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DataTable1DataTable() {
@@ -424,6 +428,22 @@ namespace Efos.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cantidad_servicioColumn {
+                get {
+                    return this.columncantidad_servicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalOrdenColumn {
+                get {
+                    return this.columnTotalOrden;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +479,7 @@ namespace Efos.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string numeortr, string numero_orden, string fecha, string codigo_servicio, string descripcion_servicio, string precio_servicio, string descripcion_tipo_precio, string codigo_paciente, string codigo_doctor, string nombre_doctor, string nombre_paciente) {
+            public DataTable1Row AddDataTable1Row(string numeortr, string numero_orden, string fecha, string codigo_servicio, string descripcion_servicio, string precio_servicio, string descripcion_tipo_precio, string codigo_paciente, string codigo_doctor, string nombre_doctor, string nombre_paciente, string cantidad_servicio, string TotalOrden) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         numeortr,
@@ -472,7 +492,9 @@ namespace Efos.Reportes {
                         codigo_paciente,
                         codigo_doctor,
                         nombre_doctor,
-                        nombre_paciente};
+                        nombre_paciente,
+                        cantidad_servicio,
+                        TotalOrden};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -506,6 +528,8 @@ namespace Efos.Reportes {
                 this.columncodigo_doctor = base.Columns["codigo_doctor"];
                 this.columnnombre_doctor = base.Columns["nombre_doctor"];
                 this.columnnombre_paciente = base.Columns["nombre_paciente"];
+                this.columncantidad_servicio = base.Columns["cantidad_servicio"];
+                this.columnTotalOrden = base.Columns["TotalOrden"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,6 +557,10 @@ namespace Efos.Reportes {
                 base.Columns.Add(this.columnnombre_doctor);
                 this.columnnombre_paciente = new global::System.Data.DataColumn("nombre_paciente", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre_paciente);
+                this.columncantidad_servicio = new global::System.Data.DataColumn("cantidad_servicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad_servicio);
+                this.columnTotalOrden = new global::System.Data.DataColumn("TotalOrden", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalOrden);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -853,6 +881,38 @@ namespace Efos.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cantidad_servicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.cantidad_servicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad_servicio\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.cantidad_servicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TotalOrden {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.TotalOrdenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalOrden\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.TotalOrdenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnumeortrNull() {
                 return this.IsNull(this.tableDataTable1.numeortrColumn);
             }
@@ -981,6 +1041,30 @@ namespace Efos.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setnombre_pacienteNull() {
                 this[this.tableDataTable1.nombre_pacienteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscantidad_servicioNull() {
+                return this.IsNull(this.tableDataTable1.cantidad_servicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcantidad_servicioNull() {
+                this[this.tableDataTable1.cantidad_servicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalOrdenNull() {
+                return this.IsNull(this.tableDataTable1.TotalOrdenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalOrdenNull() {
+                this[this.tableDataTable1.TotalOrdenColumn] = global::System.Convert.DBNull;
             }
         }
         

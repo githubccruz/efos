@@ -238,7 +238,6 @@ namespace Efos.FormProceso
                     + "{1}," +
                     "(select codiesot from estado_orden_trabajo_encabezado where descesot='PENDIENTE' limit 1));", datos);
 
-                //MessageBox.Show("Test Query: " + commando);
                 var data = PostgreSql.Execute(commando);
                 var codigo = data.Rows[0][0].ToString();
                 foreach (DataGridViewRow row in dataGridServicios.Rows)
@@ -254,6 +253,12 @@ namespace Efos.FormProceso
 
                     PostgreSql.Execute(commando);
                 }
+                var numeroOrden = codigo;
+                commando = String.Format("SELECT * FROM vista_reporte_orden_trabajo WHERE numero_orden={0}", numeroOrden);
+                var Data = PostgreSql.Execute(commando);
+                Efos.Reportes.SimpleReport report = new Reportes.SimpleReport();
+                report.ShowReport(Data, "ReportOrdenTrabajo");
+                report.Show();
             }
             catch(Exception){
 
