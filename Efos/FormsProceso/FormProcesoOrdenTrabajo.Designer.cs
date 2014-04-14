@@ -104,6 +104,7 @@
             // txtNumeroAsunto
             // 
             this.txtNumeroAsunto.Location = new System.Drawing.Point(189, 45);
+            this.txtNumeroAsunto.Validated += new System.EventHandler(this.txtNumeroAsunto_Validated);
             // 
             // txtCodigoPaciente
             // 
@@ -179,6 +180,7 @@
             this.comboTipoPrecio.FormattingEnabled = true;
             this.comboTipoPrecio.Location = new System.Drawing.Point(392, 173);
             this.comboTipoPrecio.Name = "comboTipoPrecio";
+            this.comboTipoPrecio.NoLimpiar = false;
             this.comboTipoPrecio.Size = new System.Drawing.Size(121, 23);
             this.comboTipoPrecio.Sorted = true;
             this.comboTipoPrecio.TabIndex = 20;
@@ -501,7 +503,7 @@
             this.Controls.Add(this.campoCodigo);
             this.Controls.Add(this.efosGroupBox1);
             this.Name = "FormProcesoOrdenTrabajo";
-            this.Text = "FormProcesoOrdenTrabajo";
+            this.Text = "Orden de Trabajo para Pacientes";
             this.Controls.SetChildIndex(this.efosGroupBox1, 0);
             this.Controls.SetChildIndex(this.efosGroupBoxPadre, 0);
             this.Controls.SetChildIndex(this.botonProcesar, 0);
